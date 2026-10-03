@@ -1,0 +1,42 @@
+{
+  "phase": "PHASE_14D_Y_PUB005_FORENSIC",
+  "final_status": "NO_CODE_FIX_JUSTIFIED",
+  "timestamp": "2026-10-02T01:24:00Z",
+  "y1_planner_reconstruction": {
+    "question_text": "Who won the gold medal in the event held at Olympic Weightlifting Gymnasium on 20 September 1988?",
+    "qtype": "multi_hop",
+    "gold_doc_ids": ["Q47155467"],
+    "plan_generated": "graphrag__hybrid_search (S1) -> Answer (A)",
+    "why_hybrid_search_selected": "Planner prompt contains explicit guidance instructing the LLM planner to prefer graphrag__hybrid_search for questions specifying natural-language venue names ('Olympic Weightlifting Gymnasium') and dates ('20 September 1988').",
+    "planner_deterministic_tool_knowledge": "Deterministic tools (lookup, aggregate, superlative, temporal_resolve) expect normalized graph entity names (e.g. sport, games, event_title). None accept venue or date strings.",
+    "planner_mechanism": "LLM-selected DAG guided by llm.agentic_planner_prompt."
+  },
+  "y2_evidence_analysis": {
+    "retrieved_gold_doc": "q25239316_chunk_0 (Men's 60 kg weightlifting, Infobox date: 20 September 1988, Gold: Naim Süleymanoğlu)",
+    "retrieved_competing_doc": "Q25239533_chunk_0 (Men's 67.5 kg weightlifting, Infobox date: 21 September 1988, body text mentions competition on 20 September, Gold: Joachim Kunz)",
+    "retrieval_success": "graphrag__hybrid_search succeeded 100% by returning the exact gold document Q25239316 in top_k=5.",
+    "synthesis_selection_cause": "Unstructured text synthesis without a canonical Infobox date filter prompt constraint nondeterministically selected Joachim Kunz instead of Naim Süleymanoğlu."
+  },
+  "y3_architectural_classification": {
+    "intended_architecture_type": "Option A (Hybrid Retrieval Only)",
+    "justification": "Venue and date queries operate over document text metadata. Hybrid search successfully retrieved the gold document. No secondary structural query is supported by schema for venue/date strings."
+  },
+  "y4_minimum_fix_determination": {
+    "code_fix_justified": false,
+    "prompt_fix_justified": false,
+    "conclusion": "The retrieval contract and planner logic are functioning as designed. No code modification to planner, executor, tool registry, or GSQL is justified."
+  },
+  "y5_regression_safety": {
+    "phase_6_untouched": true,
+    "phase_12_13_untouched": true,
+    "fix_a_line_863_untouched": true,
+    "fix_b_untouched": true,
+    "retrieval_gsql_embeddings_untouched": true,
+    "evaluator_untouched": true
+  },
+  "constraints_verification": {
+    "production_files_modified": 0,
+    "api_calls": 0,
+    "live_questions": 0
+  }
+}

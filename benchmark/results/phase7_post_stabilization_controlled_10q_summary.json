@@ -1,0 +1,64 @@
+{
+  "run_name": "phase7_post_stabilization_controlled_10q",
+  "number_attempted": 10,
+  "number_successful": 6,
+  "number_failed": 4,
+  "http_success_rate": 0.6,
+  "strict_exact_match": 0.0,
+  "normalized_match": 60.0,
+  "gold_doc_hit_rate": 0.0,
+  "avg_latency_seconds": 53.371,
+  "qtype_summary": {
+    "aggregation": {
+      "attempted": 3,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 3,
+      "normalized_match_pct": 100.0,
+      "gold_doc_hit_count": 0,
+      "gold_doc_hit_pct": 0.0
+    },
+    "temporal": {
+      "attempted": 2,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 2,
+      "normalized_match_pct": 100.0,
+      "gold_doc_hit_count": 0,
+      "gold_doc_hit_pct": 0.0
+    },
+    "lookup": {
+      "attempted": 1,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 1,
+      "normalized_match_pct": 100.0,
+      "gold_doc_hit_count": 0,
+      "gold_doc_hit_pct": 0.0
+    },
+    "superlative": {
+      "attempted": 2,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 0,
+      "normalized_match_pct": 0.0,
+      "gold_doc_hit_count": 0,
+      "gold_doc_hit_pct": 0.0
+    },
+    "multi_hop": {
+      "attempted": 2,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 0,
+      "normalized_match_pct": 0.0,
+      "gold_doc_hit_count": 0,
+      "gold_doc_hit_pct": 0.0
+    }
+  },
+  "pipeline_configuration": {
+    "mode": "agentic",
+    "rag_method": "similaritysearch",
+    "pass_qtype": false,
+    "graph_name": "Olympics"
+  }
+}

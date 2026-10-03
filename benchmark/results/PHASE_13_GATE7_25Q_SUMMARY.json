@@ -1,0 +1,52 @@
+{
+  "phase": "PHASE_13",
+  "gate": "GATE_7",
+  "total_questions": 25,
+  "http_success_count": 25,
+  "timeout_count": 0,
+  "normalized_accuracy_count": 12,
+  "normalized_accuracy_pct": 48.0,
+  "strict_exact_match_count": 1,
+  "strict_exact_match_pct": 4.0,
+  "combined_gold_evidence_count": 12,
+  "combined_gold_evidence_pct": 48.0,
+  "mean_latency_s": 65.92,
+  "median_latency_s": 58.07,
+  "p95_latency_s": 143.82,
+  "avg_agent_steps": 4.48,
+  "avg_llm_calls": 5.48,
+  "qtype_breakdown": {
+    "aggregation": {
+      "count": 7,
+      "accuracy_pct": 42.9,
+      "gold_hit_pct": 42.9,
+      "avg_latency_s": 50.7
+    },
+    "temporal": {
+      "count": 6,
+      "accuracy_pct": 83.3,
+      "gold_hit_pct": 83.3,
+      "avg_latency_s": 63.55
+    },
+    "superlative": {
+      "count": 3,
+      "accuracy_pct": 33.3,
+      "gold_hit_pct": 33.3,
+      "avg_latency_s": 87.15
+    },
+    "multi_hop": {
+      "count": 7,
+      "accuracy_pct": 28.6,
+      "gold_hit_pct": 28.6,
+      "avg_latency_s": 83.87
+    },
+    "lookup": {
+      "count": 2,
+      "accuracy_pct": 50.0,
+      "gold_hit_pct": 50.0,
+      "avg_latency_s": 31.62
+    }
+  },
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b"
+}

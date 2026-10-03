@@ -1,0 +1,47 @@
+{
+  "phase": "PHASE_14D_X_1Q_PUB003_REGRESSION",
+  "results": [
+    {
+      "qid": "pub-003",
+      "type": "aggregation",
+      "http_success": true,
+      "correct": true,
+      "strict_correct": false,
+      "answer": "According to the provided corpus, 8 shooting events at the 2004 Summer Olympics had more than 37 competitors.",
+      "gold": "8",
+      "latency": 19.74071216583252,
+      "telemetry": [
+        {
+          "provider": "airouter",
+          "caller": "agentic_triage",
+          "status": "SUCCESS",
+          "latency_s": 4.864,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        },
+        {
+          "provider": "airouter",
+          "caller": "agentic_plan",
+          "status": "SUCCESS",
+          "latency_s": 4.245,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        },
+        {
+          "provider": "airouter",
+          "caller": "generate_answer",
+          "status": "SUCCESS",
+          "latency_s": 6.394,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

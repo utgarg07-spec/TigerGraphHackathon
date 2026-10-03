@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "root_cause": "The 25Q runner attempted to access base_llm.MAX_PROVIDER_ATTEMPTS_PER_LOGICAL_CALL as a module-level attribute, whereas MAX_PROVIDER_ATTEMPTS_PER_LOGICAL_CALL is defined as a local variable inside LLM_Model._execute_with_fallback().",
+  "authoritative_provider_attempt_limit_location": "common/llm_services/base_llm.py (LLM_Model._execute_with_fallback)",
+  "value": 2,
+  "runner_fix": "Updated scratch/run_phase14d_l_25q_pilot.py preflight block to inspect inspect.getsource(base_llm.LLM_Model._execute_with_fallback) and parse MAX_PROVIDER_ATTEMPTS_PER_LOGICAL_CALL directly from source without modifying base_llm.py or any production code.",
+  "api_calls": 0,
+  "live_questions": 0,
+  "production_files_modified": 0,
+  "phase_12_modified": "NO",
+  "phase_13_modified": "NO",
+  "runner_compiles": "PASS",
+  "qid_set_valid": "VALID",
+  "qid_count": 25,
+  "unique_qids": 25,
+  "distribution": "5/5/5/5/5",
+  "overlap_with_phase14d_5q": 0
+}

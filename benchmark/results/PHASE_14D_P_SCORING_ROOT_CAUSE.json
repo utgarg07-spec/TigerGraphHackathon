@@ -1,0 +1,61 @@
+{
+  "phase": "PHASE_14D_P",
+  "audit_type": "5Q_SCORING_ROOT_CAUSE_REPAIR",
+  "final_status": "PASS — ROOT CAUSE FOUND AND MINIMAL REPAIR VERIFIED OFFLINE",
+  "timestamp": "2026-10-01T15:39:15Z",
+  "exact_root_cause": {
+    "historical_root_cause": "The live Gate-10 5Q AIRouter smoke benchmark executed prior to Phase 14D-K, when benchmark/unified_evaluator.py lacked number-word to digit conversion (e.g. 'five' -> '5', 'eight' -> '8'). The live evaluator compared 'five' against gold '5' and returned False.",
+    "evaluator_edge_case_defect": "In compute_correctness(), raw substring matching ('norm_gold in norm_pred') caused false positives (e.g. '8' in '18' evaluated to True) and failed on hyphenated compound numbers ('twenty-five' -> '20 5').",
+    "responsible_file": "benchmark/unified_evaluator.py",
+    "responsible_functions": ["normalize_answer", "compute_correctness"]
+  },
+  "data_flow_trace": {
+    "pub_001": {
+      "qid": "pub-001",
+      "gold_answer": ["5"],
+      "tool_name": "graphrag__aggregate",
+      "tool_result": 5,
+      "synthesis_answer": "According to the provided corpus, five biathlon events at the 2018 Winter Olympics had more than 73 competitors.",
+      "historical_live_score": false,
+      "repaired_evaluator_score": true
+    },
+    "pub_003": {
+      "qid": "pub-003",
+      "gold_answer": ["8"],
+      "tool_name": "graphrag__aggregate",
+      "tool_result": 8,
+      "synthesis_answer": "According to the provided corpus, eight shooting events at the 2004 Summer Olympics had more than 37 competitors.",
+      "historical_live_score": false,
+      "repaired_evaluator_score": true
+    }
+  },
+  "runner_evaluator_binding": {
+    "runner_file": "scratch/run_gate10_5q_airouter_smoke.py",
+    "import_statement": "from benchmark.unified_evaluator import normalize_answer, compute_correctness",
+    "is_current_evaluator_used": true
+  },
+  "minimal_code_changes": {
+    "file_modified": "benchmark/unified_evaluator.py",
+    "changes": [
+      "Added _TENS and _UNITS compound mapping to _WORD_NUMBERS so 'twenty-five' normalizes to '25'.",
+      "Added normalize_dashes() to normalize_answer() so hyphens and unicode dashes (–, —) convert to spaces prior to punctuation removal.",
+      "Updated compute_correctness() to use token word-boundary matching (re.search(rf'\\b{re.escape(norm_gold)}\\b', norm_pred)) to prevent digit substring collisions like '8' matching '18'."
+    ]
+  },
+  "validation_results": {
+    "unit_tests_run": 16,
+    "unit_tests_passed": 16,
+    "py_compile_passed": true,
+    "rescore_5q_gate10_score": "5/5 (100%)",
+    "network_api_calls_introduced": false
+  },
+  "confirmations": {
+    "api_calls_made": 0,
+    "live_questions_run": 0,
+    "phase_12_modified": false,
+    "phase_13_modified": false,
+    "tigergraph_modified": false,
+    "embeddings_modified": false,
+    "secrets_exposed": false
+  }
+}

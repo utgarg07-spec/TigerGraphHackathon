@@ -1,0 +1,41 @@
+CREATE LOADING JOB load_documents_content_json_with_images {
+    DEFINE FILENAME DocumentContent;
+    
+    // Load Documents (only entries with content field, not image storage entries)
+    LOAD DocumentContent TO VERTEX Document VALUES(gsql_lower($"doc_id"), gsql_current_time_epoch(0), _, _) 
+        WHERE $"content" != ""
+        USING JSON_FILE="true";
+    
+    // Load Content (for documents with content field)
+    // Both markdown and standalone image documents create Content vertices
+    LOAD DocumentContent TO VERTEX Content VALUES(gsql_lower($"doc_id"), $"doc_type", $"content", gsql_current_time_epoch(0)) 
+        WHERE $"content" != ""
+        USING JSON_FILE="true";
+    
+    // Edge: Document -> Content (for documents with content)
+    LOAD DocumentContent TO EDGE HAS_CONTENT VALUES(
+        gsql_lower($"doc_id") Document, 
+        gsql_lower($"doc_id") Content
+    ) WHERE $"content" != ""
+      USING JSON_FILE="true";
+    
+    // Load Images (ONLY for image storage entries which have image_data field)
+    LOAD DocumentContent TO VERTEX Image VALUES(
+        gsql_lower($"doc_id"),
+        $"image_data",
+        $"image_format",
+        gsql_lower($"parent_doc"),
+        $"page_number",
+        gsql_current_time_epoch(0)
+    ) WHERE $"image_data" != ""
+      USING JSON_FILE="true";
+    
+    // Edge: Document -> Image (for image documents)
+    LOAD DocumentContent TO EDGE HAS_IMAGE VALUES(
+        gsql_lower($"parent_doc") Document,
+        gsql_lower($"doc_id") Image,
+        $"position"
+    ) WHERE $"doc_type" == "image" AND $"parent_doc" != ""
+      USING JSON_FILE="true";
+}
+

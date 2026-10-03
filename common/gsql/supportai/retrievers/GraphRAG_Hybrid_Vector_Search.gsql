@@ -1,0 +1,150 @@
+/*
+ * Copyright (c) 2024-2026 TigerGraph, Inc.
+ *
+ * This program may be redistributed and/or modified under the terms of the GNU
+ * Affero General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+CREATE OR REPLACE DISTRIBUTED QUERY GraphRAG_Hybrid_Vector_Search(Set<STRING> v_types,
+  LIST<FLOAT> query_vector, UINT top_k=5, UINT num_hops=3, UINT num_seen_min=1, UINT max_results=0, BOOL chunk_only = False, BOOL doc_only = False, BOOL verbose = False) {
+  TYPEDEF TUPLE<VERTEX v, STRING t> VertexTypes;
+  TYPEDEF TUPLE<VERTEX s, VERTEX t> EdgeTypes;
+  TYPEDEF tuple<Vertex v, Float score> Similarity_Results;
+  // Final relevance cap: rank reached chunks by cosine to the question
+  // (degree-independent, unlike path-count) and keep the top max_results.
+  TYPEDEF tuple<Vertex<DocumentChunk> v, Float cos> ChunkScore;
+  HeapAccum<Similarity_Results>(top_k, score DESC) @@topk_set;
+  HeapAccum<ChunkScore>(max_results, cos DESC) @@top_chunks;
+  SetAccum<VERTEX> @@start_set;
+  SetAccum<VertexTypes> @@start_set_type;
+  SetAccum<VERTEX> @@tmp_set;
+  SetAccum<VertexTypes> @@selected_set_type;
+  SetAccum<EdgeTypes> @@edges;
+  SumAccum<INT> @visited;
+  SumAccum<INT> @num_times_seen;
+  MapAccum<Vertex, SetAccum<String>> @@result_set;
+  MapAccum<STRING, SetAccum<VertexTypes>> @@verbose_info;
+  SetAccum<VERTEX<DocumentChunk>> @@to_retrieve_content;
+  SetAccum<STRING> @context;
+  SetAccum<VERTEX> @parents;
+  SetAccum<EDGE> @paths;
+
+  FOREACH v_type IN v_types DO
+    IF v_type == "Document" THEN
+        CONTINUE;
+    END;
+
+    vset = {v_type.*};
+    result = SELECT v FROM vset:v WHERE v.embedding.size() > 0 POST-ACCUM @@topk_set += Similarity_Results(v, 1 - gds.vector.distance(query_vector, v.embedding, "COSINE"));
+    FOREACH i in RANGE[1, @@topk_set.size()] DO
+      @@start_set += @@topk_set.pop().v;
+    END;
+  END;
+
+  start = {@@start_set};
+  start = SELECT s FROM start:s ACCUM s.@parents += s POST-ACCUM s.@num_times_seen = num_seen_min, @@tmp_set += s, @@start_set_type += VertexTypes(s, s.type);
+
+  @@verbose_info += ("start_set" -> @@start_set_type);
+
+  FOREACH i IN RANGE[0, num_hops-1] DO
+    start = SELECT t FROM start:s -((RELATIONSHIP>|
+                                     CONTAINS_ENTITY>|
+                                     reverse_CONTAINS_ENTITY>|
+                                     IS_AFTER>):e)- :t
+            WHERE s.@visited < 1 AND t NOT IN s.@parents
+            ACCUM s.@visited += 1, t.@num_times_seen += 1, t.@parents += s, t.@parents += s.@parents, t.@paths += s.@paths, t.@paths += e
+            POST-ACCUM(t) @@tmp_set += t;
+
+    IF start.size() == 0 THEN
+      BREAK;
+    END;
+  END;
+
+  start = {@@tmp_set};
+  @@tmp_set.clear();
+
+  res = SELECT s FROM start:s WHERE s.@num_times_seen >= num_seen_min AND s.type != "Document"
+        ACCUM
+          IF s.type == "RelationshipType" THEN
+            s.@context += s.definition
+          ELSE IF s.type == "Entity" THEN
+            STRING tmp_dsc = "Entity: " + replace(s.id, "_", " ") + ", Description: " + s.definition,
+            FOREACH dsc IN s.description DO
+              tmp_dsc = tmp_dsc + " " + dsc +";"
+            END,
+            s.@context += tmp_dsc
+          ELSE IF s.type == "DocumentChunk" THEN
+            @@to_retrieve_content += s
+          ELSE
+            // Domain vertex type — surface "<TypeName>: <id>" so the
+            // LLM sees the schema-aware label.
+            s.@context += s.type + ": " + replace(s.id, "_", " ")
+          END
+        POST-ACCUM(s)
+          IF NOT (chunk_only OR doc_only) OR (chunk_only OR doc_only) AND s.type == "DocumentChunk" THEN
+            @@selected_set_type += VertexTypes(s, s.type)
+          END,
+          IF NOT (chunk_only OR doc_only) THEN
+            FOREACH v IN s.@parents DO
+              IF v IN @@start_set THEN
+                @@result_set += (v -> s.@context), @@edges += EdgeTypes(v, s)
+              END
+            END
+          END;
+
+  // Cap to the most query-relevant chunks BEFORE the (expensive) content
+  // fetch: score each reached chunk by cosine to the question and keep the
+  // top max_results. Cosine is degree-independent, so it doesn't favor
+  // chunks attached to hub entities the way path-count would. 0 = no cap.
+  IF max_results > 0 THEN
+    cand = {@@to_retrieve_content};
+    cand = SELECT s FROM cand:s WHERE s.embedding.size() > 0
+           POST-ACCUM @@top_chunks += ChunkScore(s, 1 - gds.vector.distance(query_vector, s.embedding, "COSINE"));
+    @@to_retrieve_content.clear();
+    FOREACH it IN @@top_chunks DO
+      @@to_retrieve_content += it.v;
+    END;
+  END;
+
+  doc_chunks = {@@to_retrieve_content};
+
+  IF doc_only THEN
+      @@selected_set_type.clear();
+      res = SELECT s FROM doc_chunks:s -(reverse_HAS_CHILD>:e1)- Document:d -(HAS_CONTENT>:e2)- Content:t
+        ACCUM d.@context += t.text, d.@parents += s.@parents, @@selected_set_type += VertexTypes(d, d.type)
+        POST-ACCUM(d)
+          @@result_set += (d -> d.@context),
+          FOREACH v IN d.@parents DO
+            IF v IN @@start_set THEN
+              @@edges += EdgeTypes(v, d)
+            END
+          END;
+      @@verbose_info += ("selected_set" -> @@selected_set_type);
+  ELSE
+      res = SELECT s FROM doc_chunks:s -(HAS_CONTENT>:e)- Content:t
+        ACCUM s.@context += t.text
+        POST-ACCUM(s)
+          @@result_set += (s -> s.@context),
+          FOREACH v IN s.@parents DO
+            IF v IN @@start_set THEN
+              @@edges += EdgeTypes(v, s)
+            END
+          END;
+      @@verbose_info += ("selected_set" -> @@selected_set_type);
+  END;
+
+  PRINT @@result_set as final_retrieval, @@edges as edges;
+
+  IF verbose THEN
+      PRINT @@verbose_info as verbose;
+  END;
+}

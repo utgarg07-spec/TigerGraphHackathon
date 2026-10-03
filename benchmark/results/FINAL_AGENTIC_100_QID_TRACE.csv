@@ -1,0 +1,101 @@
+qid,qtype,provider,model,latency_s,execution_status,llm_calls,agent_steps,plan_retries,strict_exact_match,normalized_match,gold_doc_hit,error
+pub-001,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,18.596,SUCCESS,4,3,0,False,True,True,
+pub-002,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,27.991,SUCCESS,4,3,0,False,True,True,
+pub-003,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,17.219,SUCCESS,4,3,0,False,True,True,
+pub-004,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,180.04,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-005,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,87.222,SUCCESS,6,5,0,False,True,True,
+pub-006,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,68.465,SUCCESS,4,3,0,False,True,True,
+pub-007,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,36.886,SUCCESS,4,3,0,False,True,True,
+pub-008,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,23.291,SUCCESS,4,3,0,False,True,True,
+pub-009,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,68.73,SUCCESS,4,3,0,False,True,True,
+pub-010,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,32.058,SUCCESS,4,3,0,False,True,True,
+pub-011,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,32.76,SUCCESS,4,3,0,False,True,True,
+pub-012,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,180.023,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-013,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,42.808,SUCCESS,4,3,0,False,True,True,
+pub-014,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,126.069,SUCCESS,6,5,0,False,False,False,
+pub-015,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,100.576,SUCCESS,4,3,0,False,False,True,
+pub-016,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,55.769,SUCCESS,4,3,0,False,True,True,
+pub-017,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,43.142,SUCCESS,4,3,0,False,True,True,
+pub-018,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,47.833,SUCCESS,4,3,0,False,True,True,
+pub-019,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,59.74,SUCCESS,4,3,0,False,True,True,
+pub-020,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,180.004,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-021,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,39.121,SUCCESS,4,3,0,False,True,True,
+pub-022,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,76.996,SUCCESS,2,1,0,False,False,False,
+pub-023,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,30.804,SUCCESS,4,3,0,False,True,True,
+pub-024,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,100.667,SUCCESS,4,3,0,True,True,True,
+pub-025,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,30.513,SUCCESS,4,3,0,False,True,True,
+pub-026,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,32.635,SUCCESS,4,3,0,False,True,True,
+pub-027,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,23.349,SUCCESS,4,3,0,False,True,True,
+pub-028,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,98.388,SUCCESS,4,3,0,False,True,True,
+pub-029,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,37.808,SUCCESS,4,3,0,False,True,True,
+pub-030,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,75.097,SUCCESS,4,3,0,False,False,False,
+pub-031,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,46.385,SUCCESS,4,3,0,False,True,True,
+pub-032,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,64.116,SUCCESS,4,3,0,False,True,True,
+pub-033,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,27.677,SUCCESS,4,3,0,False,True,True,
+pub-034,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,27.467,SUCCESS,4,3,0,False,True,True,
+pub-035,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,31.438,SUCCESS,4,3,0,False,True,True,
+pub-036,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,31.853,SUCCESS,4,3,0,False,False,True,
+pub-037,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,180.011,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-038,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.016,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-039,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,21.586,SUCCESS,4,3,0,False,True,True,
+pub-040,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,45.894,SUCCESS,4,3,0,False,True,True,
+pub-041,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,41.154,SUCCESS,4,3,0,False,True,True,
+pub-042,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,44.386,SUCCESS,4,3,0,False,True,True,
+pub-043,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,40.993,SUCCESS,4,3,0,False,True,True,
+pub-044,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,19.482,SUCCESS,4,3,0,False,True,True,
+pub-045,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,29.454,SUCCESS,4,3,0,False,True,True,
+pub-046,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,26.842,SUCCESS,4,3,0,False,True,True,
+pub-047,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,20.757,SUCCESS,4,3,0,False,True,True,
+pub-048,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,26.662,SUCCESS,4,3,0,False,True,True,
+pub-049,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,42.994,SUCCESS,4,3,0,False,True,True,
+pub-050,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,39.927,SUCCESS,4,3,0,False,True,True,
+pub-051,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,38.538,SUCCESS,4,3,0,False,True,True,
+pub-052,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,24.232,SUCCESS,4,3,0,False,True,True,
+pub-053,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,21.413,SUCCESS,4,3,0,False,True,True,
+pub-054,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,39.899,SUCCESS,4,3,0,False,True,True,
+pub-055,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,56.297,SUCCESS,4,3,0,False,True,True,
+pub-056,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,30.492,SUCCESS,4,3,0,False,True,True,
+pub-057,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,37.816,SUCCESS,4,3,0,False,True,True,
+pub-058,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,180.016,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-059,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,151.303,SUCCESS,5,4,0,False,True,True,
+pub-060,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,36.121,SUCCESS,4,3,0,False,True,True,
+pub-061,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,35.401,SUCCESS,4,3,0,False,True,True,
+pub-062,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,50.199,SUCCESS,4,3,0,False,True,True,
+pub-063,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,40.99,SUCCESS,4,3,0,False,True,True,
+pub-064,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,65.176,SUCCESS,4,3,0,False,True,True,
+pub-065,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,111.338,SUCCESS,4,3,0,False,True,True,
+pub-066,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,24.502,SUCCESS,4,3,0,False,True,True,
+pub-067,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.016,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-068,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,33.3,SUCCESS,4,3,0,False,True,True,
+pub-069,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,180.021,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-070,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,49.773,SUCCESS,4,3,0,False,True,True,
+pub-071,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,48.875,SUCCESS,4,3,0,False,True,True,
+pub-072,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,180.039,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-073,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.029,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-074,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,74.539,SUCCESS,4,3,0,False,True,True,
+pub-075,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,37.18,SUCCESS,4,3,0,False,True,True,
+pub-076,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,142.746,SUCCESS,4,3,0,False,True,True,
+pub-077,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.005,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-078,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,111.227,SUCCESS,4,3,0,False,True,True,
+pub-079,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,48.154,SUCCESS,4,3,0,False,True,True,
+pub-080,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,180.026,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-081,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,140.429,SUCCESS,5,4,0,False,True,True,
+pub-082,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,23.839,SUCCESS,4,3,0,False,True,True,
+pub-083,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,45.925,SUCCESS,4,3,0,False,True,True,
+pub-084,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,20.047,SUCCESS,4,3,0,False,True,True,
+pub-085,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,23.604,SUCCESS,4,3,0,False,True,True,
+pub-086,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.031,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-087,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,180.032,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-088,superlative,,Qwen/Qwen2.5-Coder-32B-Instruct,35.484,SUCCESS,4,3,0,False,True,True,
+pub-089,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,71.543,SUCCESS,4,3,0,False,False,True,
+pub-090,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,23.091,SUCCESS,4,3,0,False,True,True,
+pub-091,lookup,,Qwen/Qwen2.5-Coder-32B-Instruct,180.011,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-092,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,36.917,SUCCESS,4,3,0,False,True,True,
+pub-093,aggregation,,Qwen/Qwen2.5-Coder-32B-Instruct,57.756,SUCCESS,4,3,0,False,True,True,
+pub-094,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,21.361,SUCCESS,4,3,0,False,True,True,
+pub-095,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,113.974,SUCCESS,4,3,0,False,True,True,
+pub-096,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.025,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-097,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,128.541,SUCCESS,4,3,0,False,True,True,
+pub-098,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.04,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-099,multi_hop,,Qwen/Qwen2.5-Coder-32B-Instruct,180.032,TIMEOUT,1,0,0,False,False,False,"Request Exception: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=180)"
+pub-100,temporal,,Qwen/Qwen2.5-Coder-32B-Instruct,73.59,SUCCESS,4,3,0,False,True,True,

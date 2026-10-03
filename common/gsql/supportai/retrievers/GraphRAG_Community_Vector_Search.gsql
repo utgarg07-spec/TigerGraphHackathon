@@ -1,0 +1,85 @@
+/*
+ * Copyright (c) 2024-2026 TigerGraph, Inc.
+ *
+ * This program may be redistributed and/or modified under the terms of the GNU
+ * Affero General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+CREATE OR REPLACE DISTRIBUTED QUERY GraphRAG_Community_Vector_Search(LIST<FLOAT> query_vector, INT community_level=2, INT top_k = 3, UINT max_results = 0, BOOL with_chunk = true, BOOL with_doc = false, BOOL verbose = false) {
+  TYPEDEF TUPLE<VERTEX s, VERTEX t> EdgeTypes;
+  // Relevance cap for the chunks pulled in via a community's entities, so a
+  // broad community doesn't dump every linked chunk's text. 0 = no cap.
+  TYPEDEF tuple<Vertex<DocumentChunk> v, Float cos> ChunkScore;
+  MapAccum<Vertex, SetAccum<String>> @@final_retrieval;
+  MapAccum<STRING, SetAccum<Vertex>> @@verbose_info;
+  HeapAccum<ChunkScore>(max_results, cos DESC) @@top_chunks;
+  SetAccum<VERTEX<DocumentChunk>> @@keep_chunks;
+  SetAccum<STRING> @context;
+  SetAccum<Vertex> @children;
+  SetAccum<Vertex> @@start_set;
+  SetAccum<EdgeTypes> @@edges;
+  
+  filtered_comms = SELECT c FROM Community:c WHERE c.iteration == community_level and length(c.description) > 0;
+  start_comms = vectorSearch({Community.embedding}, query_vector, top_k, {candidate_set: filtered_comms});
+
+  start_comms = SELECT c FROM start_comms:c WHERE c.type == "Community"
+      POST-ACCUM @@start_set += c;
+
+  @@verbose_info += ("start_set" -> @@start_set);
+  selected_comms = start_comms;
+
+  IF with_chunk or with_doc THEN
+      FOREACH i IN RANGE[community_level, 2].STEP(-1) DO
+          selected_comms = SELECT c FROM selected_comms:s -(<HAS_PARENT)- Community:c
+              WHERE s.iteration == i
+              ACCUM s.@children += c
+              POST-ACCUM @@verbose_info += ("community_level_"+to_string(i-1) -> s.@children);
+      END;
+      start_chunks = vectorSearch({DocumentChunk.embedding}, query_vector, top_k);
+      extra_selected_comms = SELECT m FROM start_chunks:dc -(CONTAINS_ENTITY>)- Entity:v -(IN_COMMUNITY>)- Community:m;
+      selected_comms = selected_comms UNION extra_selected_comms;
+
+      // Rank the chunks linked to the selected communities by cosine relevance
+      // to the question and keep only the top max_results, so the per-community
+      // context isn't every linked chunk's full text. 0 = no cap.
+      IF max_results > 0 THEN
+          cand = SELECT d FROM DocumentChunk:d -(CONTAINS_ENTITY>)- Entity:v -(IN_COMMUNITY>)- selected_comms:m
+                 WHERE d.embedding.size() > 0
+                 POST-ACCUM @@top_chunks += ChunkScore(d, 1 - gds.vector.distance(query_vector, d.embedding, "COSINE"));
+          FOREACH it IN @@top_chunks DO
+              @@keep_chunks += it.v;
+          END;
+      END;
+
+      IF with_doc THEN
+          related_chunks = SELECT c FROM Content:c -(<HAS_CONTENT)- Document:d -(HAS_CHILD>)- DocumentChunk:dc -(CONTAINS_ENTITY>)- Entity:v -(IN_COMMUNITY>)- selected_comms:m
+              WHERE max_results == 0 OR dc IN @@keep_chunks
+              ACCUM m.@context += c.text, m.@children += d, @@edges += EdgeTypes(m, d)
+              POST-ACCUM @@verbose_info += ("related_chunks" -> m.@children);
+      ELSE
+          related_chunks = SELECT c FROM Content:c -(<HAS_CONTENT)- DocumentChunk:d -(CONTAINS_ENTITY>)- Entity:v -(IN_COMMUNITY>)- selected_comms:m
+              WHERE max_results == 0 OR d IN @@keep_chunks
+              ACCUM m.@context += c.text, m.@children += d, @@edges += EdgeTypes(m, d)
+              POST-ACCUM @@verbose_info += ("related_chunks" -> m.@children);
+      END;
+  END;
+
+  selected_comms = SELECT c FROM selected_comms:c -(HAS_PARENT>*0..)- start_comms:s WHERE s.type == c.type and c.type == "Community"
+      ACCUM s.@context += s.description, s.@context += c.@context
+      POST-ACCUM(s) @@final_retrieval += (s -> s.@context);
+
+  PRINT @@final_retrieval as final_retrieval, @@edges as edges;
+
+  IF verbose THEN
+      PRINT @@verbose_info as verbose;
+  END;
+}

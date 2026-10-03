@@ -1,0 +1,6 @@
+qtype,count,accuracy_count,accuracy_pct,evidence_count,evidence_pct,timeout_count,avg_latency_s
+lookup,19,0,0.0,0,0.0,0,44.55
+temporal,22,1,4.5,1,4.5,0,35.6
+aggregation,21,1,4.8,1,4.8,0,40.32
+superlative,10,0,0.0,0,0.0,0,46.23
+multi_hop,28,0,0.0,0,0.0,0,37.09

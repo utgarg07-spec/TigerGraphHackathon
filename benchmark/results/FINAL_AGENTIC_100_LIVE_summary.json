@@ -1,0 +1,65 @@
+{
+  "run_name": "FINAL_AGENTIC_100_LIVE",
+  "number_attempted": 100,
+  "number_successful": 82,
+  "number_failed": 18,
+  "http_success_rate": 0.82,
+  "strict_exact_match": 1.0,
+  "normalized_match": 76.0,
+  "gold_doc_hit_rate": 79.0,
+  "avg_latency_seconds": 74.296,
+  "average_retrieval_intrusion_pct": 0.0,
+  "qtype_summary": {
+    "aggregation": {
+      "attempted": 21,
+      "strict_exact_match_count": 1,
+      "strict_exact_match_pct": 4.76,
+      "normalized_match_count": 15,
+      "normalized_match_pct": 71.43,
+      "gold_doc_hit_count": 16,
+      "gold_doc_hit_pct": 76.19
+    },
+    "temporal": {
+      "attempted": 22,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 20,
+      "normalized_match_pct": 90.91,
+      "gold_doc_hit_count": 21,
+      "gold_doc_hit_pct": 95.45
+    },
+    "superlative": {
+      "attempted": 10,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 8,
+      "normalized_match_pct": 80.0,
+      "gold_doc_hit_count": 8,
+      "gold_doc_hit_pct": 80.0
+    },
+    "multi_hop": {
+      "attempted": 28,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 16,
+      "normalized_match_pct": 57.14,
+      "gold_doc_hit_count": 17,
+      "gold_doc_hit_pct": 60.71
+    },
+    "lookup": {
+      "attempted": 19,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 17,
+      "normalized_match_pct": 89.47,
+      "gold_doc_hit_count": 17,
+      "gold_doc_hit_pct": 89.47
+    }
+  },
+  "pipeline_configuration": {
+    "mode": "agentic",
+    "rag_method": "similaritysearch",
+    "pass_qtype": false,
+    "graph_name": "Olympics"
+  }
+}

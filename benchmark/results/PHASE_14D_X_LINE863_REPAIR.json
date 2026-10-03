@@ -1,0 +1,37 @@
+{
+  "phase": "PHASE_14D_X_LINE863_REPAIR",
+  "status": "SUCCESS",
+  "timestamp": "2026-10-02T01:19:00Z",
+  "exact_files_modified": [
+    "common/llm_services/base_llm.py"
+  ],
+  "fix_details": {
+    "file": "common/llm_services/base_llm.py",
+    "function": "invoke_with_parser",
+    "line": 863,
+    "change": "Updated is_openrouter check to include 'airouter' base_url and provider_name checks, establishing parity with line 1071 (invoke_structured). AIRouter invocations in generate_answer() now follow the prompt-based format instructions path with raw_msgs chat completions instead of ChatOpenAI.invoke chain fallback."
+  },
+  "fix_b_status": "RETAINED UNCHANGED in graphrag/app/agent/agentic_executor.py",
+  "offline_validation": {
+    "py_compile_base_llm": "PASSED (exit 0)",
+    "test_script": "scratch/test_phase14d_x_line863_validation.py",
+    "test_execution": "PASSED (exit 0 inside Docker container)",
+    "invariants_verified": [
+      "invoke_with_parser() recognizes AIRouter exactly as invoke_structured() does (is_openrouter=True)",
+      "OpenRouter behavior remains unchanged (is_openrouter=True)",
+      "Standard OpenAI behavior remains unchanged (is_openrouter=False)",
+      "ChatOpenAI(max_retries=0) and retry-owner architecture remain untouched",
+      "No planner/executor/retrieval/evaluator changes made beyond line 863"
+    ]
+  },
+  "constraints_verification": {
+    "production_files_outside_line_863_changed": false,
+    "api_calls": 0,
+    "live_questions": 0,
+    "phase_12_13_modified": false,
+    "phase_6_modified": false,
+    "embeddings_gsql_retrieval_modified": false,
+    "docker_compose_modified": false,
+    "evaluator_modified": false
+  }
+}

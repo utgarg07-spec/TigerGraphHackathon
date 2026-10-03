@@ -1,0 +1,126 @@
+{
+  "phase": "PHASE_14",
+  "gate": "GATE_3",
+  "targeted_regression_status": "PASS",
+  "total_questions": 9,
+  "http_success_count": 9,
+  "records": [
+    {
+      "qid": "pub-004",
+      "qtype": "superlative",
+      "question": "According to the provided corpus, which athletics event at the 2008 Summer Olympics had the highest number of competitors?",
+      "prediction": "The provided corpus does not contain information about the number of competitors in athletics events at the 2008 Summer Olympics.",
+      "gold": [
+        "Athletics at the 2008 Summer Olympics \u2013 Men's marathon"
+      ],
+      "latency_s": 52.274,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 9,
+      "error": null
+    },
+    {
+      "qid": "pub-008",
+      "qtype": "superlative",
+      "question": "According to the provided corpus, which sailing event at the 2000 Summer Olympics had the highest number of competitors?",
+      "prediction": "Among the sailing events at the 2000 Summer Olympics listed in the corpus, the Open One Person Dinghy had 43 competitors, the Women's Europe event had 27 competitors, and the Finn class had 25 competitors. Therefore, the Open One Person Dinghy had the highest number of competitors.",
+      "gold": [
+        "Sailing at the 2000 Summer Olympics \u2013 Soling"
+      ],
+      "latency_s": 43.461,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 3,
+      "error": null
+    },
+    {
+      "qid": "pub-015",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Dani KingLaura TrottJoanna Rowsell"
+      ],
+      "latency_s": 230.142,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 4,
+      "error": null
+    },
+    {
+      "qid": "pub-023",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Estadi Ol\u00edmpic Llu\u00eds Companys, Barcelona on August 9 at the 1992 Summer Olympics?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Hwang Young-Cho"
+      ],
+      "latency_s": 8.917,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 3,
+      "error": null
+    },
+    {
+      "qid": "pub-060",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at ExCeL Exhibition Centre on 30 July at the 2012 Summer Olympics?",
+      "prediction": "Kaori Matsumoto (JPN) won the gold medal in the Women's 57kg judo event held at the ExCeL Exhibition Centre on 30 July 2012.",
+      "gold": [
+        "Yana Shemyakina"
+      ],
+      "latency_s": 231.999,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 3,
+      "error": null
+    },
+    {
+      "qid": "pub-067",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at North Greenwich Arena on 4 August at the 2012 Summer Olympics?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Rosannagh MacLennan"
+      ],
+      "latency_s": 166.433,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 5,
+      "error": null
+    },
+    {
+      "qid": "pub-076",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Sestriere on February 24, 2006?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Julia Mancuso"
+      ],
+      "latency_s": 159.59,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 5,
+      "error": null
+    },
+    {
+      "qid": "pub-098",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 18 September to 1 October 2000?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Bekzat Sattarkhanov"
+      ],
+      "latency_s": 136.652,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 5,
+      "error": null
+    },
+    {
+      "qid": "pub-099",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Laura Biathlon & Ski Complex on 22 February 2014?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Erik LesserDaniel B\u00f6hmArnd PeifferSimon Schempp"
+      ],
+      "latency_s": 117.122,
+      "http_status": "SUCCESS",
+      "agent_steps_count": 4,
+      "error": null
+    }
+  ]
+}

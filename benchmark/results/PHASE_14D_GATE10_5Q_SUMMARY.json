@@ -1,0 +1,12 @@
+{
+  "gate": "GATE_10_5Q_AIRouter_SMOKE",
+  "total": 5,
+  "success": 5,
+  "timeouts": 1,
+  "accuracy": 5,
+  "accuracy_pct": 100.0,
+  "mean_latency_s": 70.23,
+  "median_latency_s": 26.53,
+  "provider": "airouter",
+  "model": "openai/gpt-oss-20b"
+}

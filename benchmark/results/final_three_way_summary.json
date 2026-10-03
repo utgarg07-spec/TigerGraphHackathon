@@ -1,0 +1,43 @@
+{
+  "benchmark_scope": {
+    "total_questions": 100,
+    "question_types": [
+      "lookup",
+      "temporal",
+      "aggregation",
+      "superlative",
+      "multi_hop"
+    ],
+    "evaluation_contract_version": "v1.0.0"
+  },
+  "overall_comparison": {
+    "RAG": {
+      "count": 100,
+      "accuracy": 0.0,
+      "accuracy_count": "0/100",
+      "combined_evidence": 0.0,
+      "evidence_hits": "0/100",
+      "avg_tokens": 8617.17,
+      "avg_latency_ms": 11289.01
+    },
+    "GraphRAG": {
+      "count": 100,
+      "accuracy": 0.0,
+      "accuracy_count": "0/100",
+      "combined_evidence": 0.0,
+      "evidence_hits": "0/100",
+      "avg_tokens": 1103.3,
+      "avg_latency_ms": 35043.14
+    },
+    "Agentic_GraphRAG": {
+      "count": 100,
+      "accuracy": 0.76,
+      "accuracy_count": "76/100",
+      "combined_evidence": 0.79,
+      "evidence_hits": "79/100",
+      "avg_tokens": 5665.46,
+      "avg_latency_ms": 74296.0,
+      "timeouts": 18
+    }
+  }
+}

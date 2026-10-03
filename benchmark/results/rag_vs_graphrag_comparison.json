@@ -1,0 +1,77 @@
+{
+  "title": "Side-by-Side Baseline Comparison: Classic Vector RAG vs GraphRAG Hybrid Retrieval",
+  "metric_comparison": {
+    "total_questions": {
+      "RAG": 100,
+      "GraphRAG": 100
+    },
+    "overall_accuracy_pct": {
+      "RAG": 19.0,
+      "GraphRAG": 20.0,
+      "delta": 1.0
+    },
+    "overall_evidence_hit_pct": {
+      "RAG": 3.0,
+      "GraphRAG": 16.0,
+      "delta": 13.0
+    },
+    "average_completeness": {
+      "RAG": 0.2302,
+      "GraphRAG": 0.2,
+      "delta": -0.0302
+    },
+    "average_latency_ms": {
+      "RAG": 11289.01,
+      "GraphRAG": 35043.14,
+      "delta": 23754.13
+    },
+    "average_retrieval_intrusion_pct": {
+      "RAG": 0.0,
+      "GraphRAG": 100.0,
+      "delta": 100.0
+    }
+  },
+  "per_qtype_accuracy_comparison": {
+    "aggregation": {
+      "rag_accuracy_pct": 85.71,
+      "graphrag_accuracy_pct": 85.71,
+      "delta": 0.0,
+      "rag_evidence_hit_pct": 0.0,
+      "graphrag_evidence_hit_pct": 0.0
+    },
+    "lookup": {
+      "rag_accuracy_pct": 5.26,
+      "graphrag_accuracy_pct": 10.53,
+      "delta": 5.27,
+      "rag_evidence_hit_pct": 0.0,
+      "graphrag_evidence_hit_pct": 5.26
+    },
+    "multi_hop": {
+      "rag_accuracy_pct": 0.0,
+      "graphrag_accuracy_pct": 0.0,
+      "delta": 0.0,
+      "rag_evidence_hit_pct": 0.0,
+      "graphrag_evidence_hit_pct": 10.71
+    },
+    "superlative": {
+      "rag_accuracy_pct": 0.0,
+      "graphrag_accuracy_pct": 0.0,
+      "delta": 0.0,
+      "rag_evidence_hit_pct": 20.0,
+      "graphrag_evidence_hit_pct": 0.0
+    },
+    "temporal": {
+      "rag_accuracy_pct": 0.0,
+      "graphrag_accuracy_pct": 0.0,
+      "delta": 0.0,
+      "rag_evidence_hit_pct": 4.55,
+      "graphrag_evidence_hit_pct": 54.55
+    }
+  },
+  "key_takeaways": [
+    "GraphRAG baseline achieves 20.0% overall accuracy vs 19.0% for Vector RAG (+1.0% improvement).",
+    "GraphRAG baseline achieves 16.0% combined gold evidence hit rate vs 3.0% for Vector RAG (+13.0% improvement).",
+    "73 out of 100 queries (73.0%) in GraphRAG baseline suffered zero-context dropouts because vector-seeded document chunks lacked outgoing DOCUMENT_HAS_EVENT edges.",
+    "GraphRAG demonstrates significantly higher temporal evidence hit rate (54.55% vs 4.55%) and multi-hop evidence hit rate (10.71% vs 0.0%) compared to classic Vector RAG."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "phase": "PHASE_14D_W_2Q_REGRESSION",
+  "results": [
+    {
+      "qid": "pub-003",
+      "type": "aggregation",
+      "http_success": true,
+      "correct": false,
+      "strict_correct": false,
+      "answer": "(no answer produced)",
+      "gold": "8",
+      "latency": 19.256414651870728,
+      "telemetry": [
+        {
+          "provider": "airouter",
+          "caller": "agentic_triage",
+          "status": "SUCCESS",
+          "latency_s": 3.129,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        },
+        {
+          "provider": "airouter",
+          "caller": "agentic_plan",
+          "status": "SUCCESS",
+          "latency_s": 5.078,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        },
+        {
+          "provider": "airouter",
+          "caller": "generate_answer",
+          "status": "SUCCESS",
+          "latency_s": 5.251,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        }
+      ]
+    },
+    {
+      "qid": "pub-005",
+      "type": "multi_hop",
+      "http_success": true,
+      "correct": false,
+      "strict_correct": false,
+      "answer": "The gold medal in the men's 67.5\u202fkg weightlifting event, held at the Olympic Weightlifting Gymnasium on 20\u202fSeptember\u202f1988, was won by Joachim\u202fKunz of the German Democratic Republic (GDR).",
+      "gold": "Naim S\u00fcleymano\u011flu",
+      "latency": 31.953561782836914,
+      "telemetry": [
+        {
+          "provider": "airouter",
+          "caller": "agentic_triage",
+          "status": "SUCCESS",
+          "latency_s": 3.212,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        },
+        {
+          "provider": "airouter",
+          "caller": "agentic_plan",
+          "status": "SUCCESS",
+          "latency_s": 3.402,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        },
+        {
+          "provider": "airouter",
+          "caller": "generate_answer",
+          "status": "SUCCESS",
+          "latency_s": 13.723,
+          "http_attempts": 1,
+          "retries": 0,
+          "failovers": 0,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

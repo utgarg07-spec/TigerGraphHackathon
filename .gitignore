@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.coverage
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/e2e/
+/e2e/.auth/state.json
+/playwright.config.ts
+
+# Node
+/node_modules/
+
+# Release docs
+/RELEASE_NOTES.md
+
+# Local Configuration
+configs/local_server_config.json
+configs/server_config.json
+configs/server_config.backup.json
+.env
+.env.*
+
+# Private benchmark
+/data/eval_hidden.jsonl
+
+# Temporary development files
+/scratch/

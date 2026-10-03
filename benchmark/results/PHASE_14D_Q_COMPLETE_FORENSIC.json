@@ -1,0 +1,85 @@
+{
+  "phase": "PHASE_14D_Q",
+  "audit_type": "COMPLETE_AGENTIC_PIPELINE_FORENSIC_AUDIT",
+  "final_status": "PASS — COMPLETE ROOT-CAUSE MAP",
+  "timestamp": "2026-10-01T15:58:00Z",
+  "constraints_enforced": {
+    "read_only_offline_forensics": true,
+    "api_calls_made": 0,
+    "live_questions_run": 0,
+    "production_code_modified": false,
+    "phase_12_13_modified": false,
+    "embeddings_graph_data_modified": false,
+    "secrets_exposed": false
+  },
+  "embedding_dimension_forensics": {
+    "qwen_embedding_dimension": 1024,
+    "legacy_gemini_embedding_dimension": 1536,
+    "origin_of_1536": "Default fallback in common/embeddings/embedding_services.py (line 35) and legacy Gemini attribute DocumentChunk.embedding in SupportAI_Schema_Native_Vector.gsql",
+    "origin_of_1024": "Authoritative output_dimensionality in configs/local_server_config.json and DocumentChunk.qwen_embedding attribute in TigerGraph schema",
+    "gsql_90000_root_cause": "tigergraph_embedding_store.py line 571 calls get_topk_similar.gsql which queries 1536-dim v.embedding instead of 1024-dim v.qwen_embedding, causing gds.vector.distance vector length mismatch (1024 vs 1536)"
+  },
+  "agentic_retrieval_failure_path": {
+    "exception_caught": "GSQL-90000 / Two lists provided for gds.vector.distance have different sizes",
+    "store_handling": "tigergraph_embedding_store.py line 603 catches exception and silently returns [] (empty list)",
+    "tool_behavior": "generate_function / structural_retrieve logs WARN no documents found and passes empty context to synthesis",
+    "synthesis_impact": "Synthesis runs without retrieved text context, causing retrieval-dependent questions to return (no answer produced)"
+  },
+  "evaluator_container_binding_forensics": {
+    "host_evaluator_state": "Updated in Phase 14D-P with number-word conversion (five -> 5) and token boundary safety",
+    "docker_compose_mounts": "docker-compose.yml mounts ./configs/:/code/configs but DOES NOT mount ./benchmark/",
+    "container_evaluator_state": "Inside graphrag container, /code/benchmark/unified_evaluator.py is read from baked Docker image layer built prior to Phase 14D-K",
+    "scoring_mismatch_cause": "docker exec runs using un-updated container code unless ./benchmark/ is volume mounted or container image is rebuilt"
+  },
+  "root_cause_matrix": [
+    {
+      "failure": "1536/1024 Vector Mismatch",
+      "evidence": "embedding_services.py L35 default 1536 vs local_server_config.json 1024",
+      "proven": true,
+      "component": "common/embeddings/",
+      "live_api_required": false
+    },
+    {
+      "failure": "GSQL-90000 Vector Size Error",
+      "evidence": "get_topk_similar.gsql L16 queries 1536-dim v.embedding with 1024-dim Qwen query vector",
+      "proven": true,
+      "component": "common/gsql/vector/ & tigergraph_embedding_store.py",
+      "live_api_required": false
+    },
+    {
+      "failure": "Live Container Scoring False",
+      "evidence": "docker-compose.yml lacks ./benchmark/ volume mount, execution uses stale baked container image code",
+      "proven": true,
+      "component": "docker-compose.yml & benchmark/",
+      "live_api_required": false
+    },
+    {
+      "failure": "Empty LLM Output / Parser Fallback",
+      "evidence": "base_llm.py L1129 logs content='' parsed=None when provider fails structured output contract",
+      "proven": true,
+      "component": "common/llm_services/",
+      "live_api_required": false
+    },
+    {
+      "failure": "Silent Empty Vector Retrieval",
+      "evidence": "tigergraph_embedding_store.py L603 catches GSQL-90000 and returns []",
+      "proven": true,
+      "component": "common/embeddings/tigergraph_embedding_store.py",
+      "live_api_required": false
+    }
+  ],
+  "required_modifications_map": [
+    {
+      "file": "common/embeddings/tigergraph_embedding_store.py",
+      "modification": "Target v.qwen_embedding or call GraphRAG_Hybrid_Qwen_Vector_Search instead of get_topk_similar when embedding model is Qwen"
+    },
+    {
+      "file": "common/embeddings/embedding_services.py",
+      "modification": "Change fallback default in EmbeddingModel.__init__ L35 from config.get('dimensions', 1536) to config.get('output_dimensionality', config.get('dimensions', 1024))"
+    },
+    {
+      "file": "docker-compose.yml",
+      "modification": "Add - ./benchmark/:/code/benchmark volume mount to graphrag service so host evaluator fixes take effect immediately inside container"
+    }
+  ]
+}

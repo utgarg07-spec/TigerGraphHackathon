@@ -1,0 +1,157 @@
+{
+  "phase": "PHASE_12B",
+  "audit_date": "2026-09-29",
+  "final_decision": "A. Provider latency is primary issue",
+  "summary": {
+    "total_questions": 100,
+    "completed_questions": 82,
+    "timeout_questions": 18,
+    "overall_avg_latency_s": 74.3,
+    "overall_median_latency_s": 45.92
+  },
+  "timeout_inventory": [
+    {
+      "qid": "pub-004",
+      "qtype": "superlative",
+      "total_latency_s": 180.04,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-012",
+      "qtype": "aggregation",
+      "total_latency_s": 180.023,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-020",
+      "qtype": "aggregation",
+      "total_latency_s": 180.004,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-037",
+      "qtype": "superlative",
+      "total_latency_s": 180.011,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-038",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.016,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-058",
+      "qtype": "aggregation",
+      "total_latency_s": 180.016,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-067",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.016,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-069",
+      "qtype": "aggregation",
+      "total_latency_s": 180.021,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-072",
+      "qtype": "temporal",
+      "total_latency_s": 180.039,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-073",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.029,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-077",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.005,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-080",
+      "qtype": "lookup",
+      "total_latency_s": 180.026,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-086",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.031,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-087",
+      "qtype": "aggregation",
+      "total_latency_s": 180.032,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-091",
+      "qtype": "lookup",
+      "total_latency_s": 180.011,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-096",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.025,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-098",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.04,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    },
+    {
+      "qid": "pub-099",
+      "qtype": "multi_hop",
+      "total_latency_s": 180.032,
+      "timeout_location": "Initial HTTP Request / Plan Generation",
+      "primary_cause": "A. Provider/network latency"
+    }
+  ],
+  "provider_routing": {
+    "gateway": "FreeLLMAPI",
+    "route": "openai/auto",
+    "model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+    "total_requests": 100,
+    "success_rate": 82.0,
+    "timeout_rate": 18.0
+  },
+  "root_cause_classification": {
+    "primary_cause": "A. Provider/network latency",
+    "empirical_evidence": "All 18 timeouts failed with 'Read timed out. (read timeout=180)' on the benchmark HTTP client before receiving payload or step telemetry. Execution budgets (max 5 steps, max 6 LLM calls) were never exceeded."
+  },
+  "fix_recommendations": [
+    "1. Latency-aware provider routing with dynamic fallback to fast inference endpoints (e.g., Groq, vLLM local).",
+    "2. Pinning a validated low-latency provider for initial planning & answer synthesis steps.",
+    "3. Implementing client-side retry on HTTP 504 / ReadTimeout before failing."
+  ]
+}

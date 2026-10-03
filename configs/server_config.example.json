@@ -1,0 +1,59 @@
+{
+  "db_config": {
+    "hostname": "https://tg-eb6a2e24-db15-4708-b294-710c9f6af79b.tg-2635877100.i.tgcloud.io",
+    "graphname": "Olympics",
+    "username": "${TIGERGRAPH_USERNAME}",
+    "password": "${TIGERGRAPH_PASSWORD}",
+    "restppPort": "443",
+    "gsPort": "443",
+    "default_timeout": 300,
+    "default_mem_threshold": 5000,
+    "default_thread_limit": 8
+  },
+  "graphrag_config": {
+    "reuse_embedding": true,
+    "ecc": "http://graphrag-ecc:8001",
+    "chat_history_api": "http://chat-history:8002",
+    "chunker_config": {},
+    "entity_extraction_switch": false,
+    "community_detection_switch": false
+  },
+  "llm_config": {
+    "token_limit": 0,
+    "authentication_configuration": {
+      "AIROUTER_API_KEY": "${AIROUTER_API_KEY}",
+      "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+      "GROQ_API_KEY": "${GROQ_API_KEY}",
+      "GOOGLE_API_KEY": "${GOOGLE_API_KEY}",
+      "OPENROUTER_API_KEY": "${OPENROUTER_API_KEY}",
+      "CEREBRAS_API_KEY": "${CEREBRAS_API_KEY}"
+    },
+    "embedding_service": {
+      "embedding_model_service": "ollama",
+      "model_name": "qwen3-embedding:0.6b",
+      "output_dimensionality": 1024,
+      "base_url": "http://host.docker.internal:11434"
+    },
+    "completion_service": {
+      "llm_service": "airouter",
+      "llm_model": "openai/gpt-oss-20b",
+      "base_url": "https://api.airouter.in/v1",
+      "reasoning_effort": "low",
+      "model_kwargs": {
+        "temperature": 0,
+        "reasoning_effort": "low"
+      },
+      "prompt_path": "./common/prompts/openai_gpt4/"
+    }
+  },
+  "chat_config": {
+    "apiPort": "8002",
+    "dbPath": "chats.db",
+    "dbLogPath": "db.log",
+    "logPath": "requestLogs.jsonl",
+    "conversationAccessRoles": [
+      "superuser",
+      "globaldesigner"
+    ]
+  }
+}

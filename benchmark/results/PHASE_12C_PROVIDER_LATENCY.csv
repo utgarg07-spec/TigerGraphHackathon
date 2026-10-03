@@ -1,0 +1,5 @@
+provider_name,model_endpoint,requests,success_rate_pct,valid_structure_pct,avg_latency_ms,median_latency_ms,p95_latency_ms,speedup_vs_baseline
+FreeLLMAPI (Baseline Qwen),auto (Qwen2.5-Coder-32B),5,80.0%,40.0%,11418.67,8841.85,32078.73,1.0x
+OpenRouter (Qwen-2.5-Coder-32B),qwen/qwen-2.5-coder-32b-instruct,5,100.0%,100.0%,7879.91,8045.4,12961.72,1.45x
+Groq (Qwen3.8-27B),qwen/qwen3.8-27b,5,100.0%,100.0%,732.97,730.48,824.07,15.58x
+OpenRouter (Llama-3.3-70B),meta-llama/llama-3.3-70b-instruct,5,100.0%,80.0%,6388.99,5695.63,14315.6,1.79x

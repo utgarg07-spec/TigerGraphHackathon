@@ -1,0 +1,8 @@
+CREATE OR REPLACE DISTRIBUTED QUERY StreamChunkContent(Vertex<DocumentChunk> chunk) {
+    DocChunk = {chunk};
+
+    // Get the document's content and mark it as processed
+    ChunkContent = SELECT c FROM DocChunk:d -(HAS_CONTENT)-> Content:c
+                 POST-ACCUM d.epoch_processed = datetime_to_epoch(now());
+    PRINT ChunkContent;
+}

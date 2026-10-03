@@ -1,0 +1,111 @@
+{
+  "run_name": "phase7_agentic_standard_100_benchmark",
+  "total_questions": 100,
+  "http_success_count": 100,
+  "http_failure_count": 0,
+  "strict_exact_match_count": 0,
+  "strict_exact_match_accuracy_pct": 0.0,
+  "normalized_match_count": 0,
+  "normalized_match_accuracy_pct": 0.0,
+  "overall_correct": 0,
+  "overall_accuracy_pct": 0.0,
+  "gold_document_recall_pct": 74.0,
+  "avg_total_latency_s": 14.951,
+  "tool_usage_summary": {
+    "graphrag__hybrid_search": 100
+  },
+  "qtype_breakdown": {
+    "aggregation": {
+      "total_questions": 21,
+      "strict_exact_match": 0,
+      "strict_pct": 0.0,
+      "normalized_match": 0,
+      "normalized_pct": 0.0,
+      "correct": 0,
+      "accuracy_pct": 0.0,
+      "gold_doc_hits": 19,
+      "gold_doc_recall_pct": 90.48,
+      "avg_latency_s": 25.713,
+      "avg_tokens": 447.1,
+      "avg_agent_steps": 3.1,
+      "tool_calls": {
+        "graphrag__hybrid_search": 21
+      }
+    },
+    "temporal": {
+      "total_questions": 22,
+      "strict_exact_match": 0,
+      "strict_pct": 0.0,
+      "normalized_match": 0,
+      "normalized_pct": 0.0,
+      "correct": 0,
+      "accuracy_pct": 0.0,
+      "gold_doc_hits": 21,
+      "gold_doc_recall_pct": 95.45,
+      "avg_latency_s": 10.414,
+      "avg_tokens": 34.3,
+      "avg_agent_steps": 3.0,
+      "tool_calls": {
+        "graphrag__hybrid_search": 22
+      }
+    },
+    "superlative": {
+      "total_questions": 10,
+      "strict_exact_match": 0,
+      "strict_pct": 0.0,
+      "normalized_match": 0,
+      "normalized_pct": 0.0,
+      "correct": 0,
+      "accuracy_pct": 0.0,
+      "gold_doc_hits": 8,
+      "gold_doc_recall_pct": 80.0,
+      "avg_latency_s": 8.366,
+      "avg_tokens": 0.0,
+      "avg_agent_steps": 3.0,
+      "tool_calls": {
+        "graphrag__hybrid_search": 10
+      }
+    },
+    "multi_hop": {
+      "total_questions": 28,
+      "strict_exact_match": 0,
+      "strict_pct": 0.0,
+      "normalized_match": 0,
+      "normalized_pct": 0.0,
+      "correct": 0,
+      "accuracy_pct": 0.0,
+      "gold_doc_hits": 7,
+      "gold_doc_recall_pct": 25.0,
+      "avg_latency_s": 14.734,
+      "avg_tokens": 0.0,
+      "avg_agent_steps": 3.0,
+      "tool_calls": {
+        "graphrag__hybrid_search": 28
+      }
+    },
+    "lookup": {
+      "total_questions": 19,
+      "strict_exact_match": 0,
+      "strict_pct": 0.0,
+      "normalized_match": 0,
+      "normalized_pct": 0.0,
+      "correct": 0,
+      "accuracy_pct": 0.0,
+      "gold_doc_hits": 19,
+      "gold_doc_recall_pct": 100.0,
+      "avg_latency_s": 12.095,
+      "avg_tokens": 0.0,
+      "avg_agent_steps": 3.0,
+      "tool_calls": {
+        "graphrag__hybrid_search": 19
+      }
+    }
+  },
+  "pipeline_configuration": {
+    "mode": "agentic",
+    "agent_style": "planned",
+    "pass_qtype": false,
+    "llm_completion": "groq/openai/gpt-oss-120b",
+    "embedding_model": "qwen3-embedding:0.6b (1024-d)"
+  }
+}

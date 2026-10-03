@@ -1,0 +1,53 @@
+{
+  "status": "FAIL",
+  "question_id": "pub-004",
+  "question_text": "According to the provided corpus, which athletics event at the 2008 Summer Olympics had the highest number of competitors?",
+  "gold_answers": [
+    "Athletics at the 2008 Summer Olympics \u2013 Men's marathon"
+  ],
+  "http_status": "SUCCESS",
+  "total_latency_seconds": 10.098,
+  "timeout": false,
+  "planner_status": "PASS",
+  "expected_tool": "graphrag__superlative",
+  "actual_tool": "graphrag__superlative",
+  "tool_arguments": {
+    "sport": "athletics",
+    "games": "2008 Summer Olympics"
+  },
+  "retrieval_status": "FAIL",
+  "evidence_returned": false,
+  "replan_count": 0,
+  "logical_llm_calls": 3,
+  "provider_http_attempts": 3,
+  "provider_retries": 0,
+  "provider_failovers": 0,
+  "agent_steps": 1,
+  "synthesis_status": "PASS",
+  "final_answer": "According to the provided corpus, the athletics event at the 2008 Summer Olympics with the highest number of competitors was **Athletics at the 2008 Summer Olympics \u2013 Men's marathon**, which had 95 competitors.",
+  "retry_invariants": "PASS",
+  "budget_invariants": "PASS",
+  "gate_checks": {
+    "pub_004_completed_http_success": true,
+    "no_http_timeout": true,
+    "planner_completed": true,
+    "expected_tool_superlative": true,
+    "tool_arguments_valid": true,
+    "deterministic_tool_executed": true,
+    "evidence_context_returned": false,
+    "no_uncontrolled_retry": true,
+    "provider_attempts_lte_2": true,
+    "logical_calls_lte_6": true,
+    "agent_steps_lte_5": true,
+    "replans_lte_1": true,
+    "synthesis_completed": true,
+    "final_answer_not_fallback": true,
+    "telemetry_fields_consistent": true,
+    "no_phase12_13_artifact_changed": true,
+    "exactly_one_question_executed": true
+  },
+  "phase_12_modified": false,
+  "phase_13_modified": false,
+  "api_questions_executed": 1,
+  "next_gate": "STOP"
+}

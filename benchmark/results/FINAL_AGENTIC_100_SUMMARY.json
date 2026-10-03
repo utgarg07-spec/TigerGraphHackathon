@@ -1,0 +1,87 @@
+{
+  "benchmark_name": "FINAL_AGENTIC_100_LIVE",
+  "timestamp": "2026-09-29T04:00:00Z",
+  "total_questions": 100,
+  "completed_questions": 82,
+  "timeouts": 18,
+  "strict_exact_match": {
+    "count": 1,
+    "pct": 1.0
+  },
+  "normalized_match": {
+    "count": 76,
+    "pct": 76.0
+  },
+  "gold_evidence_hit": {
+    "count": 79,
+    "pct": 79.0
+  },
+  "retrieval_intrusion_pct": 0.0,
+  "tokens": {
+    "total_prompt_tokens": 0,
+    "total_completion_tokens": 0,
+    "total_tokens": 566546,
+    "avg_tokens_per_question": 5665.46
+  },
+  "latency": {
+    "avg_latency_s": 74.296,
+    "median_latency_s": 45.925
+  },
+  "qtype_breakdown": {
+    "aggregation": {
+      "total": 21,
+      "strict_count": 1,
+      "strict_pct": 4.76,
+      "normalized_count": 15,
+      "normalized_pct": 71.43,
+      "gold_hit_count": 16,
+      "gold_hit_pct": 76.19,
+      "timeouts": 5,
+      "avg_latency_s": 81.418
+    },
+    "temporal": {
+      "total": 22,
+      "strict_count": 0,
+      "strict_pct": 0.0,
+      "normalized_count": 20,
+      "normalized_pct": 90.91,
+      "gold_hit_count": 21,
+      "gold_hit_pct": 95.45,
+      "timeouts": 1,
+      "avg_latency_s": 56.096
+    },
+    "superlative": {
+      "total": 10,
+      "strict_count": 0,
+      "strict_pct": 0.0,
+      "normalized_count": 8,
+      "normalized_pct": 80.0,
+      "gold_hit_count": 8,
+      "gold_hit_pct": 80.0,
+      "timeouts": 2,
+      "avg_latency_s": 56.7
+    },
+    "multi_hop": {
+      "total": 28,
+      "strict_count": 0,
+      "strict_pct": 0.0,
+      "normalized_count": 16,
+      "normalized_pct": 57.14,
+      "gold_hit_count": 17,
+      "gold_hit_pct": 60.71,
+      "timeouts": 8,
+      "avg_latency_s": 102.58
+    },
+    "lookup": {
+      "total": 19,
+      "strict_count": 0,
+      "strict_pct": 0.0,
+      "normalized_count": 17,
+      "normalized_pct": 89.47,
+      "gold_hit_count": 17,
+      "gold_hit_pct": 89.47,
+      "timeouts": 2,
+      "avg_latency_s": 55.079
+    }
+  }
+}

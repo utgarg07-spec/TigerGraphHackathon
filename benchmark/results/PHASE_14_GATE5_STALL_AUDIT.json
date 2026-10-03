@@ -1,0 +1,31 @@
+{
+  "audit_phase": "PHASE_14",
+  "gate": "GATE_5_STALL_AUDIT",
+  "timestamp": "2026-09-30T00:18:30+05:30",
+  "investigation_status": "COMPLETE",
+  "verdict": "STALL_EXPLAINED_CASCADE_FALLBACK",
+  "questions_answered": {
+    "q1_why_ran_over_2_5h": "Each of the 25 questions traversed a 3-tier fallback chain taking ~118s each (~49 min total per pass), while multiple orphaned background processes accumulated ~2.5 hours total runtime across container PIDs.",
+    "q2_did_it_make_generation_calls": true,
+    "q3_providers_attempted": ["groq", "openrouter", "freellmapi"],
+    "q4_models_attempted": ["qwen/qwen3.8-27b", "qwen/qwen-2.5-coder-32b-instruct", "openai/auto"],
+    "q5_ollama_traffic_purpose": "EMBEDDINGS_ONLY (qwen3-embedding:0.6b for vector search via TigerGraphEmbeddingStore)",
+    "q6_freellmapi_received_traffic": true,
+    "q7_groq_received_traffic": true,
+    "q8_last_active_question": "pub-050",
+    "q9_unbounded_wait_or_loop": false,
+    "q10_safe_to_rerun": "NEEDS_CONFIG_FIX",
+    "q11_required_minimal_fix": "Set extra_body={'max_tokens': max_tokens} on fallback ChatOpenAI instances in groq_llm_service.py and terminate stale container background processes.",
+    "q12_pre_rerun_test": "Execute a single-turn agentic query smoke test in Docker verifying Groq/OpenRouter returns HTTP 200 within <15s."
+  },
+  "metrics_recorded_in_run": {
+    "total_questions": 25,
+    "http_success_count": 25,
+    "mean_latency_s": 117.73,
+    "median_latency_s": 118.93,
+    "p95_latency_s": 164.72,
+    "max_latency_s": 254.59,
+    "accuracy_count": 0,
+    "accuracy_pct": 0.0
+  }
+}

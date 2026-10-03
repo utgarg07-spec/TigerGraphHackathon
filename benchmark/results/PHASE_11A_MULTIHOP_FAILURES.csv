@@ -1,0 +1,13 @@
+qid,question,gold,prediction,failure_category,root_cause,combined_evidence,latency_s
+pub-015,,Dani KingLaura TrottJoanna Rowsell,,other,Client HTTP timeout (120.0s) during joint graph-vector exploration,False,120.03
+pub-017,,Yi Siling,"Based on the provided contexts, there is no record of an Olympic shooting event held at the Royal Ar",retrieval_miss,Target shooting event for 28 July 2012 missed in vector top-k,False,47.13
+pub-023,,Hwang Young-Cho,"I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more s",synthesis,Retrieved gold chunk and event entity; synthesizer output boilerplate failure text,True,96.41
+pub-060,,Yana Shemyakina,"I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more s",tool_argument_error,Tool schema validation error (missing question arg); replan exhausted call budget,True,114.82
+pub-067,,Rosannagh MacLennan,"I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more s",synthesis,Resolved gold event vertex Q26217865; synthesizer output boilerplate text,True,67.51
+pub-076,,Julia Mancuso,,other,Client HTTP timeout (120.0s) during multi-hop graph traversal,False,120.03
+pub-077,,Kaillie Humphries,,other,Client HTTP timeout (120.0s) during multi-hop graph traversal,False,120.01
+pub-096,,Fazliddin Gaibnazarov,,other,Client HTTP timeout (120.0s) during multi-hop graph traversal,False,120.01
+pub-098,,Bekzat Sattarkhanov,,other,Client HTTP timeout (120.0s) during multi-hop graph traversal,False,120.02
+pub-099,,Erik LesserDaniel BöhmArnd PeifferSimon Schempp,"On 22 February 2014 the Laura Biathlon & Ski Complex hosted at least two Olympic events.
+
+**Cross-co",output_formatting,Extracted all 4 relay team members; gold string was unspaced concatenated names,True,103.19

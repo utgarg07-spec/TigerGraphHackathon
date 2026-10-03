@@ -1,0 +1,103 @@
+{
+  "benchmark": "PHASE_14_FINAL_100Q",
+  "total_questions": 100,
+  "http_success_count": 100,
+  "http_success_rate_pct": 100.0,
+  "timeout_count": 0,
+  "normalized_accuracy_count": 2,
+  "normalized_accuracy_pct": 2.0,
+  "strict_exact_match_count": 0,
+  "strict_exact_match_pct": 0.0,
+  "combined_gold_evidence_count": 2,
+  "combined_gold_evidence_pct": 2.0,
+  "mean_latency_s": 39.77,
+  "median_latency_s": 34.11,
+  "p95_latency_s": 64.36,
+  "max_latency_s": 77.85,
+  "avg_tokens": 1863.6,
+  "avg_llm_calls": 3.63,
+  "avg_agent_steps": 3.16,
+  "total_provider_calls": 363,
+  "total_provider_failures": 316,
+  "questions_with_failover": 11,
+  "qtype_breakdown": {
+    "lookup": {
+      "count": 19,
+      "accuracy_count": 0,
+      "accuracy_pct": 0.0,
+      "evidence_count": 0,
+      "evidence_pct": 0.0,
+      "timeout_count": 0,
+      "avg_latency_s": 44.55
+    },
+    "temporal": {
+      "count": 22,
+      "accuracy_count": 1,
+      "accuracy_pct": 4.5,
+      "evidence_count": 1,
+      "evidence_pct": 4.5,
+      "timeout_count": 0,
+      "avg_latency_s": 35.6
+    },
+    "aggregation": {
+      "count": 21,
+      "accuracy_count": 1,
+      "accuracy_pct": 4.8,
+      "evidence_count": 1,
+      "evidence_pct": 4.8,
+      "timeout_count": 0,
+      "avg_latency_s": 40.32
+    },
+    "superlative": {
+      "count": 10,
+      "accuracy_count": 0,
+      "accuracy_pct": 0.0,
+      "evidence_count": 0,
+      "evidence_pct": 0.0,
+      "timeout_count": 0,
+      "avg_latency_s": 46.23
+    },
+    "multi_hop": {
+      "count": 28,
+      "accuracy_count": 0,
+      "accuracy_pct": 0.0,
+      "evidence_count": 0,
+      "evidence_pct": 0.0,
+      "timeout_count": 0,
+      "avg_latency_s": 37.09
+    }
+  },
+  "circuit_broken_providers_at_end": [
+    "groq",
+    "openrouter"
+  ],
+  "provider_stats": {
+    "groq": {
+      "calls": 104,
+      "success": 47,
+      "failure": 57,
+      "429": 52,
+      "402": 0,
+      "timeout": 0,
+      "avg_latency_s": 0.46
+    },
+    "openrouter": {
+      "calls": 1,
+      "success": 0,
+      "failure": 1,
+      "429": 0,
+      "402": 1,
+      "timeout": 0,
+      "avg_latency_s": 0.56
+    },
+    "freellmapi": {
+      "calls": 258,
+      "success": 0,
+      "failure": 258,
+      "429": 0,
+      "402": 0,
+      "timeout": 124,
+      "avg_latency_s": 11.83
+    }
+  }
+}

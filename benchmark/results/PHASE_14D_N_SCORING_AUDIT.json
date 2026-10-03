@@ -1,0 +1,39 @@
+{
+  "phase": "PHASE_14D_N",
+  "status": "COMPLETED",
+  "final_classification": "LIVE_SCORING_PATH_MISMATCH",
+  "api_calls": 0,
+  "live_questions": 0,
+  "production_files_modified": 0,
+  "root_cause": "The live Gate 10 benchmark was executed against a historical pre-Phase 14D-K version of benchmark/unified_evaluator.py that lacked word-number normalization ('five' -> '5', 'eight' -> '8'). Rescoring using the current post-14D-K unified_evaluator evaluates all questions correctly.",
+  "pub_001_trace": {
+    "raw_prediction": "According to the provided corpus, five biathlon events at the 2018 Winter Olympics had more than 73 competitors.",
+    "gold_answer": ["5"],
+    "live_gate10_normalization": "according to provided corpus five biathlon events 2018 winter olympics had more than 73 competitors",
+    "live_gate10_gold": "5",
+    "live_gate10_result": false,
+    "current_evaluator_normalization": "according to provided corpus 5 biathlon events 2018 winter olympics had more than 73 competitors",
+    "current_evaluator_gold": "5",
+    "current_evaluator_result": true
+  },
+  "pub_003_trace": {
+    "raw_prediction": "According to the provided corpus, eight shooting events at the 2004 Summer Olympics had more than 37 competitors.",
+    "gold_answer": ["8"],
+    "live_gate10_normalization": "according to provided corpus eight shooting events 2004 summer olympics had more than 37 competitors",
+    "live_gate10_gold": "8",
+    "live_gate10_result": false,
+    "current_evaluator_normalization": "according to provided corpus 8 shooting events 2004 summer olympics had more than 37 competitors",
+    "current_evaluator_gold": "8",
+    "current_evaluator_result": true
+  },
+  "pub_005_trace": {
+    "raw_prediction_gate10": "The gold medal in the event held at the Olympic Weightlifting Gymnasium on 20 September 1988 was won by Naim Süleymanoğlu of Turkey.",
+    "gold_answer": ["Naim Süleymanoğlu"],
+    "live_gate10_result": true,
+    "current_evaluator_result": true,
+    "fallback_run_prediction": "I wasn't able to generate an answer for this question...",
+    "fallback_run_result": false
+  },
+  "discrepancy_explanation": "Live Gate 10 score was 3/5 due to pre-14D-K evaluator missing word-number normalization. Post-14D-K unified_evaluator rescores the saved Gate 10 outputs to 5/5 (100.0%).",
+  "exact_next_action": "No evaluator code changes required. The current benchmark/unified_evaluator.py is authoritative and active for all future live benchmark runs."
+}

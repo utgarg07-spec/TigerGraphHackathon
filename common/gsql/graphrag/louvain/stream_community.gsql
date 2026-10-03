@@ -1,0 +1,9 @@
+// Non-distributed form intentional; see v1.5 plan to revisit.
+CREATE OR REPLACE QUERY stream_community(UINT iter) {
+    Comms = {Community.*};
+
+    Comms = SELECT s FROM Comms:s
+               WHERE s.iteration == iter;
+
+    PRINT Comms[Comms.id];
+}

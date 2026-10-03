@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2024-2026 TigerGraph, Inc.
+ *
+ * This program may be redistributed and/or modified under the terms of the GNU
+ * Affero General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+CREATE SCHEMA_CHANGE JOB add_image_support_schema {
+    ADD VERTEX Image(
+        PRIMARY_ID id STRING,
+        image_data STRING,           // base64 encoded image data
+        image_format STRING,          // jpg, png, gif, etc.
+        source_document STRING,       // parent document ID
+        page_number INT,              // for PDFs, which page
+        epoch_added UINT
+    ) WITH STATS="OUTDEGREE_BY_EDGETYPE", PRIMARY_ID_AS_ATTRIBUTE="true";
+    
+    // Document can have multiple images (standalone or embedded)
+    ADD DIRECTED EDGE HAS_IMAGE(FROM Document, TO Image, position_index INT) 
+        WITH REVERSE_EDGE="reverse_HAS_IMAGE";
+    
+    // DocumentChunk can reference images that appear in its content
+    ADD DIRECTED EDGE REFERENCES_IMAGE(FROM DocumentChunk, TO Image) 
+        WITH REVERSE_EDGE="reverse_REFERENCES_IMAGE";
+}
+

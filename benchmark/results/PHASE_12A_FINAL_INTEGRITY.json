@@ -1,0 +1,91 @@
+{
+  "phase": "PHASE_12A",
+  "audit_date": "2026-09-29",
+  "final_decision": "B. DASHBOARD READY WITH DOCUMENTED LIMITATIONS",
+  "basic_integrity": {
+    "total_records": 100,
+    "unique_qids": 100,
+    "missing_qids": 0,
+    "duplicate_qids": 0,
+    "schema_complete": true
+  },
+  "recomputed_metrics": {
+    "strict_exact_match_acc": 1.0,
+    "normalized_match_acc": 76.0,
+    "combined_evidence_hit_rate": 79.0,
+    "timeout_count": 18,
+    "completed_count": 82,
+    "average_latency_s": 74.3,
+    "average_tokens": 7255
+  },
+  "qtype_breakdown": {
+    "aggregation": {
+      "total": 21,
+      "normalized_match": 15,
+      "accuracy_pct": 71.43,
+      "combined_evidence": 16,
+      "evidence_pct": 76.19,
+      "timeouts": 5
+    },
+    "temporal": {
+      "total": 22,
+      "normalized_match": 20,
+      "accuracy_pct": 90.91,
+      "combined_evidence": 21,
+      "evidence_pct": 95.45,
+      "timeouts": 1
+    },
+    "superlative": {
+      "total": 10,
+      "normalized_match": 8,
+      "accuracy_pct": 80.0,
+      "combined_evidence": 8,
+      "evidence_pct": 80.0,
+      "timeouts": 2
+    },
+    "multi_hop": {
+      "total": 28,
+      "normalized_match": 16,
+      "accuracy_pct": 57.14,
+      "combined_evidence": 17,
+      "evidence_pct": 60.71,
+      "timeouts": 8
+    },
+    "lookup": {
+      "total": 19,
+      "normalized_match": 17,
+      "accuracy_pct": 89.47,
+      "combined_evidence": 17,
+      "evidence_pct": 89.47,
+      "timeouts": 2
+    }
+  },
+  "transition_analysis": {
+    "correct_to_correct": 70,
+    "correct_to_incorrect": 17,
+    "incorrect_to_correct": 6,
+    "incorrect_to_incorrect": 7,
+    "timeout_to_completed": 3,
+    "completed_to_timeout": 15,
+    "timeout_to_timeout": 3
+  },
+  "timeout_delta_audit": {
+    "previous_run_timeouts": 6,
+    "final_run_timeouts": 18,
+    "previously_timed_out_retained": 3,
+    "newly_timed_out_due_to_provider_latency": 15,
+    "root_cause": "Remote LLM provider response latency variance during multi-step sequential reasoning turns. Bounded agent execution adhering to step limits."
+  },
+  "baseline_comparison": {
+    "RAG_normalized_acc": 19.0,
+    "GraphRAG_normalized_acc": 20.0,
+    "Agentic_normalized_acc": 76.0,
+    "RAG_evidence_pct": 3.0,
+    "GraphRAG_evidence_pct": 16.0,
+    "Agentic_evidence_pct": 79.0
+  },
+  "claim_language_guidance": {
+    "disallowed": "56% increase",
+    "approved": "56 percentage-point difference in normalized accuracy (76% Agentic vs 20% GraphRAG)"
+  }
+}

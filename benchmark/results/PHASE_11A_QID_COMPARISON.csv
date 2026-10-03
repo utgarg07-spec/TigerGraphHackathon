@@ -1,0 +1,101 @@
+qid,qtype,question,gold,rag_correct,graphrag_correct,agentic_correct,rag_tokens,graphrag_tokens,agentic_tokens,rag_latency_s,graphrag_latency_s,agentic_latency_s,agentic_steps,agentic_gold_combined_hit,agentic_stop_reason
+pub-001,aggregation,,5,True,False,True,8785,,4351,41.53,30.43,12.6,0,True,completed
+pub-002,temporal,,Chen Ding,False,False,True,18767,,4504,235.33,15.55,18.32,0,True,completed
+pub-003,aggregation,,8,True,True,True,8489,,4564,63.83,62.08,54.69,0,True,completed
+pub-004,superlative,,Athletics at the 2008 Summer Olympics – Men's marathon,False,False,False,6672,,4332,44.57,41.59,22.08,0,True,completed
+pub-005,multi_hop,,Naim Süleymanoğlu,False,False,True,8136,856,9082,59.82,107.33,65.41,0,True,completed
+pub-006,temporal,,Rafaela Silva,False,False,True,,854,5914,56.52,74.58,57.65,0,True,completed
+pub-007,temporal,,Renaud Lavillenie,False,False,True,,857,4406,10.87,71.06,28.77,0,True,completed
+pub-008,superlative,,Sailing at the 2000 Summer Olympics – Soling,False,False,False,854,,4483,73.57,35.7,22.79,0,True,completed
+pub-009,lookup,,26,False,False,True,,,4234,4.04,41.73,25.41,0,True,completed
+pub-010,aggregation,,4,True,True,True,,,4912,3.83,32.8,63.97,0,True,completed
+pub-011,multi_hop,,Martina Sáblíková,False,False,True,,859,14654,3.47,84.7,27.3,0,True,completed
+pub-012,aggregation,,6,False,True,True,,,4322,3.92,22.54,19.29,0,True,completed
+pub-013,temporal,,Allison Schmitt,False,False,False,,851,,4.75,71.67,120.03,0,False,timeout
+pub-014,multi_hop,,Carolina Marín,False,False,True,,,11923,3.49,24.91,46.05,0,True,completed
+pub-015,multi_hop,,Dani KingLaura TrottJoanna Rowsell,False,False,False,,,,4.87,6.19,120.03,0,False,timeout
+pub-016,temporal,,Arnd Peiffer,False,False,True,,964,5322,5.53,49.7,19.05,0,True,completed
+pub-017,multi_hop,,Yi Siling,False,False,False,,6984,13549,3.27,41.75,47.13,0,False,completed
+pub-018,temporal,,Kevin Jackson,False,False,True,,855,7272,3.33,72.54,37.71,0,True,completed
+pub-019,aggregation,,3,True,True,True,,,5470,5.0,42.8,49.2,0,True,completed
+pub-020,aggregation,,4,True,True,True,,,4436,3.51,17.18,56.44,0,True,completed
+pub-021,superlative,,Alpine skiing at the 1988 Winter Olympics – Men's giant slalom,False,False,True,,,5467,3.63,9.14,29.4,0,True,completed
+pub-022,multi_hop,,Ayumi Tanimoto,False,False,True,,889,10974,4.8,76.09,43.63,0,True,completed
+pub-023,multi_hop,,Hwang Young-Cho,False,False,False,,881,12793,3.95,86.72,96.41,0,True,completed
+pub-024,aggregation,,3,True,True,True,,,5072,3.92,47.82,28.06,0,True,completed
+pub-025,lookup,,23,False,False,True,,,5619,5.07,16.52,35.19,0,True,completed
+pub-026,temporal,,Jaroslav Kulhavý,False,False,True,,,4892,3.98,7.17,42.51,0,True,completed
+pub-027,aggregation,,4,True,True,True,,,5763,3.48,21.81,32.23,0,True,completed
+pub-028,multi_hop,,Michael Phelps,False,False,True,,935,14379,4.67,67.2,63.55,0,True,completed
+pub-029,lookup,,28,False,False,True,,,4983,3.63,68.34,28.4,0,True,completed
+pub-030,multi_hop,,Emese Szász,False,False,True,,862,11708,4.0,81.7,55.06,0,True,completed
+pub-031,multi_hop,,Dmitry Berestov,False,False,True,,,23139,8.95,28.41,114.36,0,True,completed
+pub-032,lookup,,34,False,False,True,,,5154,4.11,27.47,22.56,0,True,completed
+pub-033,aggregation,,4,True,True,True,,,6079,3.79,20.86,19.67,0,True,completed
+pub-034,lookup,,23,False,False,True,,,5034,5.83,18.44,42.8,0,True,completed
+pub-035,lookup,,30,False,False,True,,859,4957,3.38,68.65,17.88,0,True,completed
+pub-036,temporal,,Zou Shiming,False,False,True,,,4766,4.39,20.67,47.18,0,True,completed
+pub-037,superlative,,Shooting at the 2008 Summer Olympics – Men's 50 metre rifle prone,False,False,True,,,4987,5.11,63.94,19.95,0,True,completed
+pub-038,multi_hop,,Pyrros Dimas,False,False,True,,,18705,4.05,29.68,95.32,0,True,completed
+pub-039,temporal,,Sandra Perković,False,False,True,,863,4912,3.5,89.77,34.72,0,True,completed
+pub-040,temporal,,Jason Lamy Chappuis,False,False,True,,861,5278,59.02,98.18,22.35,0,True,completed
+pub-041,multi_hop,,Nino Schurter,False,False,True,,,13729,11.18,10.31,47.52,0,True,completed
+pub-042,lookup,,47,False,False,True,,,5258,3.81,20.58,37.7,0,True,completed
+pub-043,multi_hop,,Kjetil André Aamodt,False,False,True,,863,20170,6.34,99.39,88.66,0,True,completed
+pub-044,superlative,,Fencing at the 2008 Summer Olympics – Men's épée,False,False,True,,,5206,4.37,25.85,24.82,0,True,completed
+pub-045,aggregation,,20,True,True,True,,,5567,3.02,24.89,20.8,0,True,completed
+pub-046,lookup,,50,False,False,True,,,4825,4.99,26.14,15.93,0,True,completed
+pub-047,lookup,,24,False,False,True,,,4842,3.01,32.33,64.84,0,True,completed
+pub-048,temporal,,Servet Tazegül,False,False,True,,856,5442,3.35,40.92,18.18,0,True,completed
+pub-049,temporal,,Martin Fourcade,False,False,True,,966,5102,4.66,61.55,28.83,0,True,completed
+pub-050,multi_hop,,Lee Sang-hwa,False,False,True,,,18077,5.06,24.0,58.0,0,True,completed
+pub-051,aggregation,,6,True,True,True,,,5460,2.79,11.74,20.23,0,True,completed
+pub-052,lookup,,20,False,False,True,,,5138,4.51,6.71,18.41,0,True,completed
+pub-053,superlative,,Shooting at the 2016 Summer Olympics – Women's 10 metre air rifle,False,False,True,,,6361,3.35,27.96,32.76,0,True,completed
+pub-054,lookup,,24,False,True,True,,,4984,3.25,20.95,18.9,0,True,completed
+pub-055,temporal,,Sebastián Crismanich,False,False,True,,856,5670,5.09,66.87,23.0,0,True,completed
+pub-056,temporal,,Yevgeny Dementyev,False,False,True,,860,5194,3.36,115.41,23.49,0,True,completed
+pub-057,temporal,,Allyson Felix,False,False,True,,,4914,3.48,6.23,21.23,0,True,completed
+pub-058,aggregation,,5,True,True,True,,,5462,4.5,33.7,18.73,0,True,completed
+pub-059,temporal,,Laura Dahlmeier,False,False,True,,,5689,3.26,11.29,28.53,0,True,completed
+pub-060,multi_hop,,Yana Shemyakina,False,False,False,,871,16089,3.05,56.69,114.82,0,True,completed
+pub-061,lookup,,34,False,False,True,,,5461,4.66,61.61,32.27,0,True,completed
+pub-062,temporal,,Tirunesh Dibaba,False,False,True,,,5417,3.23,34.19,25.18,0,True,completed
+pub-063,lookup,,41,True,False,True,,,5104,3.14,38.22,21.4,0,True,completed
+pub-064,multi_hop,,Gabriela Szabo,False,False,True,,954,22055,27.3,62.24,86.44,0,True,completed
+pub-065,aggregation,,5,False,True,True,,,5626,4.76,19.36,36.19,0,True,completed
+pub-066,superlative,,Weightlifting at the 1992 Summer Olympics – Men's 75 kg,False,False,True,,,5224,3.38,106.22,20.34,0,True,completed
+pub-067,multi_hop,,Rosannagh MacLennan,False,False,False,,866,11058,5.08,74.73,67.51,0,True,completed
+pub-068,lookup,,24,False,True,True,,,4683,3.88,5.19,14.34,0,True,completed
+pub-069,aggregation,,3,True,True,True,,,5437,3.52,47.09,23.24,0,True,completed
+pub-070,aggregation,,3,True,True,True,,,5432,4.88,54.24,30.72,0,True,completed
+pub-071,lookup,,24,False,False,True,,,5028,3.26,48.22,14.82,0,True,completed
+pub-072,temporal,,Lee Sang-hwa,False,False,True,,851,5829,3.27,70.86,43.87,0,True,completed
+pub-073,multi_hop,,Yang Ling,False,False,True,,,12850,4.61,31.2,60.79,0,True,completed
+pub-074,lookup,,17,False,False,True,,,4464,3.02,28.1,12.72,0,True,completed
+pub-075,lookup,,32,False,False,True,,,5293,2.79,30.17,21.95,0,True,completed
+pub-076,multi_hop,,Julia Mancuso,False,False,False,,859,,4.3,32.01,120.03,0,False,timeout
+pub-077,multi_hop,,Kaillie Humphries,False,False,False,,885,,3.27,22.07,120.01,0,False,timeout
+pub-078,aggregation,,7,True,True,True,,,4726,3.57,22.28,32.78,0,True,completed
+pub-079,multi_hop,,Leontien Zijlaard,False,False,True,,872,11403,4.37,5.86,21.41,0,True,completed
+pub-080,lookup,,17,False,False,True,,,5507,3.22,3.47,35.72,0,True,completed
+pub-081,multi_hop,,Guo Wenjun,False,False,True,,,11345,3.36,5.79,33.15,0,True,completed
+pub-082,aggregation,,12,True,False,True,,,5367,55.82,4.89,22.56,0,True,completed
+pub-083,multi_hop,,Pernilla Wiberg,False,False,True,,,16290,11.67,2.86,44.92,0,True,completed
+pub-084,superlative,,Fencing at the 1992 Summer Olympics – Men's épée,False,False,True,,,5723,3.13,2.93,28.25,0,True,completed
+pub-085,superlative,,Sailing at the 2008 Summer Olympics – Men's 470,False,False,True,,,5502,3.02,1.79,18.59,0,True,completed
+pub-086,multi_hop,,Shani Davis,False,False,True,,,21409,25.61,1.78,116.98,0,True,completed
+pub-087,aggregation,,17,False,False,True,,,6285,12.58,2.98,26.22,0,True,completed
+pub-088,superlative,,Alpine skiing at the 1992 Winter Olympics – Men's giant slalom,False,False,True,,,5047,2.98,42.27,19.64,0,True,completed
+pub-089,aggregation,,5,True,True,True,,,5344,3.34,1.83,16.57,0,True,completed
+pub-090,temporal,,Aslanbek Khushtov,False,False,True,,,5597,5.12,1.78,91.08,0,True,completed
+pub-091,lookup,,18,False,False,True,,,5244,3.68,1.81,45.15,0,True,completed
+pub-092,aggregation,,6,True,True,True,,,5678,3.42,1.77,24.13,0,True,completed
+pub-093,aggregation,,4,True,True,True,,,5302,5.12,1.8,21.41,0,True,completed
+pub-094,temporal,,Oleg Kucherenko,False,False,True,,,5128,3.11,1.81,24.65,0,True,completed
+pub-095,multi_hop,,Valerie Vili,False,False,True,,,20146,3.25,1.94,87.95,0,True,completed
+pub-096,multi_hop,,Fazliddin Gaibnazarov,False,False,False,,,,4.63,1.84,120.01,0,False,timeout
+pub-097,temporal,,Yana Shemyakina,False,False,True,,,5805,3.47,2.11,55.97,0,True,completed
+pub-098,multi_hop,,Bekzat Sattarkhanov,False,False,False,,,,3.14,2.05,120.02,0,False,timeout
+pub-099,multi_hop,,Erik LesserDaniel BöhmArnd PeifferSimon Schempp,False,False,False,,,18812,4.87,2.05,103.19,0,True,completed
+pub-100,temporal,,Missy Franklin,False,False,True,,,5302,3.34,1.93,19.84,0,True,completed

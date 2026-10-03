@@ -1,0 +1,50 @@
+{
+  "status": "VERIFIED WITH LIMITATION",
+  "limitation_reason": "All 43 historically identified missing chunks are independently verified in the current TigerGraph state with non-null 1024-dimensional Qwen embeddings (43/43 PASS). The original repair execution stdout was not preserved, so the historical write event itself remains report-level evidence.",
+  "embedding_repair": {
+    "historical_missing_count": 43,
+    "repaired_count": 43,
+    "final_verified_count": 5716,
+    "all_43_accounted_for": true,
+    "current_state_verified_count": 43,
+    "current_state_proof_csv": "benchmark/results/qwen_43_current_state_verification.csv",
+    "current_state_proof_json": "benchmark/results/qwen_43_current_state_verification.json",
+    "historical_missing_chunk_ids": [
+      "Q1005192_chunk_0", "Q1005557_chunk_0", "Q1005811_chunk_1", "Q10572431_chunk_0",
+      "Q107861723_chunk_1", "Q1095367_chunk_1", "Q1156252_chunk_5", "Q1222641_chunk_0",
+      "Q1222651_chunk_0", "Q12808128_chunk_0", "Q1360804_chunk_2", "Q1408881_chunk_0",
+      "Q17515790_chunk_0", "Q2000988_chunk_2", "Q2070832_chunk_0", "Q22964444_chunk_2",
+      "Q2463752_chunk_4", "Q24761058_chunk_0", "Q2500292_chunk_0", "Q25991452_chunk_1",
+      "Q26228283_chunk_0", "Q26234144_chunk_1", "Q26860_chunk_1", "Q280553_chunk_0",
+      "Q30680433_chunk_0", "Q3499066_chunk_1", "Q3628683_chunk_5", "Q3628777_chunk_2",
+      "Q3998590_chunk_1", "Q47155555_chunk_1", "Q47295256_chunk_1", "Q4903025_chunk_7",
+      "Q599322_chunk_1", "Q645932_chunk_2", "Q65242164_chunk_3", "Q65242174_chunk_2",
+      "Q677063_chunk_1", "Q735286_chunk_2", "Q7979972_chunk_0", "Q7979977_chunk_1",
+      "Q843436_chunk_6", "Q914969_chunk_0", "Q937526_chunk_0"
+    ]
+  },
+  "gold_cross_reference": {
+    "affected_question_count": 9,
+    "affected_qids": ["pub-001", "pub-021", "pub-024", "pub-045", "pub-053", "pub-058", "pub-066", "pub-078", "pub-087"],
+    "deterministic_only": true,
+    "vector_dependency": false,
+    "impact_conclusion": "ALL 9 affected questions were answered through deterministic graphrag__aggregate or graphrag__superlative GSQL tool paths and NONE required vector embeddings during Phase 7 execution."
+  },
+  "multihop_joint_integrity": {
+    "total": 28,
+    "correct_evidence_hit": 18,
+    "correct_evidence_miss": 0,
+    "incorrect_evidence_hit": 4,
+    "incorrect_evidence_miss": 6,
+    "evidence_hit_total": 22,
+    "subset_verified": true,
+    "correct_evidence_qids": ["pub-005", "pub-011", "pub-014", "pub-022", "pub-028", "pub-030", "pub-031", "pub-038", "pub-041", "pub-043", "pub-050", "pub-064", "pub-073", "pub-079", "pub-081", "pub-083", "pub-086", "pub-095"],
+    "evidence_hit_qids": ["pub-005", "pub-011", "pub-014", "pub-022", "pub-023", "pub-028", "pub-030", "pub-031", "pub-038", "pub-041", "pub-043", "pub-050", "pub-060", "pub-064", "pub-067", "pub-073", "pub-079", "pub-081", "pub-083", "pub-086", "pub-095", "pub-099"]
+  },
+  "benchmark_100q": {
+    "accuracy": "87/100 (87.0%)",
+    "combined_evidence": "93/100 (93.0% all) / 93/94 (98.94% completed)",
+    "completed": 94,
+    "timeouts": 6
+  }
+}

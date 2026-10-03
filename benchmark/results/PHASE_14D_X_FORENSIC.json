@@ -1,0 +1,27 @@
+{
+  "phase": "PHASE_14D_X_FORENSIC",
+  "status": "COMPLETED",
+  "timestamp": "2026-10-02T01:08:00Z",
+  "x1_pub003_forensic_trace": {
+    "conclusion": "PROVEN",
+    "exact_invoke_path": "synthesize() -> TigerGraphAgentGenerator.generate_answer() -> base_llm.invoke_with_parser()",
+    "root_cause": "Line 863 in base_llm.py (inside invoke_with_parser) was omitted from Phase 14D-W Fix A. Line 1071 (inside invoke_structured) was updated, allowing triage and plan to succeed, but line 863 still evaluated is_openrouter to False for AIRouter. This forced generate_answer onto the chain.invoke path, which receives empty content='' from AIRouter and yields (no answer produced).",
+    "manual_vs_generation_difference": "Manual/triage requests used direct chat completions with raw_msgs, whereas invoke_with_parser used chain.invoke(input_variables) via ChatOpenAI."
+  },
+  "x2_pub005_forensic_trace": {
+    "conclusion": "PROVEN",
+    "exact_execution_path": "agentic_plan generated a single-step plan containing only graphrag__hybrid_search (S1). Fix B did not drop any step.",
+    "root_cause": "Hybrid search retrieved chunks containing two events taking place on 20 September 1988 at the same venue: Men's 67.5 kg (Joachim Kunz) and Men's 60 kg (Naim Süleymanoğlu). Without a 2nd-stage structural query, synthesis picked Joachim Kunz from the multi-candidate context.",
+    "fix_b_safety": "Fix B in agentic_executor.py correctly protected existing string question arguments from dict context overwrites."
+  },
+  "x3_regression_safety": {
+    "recommendation": "MODIFY_AND_RETAIN",
+    "base_llm_fix": "Extend Fix A to include line 863 in invoke_with_parser() in base_llm.py.",
+    "agentic_executor_fix": "Retain Fix B in agentic_executor.py."
+  },
+  "constraints_verification": {
+    "production_modifications": 0,
+    "api_calls": 0,
+    "live_questions": 0
+  }
+}

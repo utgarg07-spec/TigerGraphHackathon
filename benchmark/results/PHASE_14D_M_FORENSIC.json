@@ -1,0 +1,16 @@
+{
+  "phase": "PHASE_14D_M",
+  "status": "COMPLETED",
+  "final_classification": "MIXED_FAILURE",
+  "api_calls": 0,
+  "live_questions": 0,
+  "production_files_modified": 0,
+  "evaluator_path_active": true,
+  "pub_001_diagnosis": "EVALUATOR_PATH_FAILURE (Number word 'five' vs '5', resolved in Phase 14D-K evaluator)",
+  "pub_003_diagnosis": "EVALUATOR_PATH_FAILURE (Number word 'eight' vs '8', resolved in Phase 14D-K evaluator)",
+  "pub_005_diagnosis": "PARSER_FAILURE / SYNTHESIS_FAILURE when LLM parser fails; PASS (100% correct) when AIRouter LLM synthesis succeeds",
+  "pub_004_comparison": "MATCH (Phase 14D-I and Gate 10 pub-004 are 100% identical in tool execution, evidence, and prediction)",
+  "embedding_configuration_concern": "NO_CAUSAL_IMPACT (Vector retrieval functions correctly for 1024-dim index)",
+  "rescored_5q_accuracy": "5/5 (100.0%) when evaluated with active Phase 14D-K unified_evaluator",
+  "exact_next_action": "Provide valid AIRouter API key (sk-air-v1-...) to enable LLM completion and execute live 25Q pilot benchmark."
+}

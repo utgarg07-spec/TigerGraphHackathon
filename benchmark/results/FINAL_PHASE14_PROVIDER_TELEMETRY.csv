@@ -1,0 +1,4 @@
+Provider,Calls,Success,Failure,429,402,Timeout,Avg_Latency_s
+groq,104,47,57,52,0,0,0.46
+openrouter,1,0,1,0,1,0,0.56
+freellmapi,258,0,258,0,0,124,11.83

@@ -1,0 +1,6 @@
+Question Type,Question Count,RAG Accuracy (%),GraphRAG Accuracy (%),Agentic Accuracy (%),RAG Evidence Hit (%),GraphRAG Evidence Hit (%),Agentic Evidence Hit (%),RAG Avg Latency (ms),GraphRAG Avg Latency (ms),Agentic Avg Latency (ms),RAG Avg Tokens,GraphRAG Avg Tokens,Agentic Avg Tokens
+aggregation,21,85.71%,85.71%,100.0%,0.0%,0.0%,100.0%,11435.5714,24994.619,29986.0476,8637,,5269.2857
+lookup,19,5.26%,10.53%,100.0%,0.0%,5.26%,100.0%,3856.8947,29718.4737,27705.1053,,859,5042.7368
+multi_hop,28,0.0%,0.0%,64.29%,0.0%,10.71%,78.57%,8443.7143,38268.1786,78059.6429,8136,1316.8571,15406.0435
+superlative,10,0.0%,0.0%,80.0%,20.0%,0.0%,100.0%,14710.5,35740.8,23863.1,3763,,5233.2
+temporal,22,0.0%,0.0%,95.45%,4.55%,54.55%,95.45%,19633.8182,44811.7727,37824.1364,18767,874.5,5350.2381

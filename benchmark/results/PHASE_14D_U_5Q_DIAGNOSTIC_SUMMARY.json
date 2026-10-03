@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "qid": "pub-001",
+      "correct": true,
+      "latency": 30.109931707382202
+    },
+    {
+      "qid": "pub-002",
+      "correct": true,
+      "latency": 14.867552042007446
+    },
+    {
+      "qid": "pub-003",
+      "correct": false,
+      "latency": 16.262354373931885
+    },
+    {
+      "qid": "pub-004",
+      "correct": true,
+      "latency": 7.09314489364624
+    },
+    {
+      "qid": "pub-005",
+      "correct": true,
+      "latency": 18.696940660476685
+    }
+  ]
+}

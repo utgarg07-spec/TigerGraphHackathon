@@ -1,0 +1,315 @@
+{
+  "evaluation_contract": "Unified Three-Way Evaluation (100 Public Questions)",
+  "datasets_verified": {
+    "rag": "benchmark/results/rag_baseline_normalized.jsonl",
+    "graphrag": "benchmark/results/graphrag_baseline_normalized.jsonl",
+    "agentic": "benchmark/results/agentic_baseline_normalized.jsonl",
+    "unique_qids_count": 100
+  },
+  "overall_pipeline_comparison": {
+    "Classic Vector RAG": {
+      "pipeline": "Classic Vector RAG",
+      "total_questions": 100,
+      "correct_answers": 19,
+      "accuracy_pct": 19.0,
+      "evidence_hits": 3,
+      "evidence_hit_pct": 3.0,
+      "evidence_breakdown": {
+        "gold_chunk_hits": 0,
+        "gold_vertex_hits": 0,
+        "gold_tool_evidence_hits": 0,
+        "combined_evidence_hits": 3
+      },
+      "average_completeness": 0.2302,
+      "average_grounding": null,
+      "tokens": {
+        "average": 8617.1667,
+        "median": 8312.5,
+        "min": 854,
+        "max": 18767
+      },
+      "latency_ms": {
+        "average": 11289.01,
+        "median": 3967.5,
+        "min": 2791.0,
+        "max": 235326.0
+      },
+      "average_retrieval_intrusion_pct": 0.0,
+      "stop_reasons": {
+        "completed": 100
+      }
+    },
+    "GraphRAG Hybrid": {
+      "pipeline": "GraphRAG Hybrid",
+      "total_questions": 100,
+      "correct_answers": 20,
+      "accuracy_pct": 20.0,
+      "evidence_hits": 16,
+      "evidence_hit_pct": 16.0,
+      "evidence_breakdown": {
+        "gold_chunk_hits": 0,
+        "gold_vertex_hits": 0,
+        "gold_tool_evidence_hits": 0,
+        "combined_evidence_hits": 16
+      },
+      "average_completeness": 0.2,
+      "average_grounding": null,
+      "tokens": {
+        "average": 1103.2963,
+        "median": 862,
+        "min": 851,
+        "max": 6984
+      },
+      "latency_ms": {
+        "average": 35043.14,
+        "median": 28030.5,
+        "min": 1766.0,
+        "max": 115409.0
+      },
+      "average_retrieval_intrusion_pct": 100.0,
+      "stop_reasons": {
+        "completed": 100
+      }
+    },
+    "Agentic GraphRAG": {
+      "pipeline": "Agentic GraphRAG",
+      "total_questions": 100,
+      "correct_answers": 87,
+      "accuracy_pct": 87.0,
+      "evidence_hits": 93,
+      "evidence_hit_pct": 93.0,
+      "evidence_breakdown": {
+        "gold_chunk_hits": 21,
+        "gold_vertex_hits": 59,
+        "gold_tool_evidence_hits": 83,
+        "combined_evidence_hits": 93
+      },
+      "average_completeness": 0.8813,
+      "average_grounding": null,
+      "tokens": {
+        "average": 7718.0106,
+        "median": 5439.5,
+        "min": 4234,
+        "max": 23139
+      },
+      "latency_ms": {
+        "average": 44125.36,
+        "median": 31473.0,
+        "min": 12602.0,
+        "max": 120028.0
+      },
+      "average_retrieval_intrusion_pct": 0.0,
+      "stop_reasons": {
+        "completed": 94,
+        "timeout": 6
+      }
+    }
+  },
+  "per_qtype_comparison": {
+    "aggregation": {
+      "questions_count": 21,
+      "accuracy_pct": {
+        "rag": 85.71,
+        "graphrag": 85.71,
+        "agentic": 100.0
+      },
+      "evidence_hit_pct": {
+        "rag": 0.0,
+        "graphrag": 0.0,
+        "agentic": 100.0
+      },
+      "average_completeness": {
+        "rag": 0.8571,
+        "graphrag": 0.8571,
+        "agentic": 0.9524
+      },
+      "average_latency_ms": {
+        "rag": 11435.5714,
+        "graphrag": 24994.619,
+        "agentic": 29986.0476
+      },
+      "average_tokens": {
+        "rag": 8637,
+        "graphrag": null,
+        "agentic": 5269.2857
+      },
+      "median_tokens": {
+        "rag": 8637.0,
+        "graphrag": null,
+        "agentic": 5432
+      }
+    },
+    "lookup": {
+      "questions_count": 19,
+      "accuracy_pct": {
+        "rag": 5.26,
+        "graphrag": 10.53,
+        "agentic": 100.0
+      },
+      "evidence_hit_pct": {
+        "rag": 0.0,
+        "graphrag": 5.26,
+        "agentic": 100.0
+      },
+      "average_completeness": {
+        "rag": 0.1053,
+        "graphrag": 0.1053,
+        "agentic": 1.0
+      },
+      "average_latency_ms": {
+        "rag": 3856.8947,
+        "graphrag": 29718.4737,
+        "agentic": 27705.1053
+      },
+      "average_tokens": {
+        "rag": null,
+        "graphrag": 859,
+        "agentic": 5042.7368
+      },
+      "median_tokens": {
+        "rag": null,
+        "graphrag": 859,
+        "agentic": 5034
+      }
+    },
+    "multi_hop": {
+      "questions_count": 28,
+      "accuracy_pct": {
+        "rag": 0.0,
+        "graphrag": 0.0,
+        "agentic": 64.29
+      },
+      "evidence_hit_pct": {
+        "rag": 0.0,
+        "graphrag": 10.71,
+        "agentic": 78.57
+      },
+      "average_completeness": {
+        "rag": 0.0357,
+        "graphrag": 0.0,
+        "agentic": 0.6571
+      },
+      "average_latency_ms": {
+        "rag": 8443.7143,
+        "graphrag": 38268.1786,
+        "agentic": 78059.6429
+      },
+      "average_tokens": {
+        "rag": 8136,
+        "graphrag": 1316.8571,
+        "agentic": 15406.0435
+      },
+      "median_tokens": {
+        "rag": 8136,
+        "graphrag": 871.5,
+        "agentic": 14379
+      }
+    },
+    "superlative": {
+      "questions_count": 10,
+      "accuracy_pct": {
+        "rag": 0.0,
+        "graphrag": 0.0,
+        "agentic": 80.0
+      },
+      "evidence_hit_pct": {
+        "rag": 20.0,
+        "graphrag": 0.0,
+        "agentic": 100.0
+      },
+      "average_completeness": {
+        "rag": 0.1018,
+        "graphrag": 0.0,
+        "agentic": 0.9732
+      },
+      "average_latency_ms": {
+        "rag": 14710.5,
+        "graphrag": 35740.8,
+        "agentic": 23863.1
+      },
+      "average_tokens": {
+        "rag": 3763,
+        "graphrag": null,
+        "agentic": 5233.2
+      },
+      "median_tokens": {
+        "rag": 3763.0,
+        "graphrag": null,
+        "agentic": 5215.0
+      }
+    },
+    "temporal": {
+      "questions_count": 22,
+      "accuracy_pct": {
+        "rag": 0.0,
+        "graphrag": 0.0,
+        "agentic": 95.45
+      },
+      "evidence_hit_pct": {
+        "rag": 4.55,
+        "graphrag": 54.55,
+        "agentic": 95.45
+      },
+      "average_completeness": {
+        "rag": 0.0455,
+        "graphrag": 0.0,
+        "agentic": 0.9545
+      },
+      "average_latency_ms": {
+        "rag": 19633.8182,
+        "graphrag": 44811.7727,
+        "agentic": 37824.1364
+      },
+      "average_tokens": {
+        "rag": 18767,
+        "graphrag": 874.5,
+        "agentic": 5350.2381
+      },
+      "median_tokens": {
+        "rag": 18767,
+        "graphrag": 856.5,
+        "agentic": 5302
+      }
+    }
+  },
+  "agentic_specific_operational_metrics": {
+    "average_steps": 2.96,
+    "median_steps": 3.0,
+    "total_strategy_changes": 0,
+    "tools_usage_distribution": {
+      "graphrag__aggregate": 21,
+      "graphrag__temporal_resolve": 21,
+      "graphrag__superlative": 10,
+      "graphrag__structural_retrieve": 13,
+      "graphrag__lookup": 19
+    },
+    "retrieval_methods_distribution": {
+      "graphrag__aggregate": 21,
+      "graphrag__temporal_resolve": 21,
+      "graphrag__superlative": 10,
+      "graphrag__structural_retrieve": 13,
+      "graphrag__lookup": 19,
+      "vector_similarity": 22
+    },
+    "stop_reasons_breakdown": {
+      "completed": 94,
+      "timeout": 6
+    }
+  },
+  "failure_categories_analysis": {
+    "Classic Vector RAG": {
+      "distractor_intrusion_rate_pct": 0.0,
+      "description": "High distractor chunk noise and lack of multi-hop/relational graph traversal capabilities."
+    },
+    "GraphRAG Hybrid": {
+      "zero_context_dropouts_count": 73,
+      "zero_context_dropouts_pct": 73.0,
+      "description": "Seed vector chunks failed graph expansion due to missing outgoing DOCUMENT_HAS_EVENT edges."
+    },
+    "Agentic GraphRAG": {
+      "timeouts_count": 6,
+      "timeouts_pct": 6.0,
+      "description": "6 timeouts on complex multi-hop questions exceeding per-query latency limits."
+    }
+  }
+}

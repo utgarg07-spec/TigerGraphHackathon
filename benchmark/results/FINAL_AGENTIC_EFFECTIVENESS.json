@@ -1,0 +1,45 @@
+{
+  "total_questions": 100,
+  "agent_steps": {
+    "average": 2.5,
+    "median": 3,
+    "max": 5,
+    "budget_limit": 5
+  },
+  "llm_calls": {
+    "average": 3.5,
+    "max": 6,
+    "budget_limit": 6
+  },
+  "plan_retries": {
+    "total": 0,
+    "max_per_question": 0,
+    "budget_limit": 2
+  },
+  "strategy_changes": 0,
+  "replanning_events": 0,
+  "budget_violations": 0,
+  "specialists": {
+    "registered": 8,
+    "invoked_count": 250,
+    "tool_breakdown": {
+      "plan": 82,
+      "S1: graphrag__aggregate": 13,
+      "synthesize": 81,
+      "S1: graphrag__temporal_resolve": 20,
+      "S1: graphrag__get_schema": 1,
+      "S2: graphrag__structural_retrieve": 1,
+      "S3: graphrag__hybrid_search": 1,
+      "S1: graphrag__superlative": 8,
+      "S1: graphrag__lookup": 17,
+      "S1: graphrag__hybrid_search": 16,
+      "s1: graphrag__get_schema": 1,
+      "s2: graphrag__hybrid_search": 1,
+      "s3: graphrag__structural_retrieve": 1,
+      "S2: graphrag__hybrid_search": 2,
+      "s1: graphrag__aggregate": 2,
+      "S1: graphrag__structural_retrieve": 2,
+      "s1: graphrag__temporal_resolve": 1
+    }
+  }
+}

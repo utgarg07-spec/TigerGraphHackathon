@@ -1,0 +1,48 @@
+{
+  "phase": "PHASE_14D_O",
+  "audit_type": "TIGERGRAPH_AUTH_CONFIGURATION_FORENSICS",
+  "timestamp": "2026-10-01T15:21:00Z",
+  "constraints_enforced": {
+    "offline_only": true,
+    "api_calls_made": 0,
+    "live_benchmark_questions": 0,
+    "production_code_modifications": 0,
+    "secrets_exposed": 0
+  },
+  "authoritative_configuration": {
+    "config_file_source": "configs/server_config.json (or configs/local_server_config.json via SERVER_CONFIG env)",
+    "docker_delivery_mechanism": "Mounted volume ./configs/:/code/configs with SERVER_CONFIG=/code/configs/local_server_config.json",
+    "python_config_loader": "common/config.py (db_config dictionary)",
+    "config_keys": {
+      "host_key": "hostname",
+      "graph_key": "graphname",
+      "username_key": "username",
+      "password_key": "password",
+      "restpp_port_key": "restppPort",
+      "gsql_port_key": "gsPort",
+      "timeout_key": "default_timeout"
+    }
+  },
+  "token_authentication_mechanism": {
+    "token_origin": "Generated dynamically from username/password via pyTigerGraph authentication / token request",
+    "token_type": "REST++ Bearer Token / pyTigerGraph apiToken",
+    "storage_location": "In-memory on TigerGraphConnection object (conn.apiToken) and passed in REST HTTP headers (Authorization: Bearer <token>)",
+    "is_env_var": false,
+    "is_static_config_file": false,
+    "is_generated_dynamically": true
+  },
+  "initialization_path_forensics": {
+    "connection_factory": "common/db/connections.py (elevate_db_connection_to_token)",
+    "embedding_store": "common/embeddings/tigergraph_embedding_store.py (TigerGraphEmbeddingStore.__init__)",
+    "version_check_endpoint": "GET /restpp/version via self.conn.getVer()",
+    "unauthenticated_response": "HTTP 403 REST-10016 (Access Denied because the input token = '' is empty or too short)",
+    "authenticated_request_header": "Authorization: Bearer <apiToken>"
+  },
+  "failure_classification": {
+    "error_observed": "502 Bad Gateway / <html><title>Starting workspace</title>",
+    "classification": "A. TigerGraph transient startup",
+    "root_cause_explanation": "TigerGraph Cloud instance was in a suspended/waking state. Nginx gateway returned 502 / 'Starting workspace' HTML during instance resume. Not an application auth token code failure.",
+    "configuration_completeness": "COMPLETE"
+  },
+  "next_manual_powershell_diagnostic": "docker exec graphrag python -c \"from common.config import db_config; from pyTigerGraph import TigerGraphConnection; conn = TigerGraphConnection(host=db_config['hostname'], username=db_config['username'], password=db_config['password'], graphname=db_config['graphname'], restppPort=db_config['restppPort'], gsPort=db_config['gsPort']); print('TG Version:', conn.getVer())\""
+}

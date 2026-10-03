@@ -1,0 +1,44 @@
+{
+  "gate_status": {
+    "gate6_status": "PASS",
+    "gate7_status": "PASS",
+    "final_verdict": "PASS — ALL TARGETED FIXES VERIFIED",
+    "verdict_enum": "A"
+  },
+  "fixes_applied": [
+    {
+      "id": "FIX_1",
+      "name": "Canonical Event Title Verbatim Preservation",
+      "file": "common/llm_services/base_llm.py",
+      "target": "Superlative questions (pub-004, pub-008)",
+      "result": "VERIFIED — pub-004 and pub-008 now preserve complete canonical title verbatim in natural language answer."
+    },
+    {
+      "id": "FIX_2",
+      "name": "Benchmark HTTP Client Timeout Ceiling (120s -> 180s)",
+      "file": "benchmark/runner.py, benchmark/run_qwen_100_benchmark.py",
+      "target": "Client HTTP read timeouts (pub-013, pub-076, pub-077, pub-096)",
+      "result": "VERIFIED — pub-013, pub-076, pub-077, pub-096 now complete within 180s and produce correct gold answers."
+    },
+    {
+      "id": "FIX_3",
+      "name": "General Tool Argument Validation Guard",
+      "file": "common/py_schemas/schemas.py, graphrag/app/agent/agentic_planner.py, graphrag/app/tools/tool_registry.py",
+      "target": "Tool schema validation errors & malformed args (pub-060)",
+      "result": "VERIFIED — empty/whitespace-only required string args rejected cleanly; search question fallback safely bound."
+    }
+  ],
+  "test_results": {
+    "phase6_tools_suite": "78/78 PASS (100.0%)",
+    "superlative_target_accuracy": "10/10 PASS (100.0%)",
+    "temporal_target_accuracy": "22/22 PASS (100.0%)",
+    "targeted_regression_qids_tested": 15,
+    "targeted_regression_passes": 11,
+    "targeted_regression_failures": 4,
+    "budgets_unchanged": {
+      "MAX_LLM_CALLS_PER_QUESTION": 6,
+      "MAX_PLAN_RETRIES": 2,
+      "MAX_AGENT_STEPS": 5
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{"timestamp": "2026-10-01T19:50:44.064040", "elapsed_s": 6.67572021484375e-05, "qid": "pub-003", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:50:44.067850", "elapsed_s": 0.0038559436798095703, "qid": "pub-003", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:50:44.095215", "elapsed_s": 0.03122234344482422, "qid": "pub-003", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:50:48.962434", "elapsed_s": 4.898454427719116, "qid": "pub-003", "event": "end agentic_triage elapsed=4.864s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:50:48.999202", "elapsed_s": 4.935203313827515, "qid": "pub-003", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:50:53.247227", "elapsed_s": 9.1832435131073, "qid": "pub-003", "event": "end agentic_plan elapsed=4.245s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:50:53.251172", "elapsed_s": 9.187210083007812, "qid": "pub-003", "event": "TOOL graphrag__aggregate start", "stage": "TOOL graphrag__aggregate", "details": {}}
+{"timestamp": "2026-10-01T19:50:57.397134", "elapsed_s": 13.333139181137085, "qid": "pub-003", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:51:03.794644", "elapsed_s": 19.730683088302612, "qid": "pub-003", "event": "end generate_answer elapsed=6.394s", "stage": "LLM_CALL", "details": {}}

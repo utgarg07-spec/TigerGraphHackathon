@@ -1,0 +1,107 @@
+{
+  "phase": "PHASE_14D_S",
+  "status": "PASS — PRE-LIVE HARDENING COMPLETE",
+  "mode": "IMPLEMENTATION + OFFLINE VALIDATION ONLY",
+  "api_calls": 0,
+  "live_questions_executed": 0,
+  "defects_found_and_repaired": [
+    {
+      "id": "DEFECT_S1",
+      "gate": "GATE 5",
+      "component": "common/embeddings/tigergraph_embedding_store.py",
+      "description": "1024-d Qwen query vector passed to get_topk_similar resulting in GSQL-90000 and swallowed empty results.",
+      "resolution": "Repaired in 14D-R and verified in 14D-S test suite test_05: 1024-d query vectors route exclusively to GraphRAG_Hybrid_Qwen_Vector_Search operating on v.qwen_embedding (1024-d)."
+    },
+    {
+      "id": "DEFECT_S2",
+      "gate": "GATE 9",
+      "component": "docker-compose.yml",
+      "description": "Stale evaluator code in graphrag container due to unmounted benchmark/ directory.",
+      "resolution": "Added ./benchmark/:/code/benchmark volume mount to graphrag service in docker-compose.yml."
+    },
+    {
+      "id": "DEFECT_S3",
+      "gate": "GATE 8",
+      "component": "scratch/run_gate10_5q_airouter_smoke.py",
+      "description": "Live runner evaluator path discrepancy between host and container.",
+      "resolution": "Configured runner to dynamically import unified_evaluator from /code/benchmark."
+    }
+  ],
+  "issues_deliberately_left_unchanged": [
+    {
+      "id": "LEAVE_1",
+      "topic": "Structured-Output Provider Formatting Failures",
+      "reason": "Audited in 14D-Q and verified in 14D-S. Structured output failures on provider side must NOT trigger recursive retries or LLM retry loops; existing bounded keyword fallback remains sole safe fallback path."
+    },
+    {
+      "id": "LEAVE_2",
+      "topic": "Retry Budgets & Replan Caps",
+      "reason": "MAX_REPLANS=1, MAX_PLAN_RETRIES=2, MAX_LLM_CALLS_PER_QUESTION=6 are strictly enforced invariants and were deliberately left untouched."
+    }
+  ],
+  "contract_audits": {
+    "airouter": {
+      "endpoint": "https://api.airouter.in/v1",
+      "api_key_source": "environment AIROUTER_API_KEY",
+      "max_retries": 0,
+      "single_retry_owner": "base_llm.py",
+      "max_provider_attempts_per_logical_call": 2,
+      "circuit_breaker_on_402_and_quota": true
+    },
+    "structured_output": {
+      "resilience": "PydanticOutputParser with bounded keyword fallback in agentic_planner.py",
+      "fallback_args_repair": "_repair_olympic_args enforces valid Olympic tool signatures without crashing"
+    },
+    "planner": {
+      "max_plan_retries": 2,
+      "bounded_keyword_fallback": true,
+      "prompt_braces_safety": "SystemMessage/HumanMessage objects isolate prompt strings"
+    },
+    "agentic_graph": {
+      "max_replans": 1,
+      "max_total_steps": 20,
+      "context_presence_breaks_loop": true,
+      "infrastructure_errors_visible": true
+    },
+    "vector_query": {
+      "active_qwen_dimension": 1024,
+      "active_query_name": "GraphRAG_Hybrid_Qwen_Vector_Search",
+      "active_vector_field": "v.qwen_embedding",
+      "legacy_vector_field": "v.embedding (1536-d, untouched)"
+    },
+    "evidence_to_synthesis": {
+      "propagation": "_gather collects all retrieved step contexts into synthesis payload",
+      "no_answer_fallback": "Controlled error/no-answer state when evidence is missing or synthesis fails"
+    },
+    "docker_visibility": {
+      "benchmark_volume": "./benchmark/:/code/benchmark",
+      "configs_volume": "./configs/:/code/configs"
+    }
+  },
+  "static_invariants": {
+    "MAX_LLM_CALLS_PER_QUESTION": 6,
+    "MAX_PLAN_RETRIES": 2,
+    "MAX_REPLANS": 1,
+    "MAX_PROVIDER_ATTEMPTS_PER_LOGICAL_CALL": 2,
+    "ChatOpenAI_max_retries": 0,
+    "Phase_6_test_score": "78/78 PASS"
+  },
+  "offline_test_results": {
+    "py_compile": "PASS (scratch/test_phase14d_s_prelive_hardening.py)",
+    "phase14d_r_contract_suite": "5/5 PASS (scratch/test_phase14d_r_contracts.py)",
+    "evaluator_normalization_suite": "16/16 PASS (scratch/test_evaluator_number_word_normalization.py)",
+    "phase14d_s_prelive_suite": "7/7 PASS (scratch/test_phase14d_s_prelive_hardening.py)"
+  },
+  "files_modified_in_phase_14d_s": [
+    "scratch/test_phase14d_s_prelive_hardening.py",
+    "scratch/test_phase14d_r_contracts.py"
+  ],
+  "integrity_checks": {
+    "benchmark_questions_modified": false,
+    "phase12_phase13_artifacts_modified": false,
+    "dataset_modified": false,
+    "embedding_regeneration": false,
+    "api_calls": 0,
+    "live_questions": 0
+  }
+}

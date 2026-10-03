@@ -1,0 +1,52 @@
+{
+  "db_config": {
+    "hostname": "http://tigergraph",
+    "restppPort": "14240",
+    "gsPort": "14240",
+    "default_timeout": 300,
+    "default_mem_threshold": 5000,
+    "default_thread_limit": 8
+  },
+  "graphrag_config": {
+    "reuse_embedding": true,
+    "ecc": "http://graphrag-ecc:8001",
+    "chat_history_api": "http://chat-history:8002",
+    "chunker_config": {}
+  },
+  "llm_config": {
+    "token_limit": 0,
+    "authentication_configuration": {
+      "GOOGLE_API_KEY": "YOUR_LLM_API_KEY_HERE"
+    },
+    "embedding_service": {
+      "embedding_model_service": "genai",
+      "model_name": "models/gemini-embedding-exp-03-07",
+      "dimensions": 1536,
+    },
+    "completion_service": {
+      "llm_service": "genai",
+      "llm_model": "gemini-2.5-flash",
+      "model_kwargs": {
+        "temperature": 0
+      },
+      "prompt_path": "./common/prompts/google_gemini/"
+    },
+    "multimodal_service": {
+      "llm_service": "openai",
+      "llm_model": "gpt-4o-mini",
+      "model_kwargs": {
+        "temperature": 0
+      }
+    }
+  },
+  "chat_config": {
+    "apiPort": "8002",
+    "dbPath": "chats.db",
+    "dbLogPath": "db.log",
+    "logPath": "requestLogs.jsonl",
+    "conversationAccessRoles": [
+      "superuser",
+      "globaldesigner"
+    ]
+  }
+}

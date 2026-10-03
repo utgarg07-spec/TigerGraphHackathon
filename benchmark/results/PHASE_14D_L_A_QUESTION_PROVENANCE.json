@@ -1,0 +1,31 @@
+{
+  "question_set_verdict": "NEEDS CLARIFICATION",
+  "api_calls": 0,
+  "live_questions": 0,
+  "production_files_modified": 0,
+  "runner_selected_qids": [
+    "pub-001", "pub-002", "pub-003", "pub-004", "pub-005",
+    "pub-006", "pub-007", "pub-008", "pub-009", "pub-010",
+    "pub-011", "pub-012", "pub-013", "pub-014", "pub-015",
+    "pub-016", "pub-017", "pub-018", "pub-019", "pub-020",
+    "pub-021", "pub-022", "pub-023", "pub-024", "pub-025"
+  ],
+  "pub001_to_pub005_used_in_phase14d_5q": true,
+  "intended_as_fresh_25q_pilot": true,
+  "overlapping_qids_count": 5,
+  "overlapping_qids": ["pub-001", "pub-002", "pub-003", "pub-004", "pub-005"],
+  "runner_consistent_with_methodology": true,
+  "duplicates_found": false,
+  "missing_qids": false,
+  "alternative_stratified_set_available": {
+    "script": "scratch/run_25q_benchmark.py",
+    "qids": [
+      "pub-032", "pub-034", "pub-035", "pub-042", "pub-046",
+      "pub-013", "pub-016", "pub-018", "pub-026", "pub-036",
+      "pub-012", "pub-019", "pub-020", "pub-024", "pub-027",
+      "pub-037", "pub-044", "pub-053", "pub-066", "pub-084",
+      "pub-015", "pub-017", "pub-022", "pub-023", "pub-028"
+    ],
+    "overlap_with_phase14d_5q": 0
+  }
+}

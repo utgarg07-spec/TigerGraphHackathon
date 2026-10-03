@@ -1,0 +1,3 @@
+entity_type,name,total_requests,success_count,timeout_count,avg_latency_s,median_latency_s,p95_latency_s
+Provider,FreeLLMAPI (openai/auto),100,82,18,74.3,45.92,180.03
+Model,Qwen/Qwen2.5-Coder-32B-Instruct,100,82,18,74.3,45.92,180.03

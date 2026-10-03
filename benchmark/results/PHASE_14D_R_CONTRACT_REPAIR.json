@@ -1,0 +1,66 @@
+{
+  "phase": "PHASE_14D_R",
+  "status": "PASS — DETERMINISTIC CONTRACTS REPAIRED",
+  "mode": "IMPLEMENTATION + OFFLINE VALIDATION ONLY",
+  "root_causes_addressed": [
+    {
+      "id": "FIX_A",
+      "issue": "Wrong TigerGraph vector query: Qwen 1024-d query vector compared against legacy v.embedding at 1536-d, causing GSQL-90000.",
+      "resolution": "Updated retrieve_similar_with_score in tigergraph_embedding_store.py to check for 1024-dimensional query vectors and route to GraphRAG_Hybrid_Qwen_Vector_Search operating on v.qwen_embedding (1024-d)."
+    },
+    {
+      "id": "FIX_B",
+      "issue": "Legacy 1536-dim fallback in embedding_services.py overriding Qwen 1024 config.",
+      "resolution": "Updated EmbeddingModel.__init__ to resolve explicit output_dimensionality first and default to 1024 for Qwen/standard embeddings, while preserving explicit 1536 on GenAI_Embedding."
+    },
+    {
+      "id": "FIX_C",
+      "issue": "Swallowed vector retrieval errors turning GSQL execution failures into empty results [].",
+      "resolution": "Updated retrieve_similar_with_score to raise explicit RuntimeError upon GSQL/vector query execution failures."
+    },
+    {
+      "id": "FIX_D",
+      "issue": "Stale evaluator code in live Docker container because benchmark/ directory was not mounted.",
+      "resolution": "Added ./benchmark/:/code/benchmark volume mount to graphrag service in docker-compose.yml."
+    }
+  ],
+  "files_modified": [
+    "common/embeddings/tigergraph_embedding_store.py",
+    "common/embeddings/embedding_services.py",
+    "docker-compose.yml",
+    "scratch/test_phase14d_r_contracts.py"
+  ],
+  "functions_modified": [
+    "TigerGraphEmbeddingStore.retrieve_similar_with_score",
+    "EmbeddingModel.__init__"
+  ],
+  "before_after_retrieval_path": {
+    "before": "Qwen 1024-d vector -> get_topk_similar.gsql -> v.embedding (1536-d) -> GSQL-90000 -> swallowed -> []",
+    "after": "Qwen 1024-d vector -> GraphRAG_Hybrid_Qwen_Vector_Search.gsql -> v.qwen_embedding (1024-d) -> matching documents"
+  },
+  "before_after_embedding_dimension": {
+    "before": "config.get('dimensions', 1536) defaulting Qwen to 1536",
+    "after": "output_dimensionality (1024) -> dimensions setting -> 1024 default (Qwen/standard)"
+  },
+  "before_after_retrieval_error_behavior": {
+    "before": "catch Exception -> return [] (masks infrastructure failures as zero documents)",
+    "after": "catch Exception -> raise RuntimeError('TigerGraph vector query failed: ...') (explicit observability)"
+  },
+  "docker_evaluator_binding_solution": "Added volume mount ./benchmark/:/code/benchmark to graphrag service in docker-compose.yml",
+  "offline_validation_results": {
+    "py_compile": "PASS (common/embeddings/tigergraph_embedding_store.py, common/embeddings/embedding_services.py, scratch/test_phase14d_r_contracts.py)",
+    "evaluator_test_suite": "16/16 PASS (scratch/test_evaluator_number_word_normalization.py)",
+    "vector_contract_test_suite": "5/5 PASS (scratch/test_phase14d_r_contracts.py)",
+    "retrieval_error_test": "PASS (RuntimeError explicitly raised on GSQL-90000 failure)",
+    "docker_binding_verification": "PASS (docker-compose.yml contains ./benchmark/:/code/benchmark)",
+    "static_check_legacy_embedding": "PASS (DocumentChunk.embedding dimension=1536 untouched in GSQL schema)"
+  },
+  "integrity_checks": {
+    "benchmark_questions_modified": false,
+    "phase12_13_artifacts_modified": false,
+    "dataset_modified": false,
+    "embedding_regeneration": false,
+    "api_calls": 0,
+    "live_questions": 0
+  }
+}

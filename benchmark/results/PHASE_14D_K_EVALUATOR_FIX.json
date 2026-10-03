@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "normalization_fix": "benchmark/unified_evaluator.py (normalize_answer)",
+  "regression_tests": "13/13",
+  "pub_001_offline_rescore": "PASS",
+  "pub_003_offline_rescore": "PASS",
+  "five_q_offline_rescore": "5/5",
+  "api_calls": 0,
+  "live_questions": 0,
+  "phase_12_modified": "NO",
+  "phase_13_modified": "NO",
+  "production_agentic_files_modified": 0
+}

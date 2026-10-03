@@ -1,0 +1,197 @@
+{
+  "benchmark": "FINAL_100Q_AGENTIC_BENCHMARK",
+  "timestamp": "2026-10-02T09:59:30.554007",
+  "total_questions": 100,
+  "http_success_rate": "100/100 (100.0%)",
+  "normalized_accuracy": "95/100 (95.0%)",
+  "strict_exact_match": "0/100 (0.0%)",
+  "gold_evidence_hit": "95/100 (95.0%)",
+  "latency_metrics": {
+    "mean_s": 39.43,
+    "median_s": 25.22,
+    "p95_s": 116.35,
+    "max_s": 358.78,
+    "total_elapsed_s": 3943.0
+  },
+  "llm_and_agent_metrics": {
+    "mean_logical_llm_calls": 3.04,
+    "mean_agent_steps": 1,
+    "mean_replans": 0.04,
+    "total_provider_retries": 4,
+    "total_provider_failovers": 0
+  },
+  "qtype_summary": {
+    "aggregation": {
+      "count": 21,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 26.51
+    },
+    "temporal": {
+      "count": 22,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 43.52
+    },
+    "superlative": {
+      "count": 10,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 22.46
+    },
+    "multi_hop": {
+      "count": 28,
+      "accuracy_pct": 82.1,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 82.1,
+      "mean_latency_s": 48.22
+    },
+    "lookup": {
+      "count": 19,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 44.94
+    }
+  },
+  "failures": [
+    {
+      "qid": "pub-015",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics?",
+      "prediction": "**Men\u2019s cycling omnium \u2013 2012 Summer Olympics (London Velopark, 4\u20135\u202fAugust)**\n\nThe gold medal was won by **Lasse\u202fNorman\u202fHansen** of Denmark.\n\n---\n\n*Source: Q2437166_chunk_0*",
+      "gold": [
+        "Dani KingLaura TrottJoanna Rowsell"
+      ],
+      "latency_s": 22.002,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 1,
+      "logical_llm_calls": 3,
+      "provider_http_attempts": 3,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    },
+    {
+      "qid": "pub-038",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 23 September 2000?",
+      "prediction": "**Men\u2019s super\u2011heavyweight boxing at the 2000 Summer Olympics** \u2013 The gold medal was won by **Audley Harrison** of Great Britain.\n\nThe competition began on 23\u202fSeptember\u202f2000 at the Sydney Convention and Exhibition Centre and concluded on 1\u202fOctober 2000. Harrison secured the top podium spot in the 91\u202fkg+ category.\n\n---\n\n*Citation:* Q4951847_chunk_0",
+      "gold": [
+        "Pyrros Dimas"
+      ],
+      "latency_s": 15.354,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 1,
+      "logical_llm_calls": 3,
+      "provider_http_attempts": 3,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    },
+    {
+      "qid": "pub-060",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at ExCeL Exhibition Centre on 30 July at the 2012 Summer Olympics?",
+      "prediction": "The following Olympic events took place at the ExCeL Exhibition Centre on 30\u202fJuly\u202f2012, along with their gold\u2011medal winners:\n\n- **Women's 57kg competition in judo at the 2012 Summer Olympics in London** \u2013 Kaori\u202fMatsumoto\u202f(JPN)\n- **Men's 73kg competition in judo at the 2012 Summer Olympics in London** \u2013 Mansur\u202fIsaev\u202f(RUS)\n- **Women's",
+      "gold": [
+        "Yana Shemyakina"
+      ],
+      "latency_s": 24.219,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 1,
+      "logical_llm_calls": 3,
+      "provider_http_attempts": 3,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    },
+    {
+      "qid": "pub-076",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Sestriere on February 24, 2006?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Julia Mancuso"
+      ],
+      "latency_s": 101.413,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 1,
+      "logical_llm_calls": 3,
+      "provider_http_attempts": 3,
+      "provider_retries": 1,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    },
+    {
+      "qid": "pub-098",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 18 September to 1 October 2000?",
+      "prediction": "**Men\u2019s heavyweight boxing** \u2013 The gold medal was won by **F\u00e9lix\u202fSav\u00f3n** of Cuba.",
+      "gold": [
+        "Bekzat Sattarkhanov"
+      ],
+      "latency_s": 48.987,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 1,
+      "logical_llm_calls": 3,
+      "provider_http_attempts": 3,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    }
+  ]
+}

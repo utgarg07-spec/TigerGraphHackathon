@@ -1,0 +1,99 @@
+{
+  "analysis_meta": {
+    "title": "Agentic GraphRAG Cost-Effectiveness & Trade-Off Analysis",
+    "eval_contract": "Unified 3-Way Contract v1.0.0",
+    "total_questions": 100,
+    "winner_score_calculated": false,
+    "philosophy": "Objective evaluation across accuracy, evidence groundedness, and resource consumption trade-offs without synthetic winner scores."
+  },
+  "quantitative_deltas": {
+    "accuracy_gain_vs_rag": "+68.00% (87/100 vs 19/100 normalized match, +85.00% under strict non-fallback match)",
+    "accuracy_gain_vs_graphrag": "+67.00% (87/100 vs 20/100 normalized match, +85.00% under strict non-fallback match)",
+    "evidence_gain_vs_rag": "+90.00% (93/100 vs 3/100)",
+    "evidence_gain_vs_graphrag": "+77.00% (93/100 vs 16/100)",
+    "token_delta_vs_rag": "-899.16 tokens (avg 7718.01 vs 8617.17 on completed queries; 35% to 76% token reduction on direct comparisons)",
+    "latency_delta_vs_rag_ms": "+32836.35 ms (overall avg 44125.36 vs 11289.01; on completed queries Agentic is 2.2x FASTER: 39.28s vs 86.44s)",
+    "avg_agentic_steps": 3.02
+  },
+  "trade_off_categorization": {
+    "A_both_rag_and_agentic_correct": {
+      "count": 19,
+      "description": "Questions where both RAG and Agentic achieved normalized match. In strict evaluation without UUID hex collisions, only 2 queries (pub-001, pub-003) were genuinely completed and correct in base RAG.",
+      "qids": [
+        "pub-001",
+        "pub-003",
+        "pub-010",
+        "pub-019",
+        "pub-020",
+        "pub-024",
+        "pub-027",
+        "pub-033",
+        "pub-045",
+        "pub-051",
+        "pub-058",
+        "pub-063",
+        "pub-069",
+        "pub-070",
+        "pub-078",
+        "pub-082",
+        "pub-089",
+        "pub-092",
+        "pub-093"
+      ],
+      "genuine_completed_correct_qids": [
+        "pub-001",
+        "pub-003"
+      ]
+    },
+    "B_agentic_added_cost_and_improved_correctness": {
+      "count": 68,
+      "description": "Questions where base RAG failed or crashed, but Agentic GraphRAG successfully resolved the multi-step query with high evidence groundedness.",
+      "count_percentage": "68.0%"
+    },
+    "C_agentic_added_cost_and_still_failed": {
+      "count": 13,
+      "description": "The 13 questions where Agentic GraphRAG did not produce a correct answer, consisting of 2 Superlatives (correct entity found, slight text format difference), 10 Multi-Hop queries, and 1 Temporal query (6 of which were 120s HTTP timeout limits).",
+      "qids": [
+        "pub-004",
+        "pub-008",
+        "pub-013",
+        "pub-015",
+        "pub-017",
+        "pub-023",
+        "pub-060",
+        "pub-067",
+        "pub-076",
+        "pub-077",
+        "pub-096",
+        "pub-098",
+        "pub-099"
+      ]
+    },
+    "D_agentic_improved_evidence_without_correctness": {
+      "count": 6,
+      "description": "Questions where Agentic successfully located and grounded the gold evidence (gold_combined_hit = True) but failed strict accuracy due to phrasing or parser formatting.",
+      "qids": [
+        "pub-004",
+        "pub-008",
+        "pub-023",
+        "pub-060",
+        "pub-067",
+        "pub-099"
+      ]
+    },
+    "E_agentic_reduced_token_cost_vs_rag": {
+      "count": 4,
+      "description": "Populated benchmark questions where Agentic GraphRAG consumed significantly fewer tokens than base RAG by offloading reasoning to TigerGraph GSQL tools.",
+      "details": [
+        {"qid": "pub-001", "rag_tokens": 8785, "agentic_tokens": 4351, "tokens_saved": 4434, "pct_reduction": "50.5%"},
+        {"qid": "pub-002", "rag_tokens": 18767, "agentic_tokens": 4504, "tokens_saved": 14263, "pct_reduction": "76.0%"},
+        {"qid": "pub-003", "rag_tokens": 8489, "agentic_tokens": 4564, "tokens_saved": 3925, "pct_reduction": "46.2%"},
+        {"qid": "pub-004", "rag_tokens": 6672, "agentic_tokens": 4332, "tokens_saved": 2340, "pct_reduction": "35.1%"}
+      ]
+    }
+  },
+  "narrative_corrections": {
+    "redundant_planning_claim_audit": "The claim of 19 redundant planning questions is INVALIDATED. It was an artifact of 17 single-digit UUID hex collisions in crashed RAG fallback strings. In reality, only 2 questions were genuinely answered by both RAG and Agentic.",
+    "unresolved_multihop_claim_audit": "The claim of 13 unresolved multi-hop questions is CLARIFIED. The 13 failures comprise 10 Multi-Hop, 2 Superlative, and 1 Temporal question. 6 of these 13 were hard 120s timeouts on complex joint graph-vector traversals."
+  }
+}

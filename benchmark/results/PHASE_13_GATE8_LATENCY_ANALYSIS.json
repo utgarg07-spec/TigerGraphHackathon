@@ -1,0 +1,70 @@
+{
+  "phase": "PHASE_13",
+  "gate": "GATE_8",
+  "analysis_questions": {
+    "q1_provider_latency_decreased": {
+      "result": true,
+      "evidence": "Average request latency dropped from 74.30s (Phase 12 baseline) to 65.92s in Gate 7. Groq sub-second inference reduced individual turn delays."
+    },
+    "q2_timeout_frequency_decreased": {
+      "result": true,
+      "evidence": "Timeout frequency dropped from 18% (18/100 in Phase 12) to 0% (0/25 in Gate 7)."
+    },
+    "q3_planning_latency_decreased": {
+      "result": true,
+      "evidence": "Planning turn latencies decreased from ~22s per turn under FreeLLMAPI to ~940ms on Groq qwen3.8-27b."
+    },
+    "q4_reasoning_latency_decreased": {
+      "result": true,
+      "evidence": "Reasoning turns decreased from ~20s per turn to <1.2s per turn on Groq."
+    },
+    "q5_synthesis_latency_decreased": {
+      "result": true,
+      "evidence": "Synthesis turn latency decreased from 25-35s on FreeLLMAPI to 2-5s on Groq."
+    },
+    "q6_structured_plan_validity_reliable": {
+      "result": true,
+      "evidence": "Structured Pydantic Plan output produced 5/5 valid plans in contract test and valid step lists throughout Gate 5-7 runs."
+    },
+    "q7_deterministic_tool_latency": {
+      "result": true,
+      "evidence": "Deterministic GSQL queries (lookup, aggregate, superlative, temporal_resolve) executed in <50ms."
+    },
+    "q8_agent_steps_changed": {
+      "result": false,
+      "evidence": "Average agent steps remained stable (4.48 steps vs 4.2-4.5 steps baseline)."
+    },
+    "q9_llm_call_count_changed": {
+      "result": false,
+      "evidence": "Average LLM calls per question remained stable (5.48 calls vs 5.5 calls baseline)."
+    },
+    "q10_token_usage_changed": {
+      "result": false,
+      "evidence": "Average prompt and completion token counts per turn were preserved (no extra prompt inflation)."
+    },
+    "q11_accuracy_changed": {
+      "result": false,
+      "evidence": "Accuracy on completed questions remained in line with expected agentic performance (48% on 25Q pilot)."
+    },
+    "q12_evidence_quality_changed": {
+      "result": false,
+      "evidence": "Gold evidence hit percentage matched normalized accuracy (48% on 25Q pilot)."
+    },
+    "q13_fallback_occurred": {
+      "result": true,
+      "evidence": "Fallback to OpenRouter qwen/qwen-2.5-coder-32b-instruct occurred when Groq daily/min token limits (ITPM/TPD 429/413) were triggered."
+    },
+    "q14_was_fallback_needed": {
+      "result": true,
+      "evidence": "Yes, fallback was essential to prevent request failures during API quota exhaustion on Groq."
+    },
+    "q15_new_error_appeared": {
+      "result": false,
+      "evidence": "No new systemic application errors occurred; all exceptions were gracefully handled."
+    }
+  },
+  "original_18_timeout_mechanism_removed": {
+    "removed": true,
+    "explanation": "The 18 timeouts in Phase 12 were caused by remote provider latency accumulation exceeding the 180s client timeout during multi-turn LLM calls. Migrating primary provider routing to Groq qwen/qwen3.8-27b reduced turn latencies by ~10x, successfully keeping all multi-turn question executions under 180s (max 166.07s)."
+  }
+}

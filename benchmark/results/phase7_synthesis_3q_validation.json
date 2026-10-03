@@ -1,0 +1,68 @@
+[
+  {
+    "qid": "pub-035",
+    "question": "How many nations competed in Shooting at the 1996 Summer Olympics \u2013 Men's 50 metre rifle three positions?",
+    "qtype": "lookup",
+    "gold_answer": [
+      "30"
+    ],
+    "planned_tools": [],
+    "executed_tools": [],
+    "deterministic_result": null,
+    "hybrid_executed": false,
+    "final_answer": "Execution failed: 429 Rate Limit retry-after (806.0s) exceeds max wait threshold (30s)",
+    "correctness_match": false,
+    "llm_calls": 0,
+    "plan_retries": 0,
+    "agent_steps": 0,
+    "latency_s": 0.2,
+    "http_status": 200,
+    "is_429": false,
+    "circuit_breaker": false,
+    "error": null
+  },
+  {
+    "qid": "pub-042",
+    "question": "How many nations competed in Alpine skiing at the 1992 Winter Olympics \u2013 Men's giant slalom?",
+    "qtype": "lookup",
+    "gold_answer": [
+      "47"
+    ],
+    "planned_tools": [],
+    "executed_tools": [],
+    "deterministic_result": null,
+    "hybrid_executed": false,
+    "final_answer": "Execution failed: 429 Rate Limit retry-after (787.0s) exceeds max wait threshold (30s)",
+    "correctness_match": false,
+    "llm_calls": 0,
+    "plan_retries": 0,
+    "agent_steps": 0,
+    "latency_s": 0.23,
+    "http_status": 200,
+    "is_429": false,
+    "circuit_breaker": false,
+    "error": null
+  },
+  {
+    "qid": "pub-024",
+    "question": "According to the provided corpus, how many biathlon events at the 2002 Winter Olympics had more than 74 competitors?",
+    "qtype": "aggregation",
+    "gold_answer": [
+      "3"
+    ],
+    "planned_tools": [],
+    "executed_tools": [],
+    "deterministic_result": null,
+    "hybrid_executed": false,
+    "final_answer": "Execution failed: 429 Rate Limit retry-after (795.0s) exceeds max wait threshold (30s)",
+    "correctness_match": false,
+    "llm_calls": 0,
+    "plan_retries": 0,
+    "agent_steps": 0,
+    "latency_s": 0.27,
+    "http_status": 200,
+    "is_429": false,
+    "circuit_breaker": false,
+    "error": null
+  }
+]

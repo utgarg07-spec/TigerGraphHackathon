@@ -1,0 +1,75 @@
+{
+  "run_name": "phase3_qwen_100_benchmark",
+  "total_questions": 100,
+  "http_success_count": 100,
+  "http_failure_count": 0,
+  "strict_exact_match_count": 0,
+  "strict_exact_match_accuracy_pct": 0.0,
+  "normalized_match_count": 19,
+  "normalized_match_accuracy_pct": 19.0,
+  "gold_retrieval_hit_count": 3,
+  "gold_retrieval_hit_rate_pct": 3.0,
+  "avg_latency_s": 11.289,
+  "qtype_breakdown": {
+    "aggregation": {
+      "count": 21,
+      "strict_match_count": 0,
+      "strict_match_pct": 0.0,
+      "norm_match_count": 18,
+      "norm_match_pct": 85.71,
+      "gold_hit_count": 0,
+      "gold_hit_rate_pct": 0.0,
+      "avg_latency_s": 11.436,
+      "avg_retrieval_latency_s": 0,
+      "avg_gen_latency_s": 10.47
+    },
+    "temporal": {
+      "count": 22,
+      "strict_match_count": 0,
+      "strict_match_pct": 0.0,
+      "norm_match_count": 0,
+      "norm_match_pct": 0.0,
+      "gold_hit_count": 1,
+      "gold_hit_rate_pct": 4.55,
+      "avg_latency_s": 19.634,
+      "avg_retrieval_latency_s": 3.897,
+      "avg_gen_latency_s": 30.895
+    },
+    "superlative": {
+      "count": 10,
+      "strict_match_count": 0,
+      "strict_match_pct": 0.0,
+      "norm_match_count": 0,
+      "norm_match_pct": 0.0,
+      "gold_hit_count": 2,
+      "gold_hit_rate_pct": 20.0,
+      "avg_latency_s": 14.711,
+      "avg_retrieval_latency_s": 15.215,
+      "avg_gen_latency_s": 17.602
+    },
+    "multi_hop": {
+      "count": 28,
+      "strict_match_count": 0,
+      "strict_match_pct": 0.0,
+      "norm_match_count": 0,
+      "norm_match_pct": 0.0,
+      "gold_hit_count": 0,
+      "gold_hit_rate_pct": 0.0,
+      "avg_latency_s": 8.444,
+      "avg_retrieval_latency_s": 0,
+      "avg_gen_latency_s": 8.845
+    },
+    "lookup": {
+      "count": 19,
+      "strict_match_count": 0,
+      "strict_match_pct": 0.0,
+      "norm_match_count": 1,
+      "norm_match_pct": 5.26,
+      "gold_hit_count": 0,
+      "gold_hit_rate_pct": 0.0,
+      "avg_latency_s": 3.857,
+      "avg_retrieval_latency_s": 0,
+      "avg_gen_latency_s": 0
+    }
+  }
+}

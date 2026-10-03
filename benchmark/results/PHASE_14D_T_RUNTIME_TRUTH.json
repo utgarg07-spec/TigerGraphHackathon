@@ -1,0 +1,62 @@
+{
+  "phase": "PHASE_14D_T",
+  "status": "PASS — RUNTIME TRUTH VERIFIED",
+  "mode": "CONTAINER SYNCHRONIZATION + DIRECT OFFLINE/QUERY AUDIT",
+  "airouter_calls": 0,
+  "live_questions_executed": 0,
+  "tasks_completed": [
+    {
+      "id": "T1",
+      "task": "Container / Host Source Parity Verification",
+      "status": "PASS",
+      "findings": "Recreated graphrag container with source mounts (./common/:/code/common, ./graphrag/app/:/code, ./benchmark/:/code/benchmark). Container now runs current host source directly.",
+      "verified_components": [
+        "/code/benchmark/unified_evaluator.py (convert_word_numbers active)",
+        "/code/tools/olympic_tools.py (graphrag__lookup, aggregate, superlative, temporal_resolve registered)",
+        "/code/common/embeddings/tigergraph_embedding_store.py (dimensions=1024 Qwen routing)",
+        "/code/common/embeddings/embedding_services.py (output_dimensionality fallback)"
+      ]
+    },
+    {
+      "id": "T2",
+      "task": "Direct Evaluator Execution Inside Container",
+      "status": "PASS",
+      "prediction": "According to the provided corpus, five biathlon events at the 2018 Winter Olympics...",
+      "gold": "5",
+      "norm_pred": "according to provided corpus 5 biathlon events at 2018 winter olympics",
+      "norm_gold": "5",
+      "correctness_result": true,
+      "pub_001_explanation": "Previous run scored pub-001 as False because container had old baked image evaluator. With container source mount active, pub-001 evaluates to True."
+    },
+    {
+      "id": "T3",
+      "task": "Pub-003 Forensic Investigation & Salvage Hardening",
+      "status": "PASS",
+      "root_cause": "Container previously lacked tools/olympic_tools.py in baked image, so graphrag__aggregate was un-registered and execution fell back to empty context. Additionally, JSON params fix applied.",
+      "tool_execution_test": "graphrag__aggregate('shooting', '2016 Summer Olympics', 0) returned summary='14' with 14 matched events.",
+      "salvage_hardening": "Updated _salvage_answer_output in base_llm.py to preserve raw text if answer is default placeholder."
+    },
+    {
+      "id": "T4",
+      "task": "Direct Authenticated Qwen Vector Retrieval",
+      "status": "PASS",
+      "embedding_model": "qwen3-embedding:0.6b (1024-d)",
+      "query_name": "GraphRAG_Hybrid_Qwen_Vector_Search",
+      "vector_field": "v.qwen_embedding",
+      "bug_fixed": "Changed 'v_types': set(vertex_types) to list(set(vertex_types)) in tigergraph_embedding_store.py to prevent JSON serialization error.",
+      "docs_retrieved": 5,
+      "sample_snippet": "[Infobox Olympic event]\n  event: Men's sprint\n  games: 2018 Winter\n  venue: Alpensia Biathlon Centre in Pyeongchang,"
+    }
+  ],
+  "files_modified": [
+    "docker-compose.yml",
+    "common/embeddings/tigergraph_embedding_store.py",
+    "common/llm_services/base_llm.py"
+  ],
+  "integrity_checks": {
+    "benchmark_questions_modified": false,
+    "phase12_13_artifacts_modified": false,
+    "dataset_modified": false,
+    "airouter_calls": 0
+  }
+}

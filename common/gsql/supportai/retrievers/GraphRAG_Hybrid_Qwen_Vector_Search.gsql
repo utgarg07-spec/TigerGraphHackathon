@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2024-2026 TigerGraph, Inc.
+ *
+ * This program may be redistributed and/or modified under the terms of the GNU
+ * Affero General Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+CREATE OR REPLACE DISTRIBUTED QUERY GraphRAG_Hybrid_Qwen_Vector_Search(Set<STRING> v_types,
+  LIST<FLOAT> query_vector, UINT top_k=5, UINT num_hops=3, UINT num_seen_min=1, UINT max_results=0, BOOL chunk_only = False, BOOL doc_only = False, BOOL verbose = False) {
+  TYPEDEF TUPLE<VERTEX v, STRING t> VertexTypes;
+  TYPEDEF TUPLE<VERTEX s, VERTEX t> EdgeTypes;
+  TYPEDEF tuple<Vertex v, Float score> Similarity_Results;
+  TYPEDEF tuple<Vertex<DocumentChunk> v, Float cos> ChunkScore;
+  HeapAccum<Similarity_Results>(top_k, score DESC) @@topk_set;
+  HeapAccum<ChunkScore>(max_results, cos DESC) @@top_chunks;
+  SetAccum<VERTEX> @@start_set;
+  SetAccum<VertexTypes> @@start_set_type;
+  SetAccum<VERTEX> @@tmp_set;
+  SetAccum<VertexTypes> @@selected_set_type;
+  SetAccum<EdgeTypes> @@edges;
+  SumAccum<INT> @visited;
+  SumAccum<INT> @num_times_seen;
+  MapAccum<STRING, STRING> @@final_retrieval;
+  MapAccum<STRING, SetAccum<VertexTypes>> @@verbose_info;
+  SetAccum<VERTEX<DocumentChunk>> @@to_retrieve_content;
+  SetAccum<STRING> @@chunk_ids;
+  SetAccum<STRING> @context;
+  SetAccum<VERTEX> @parents;
+
+  FOREACH v_type IN v_types DO
+    IF v_type == "Document" THEN
+        CONTINUE;
+    END;
+
+    vset = {v_type.*};
+    result = SELECT v FROM vset:v WHERE v.qwen_embedding.size() > 0 POST-ACCUM @@topk_set += Similarity_Results(v, 1 - gds.vector.distance(query_vector, v.qwen_embedding, "COSINE"));
+    WHILE @@topk_set.size() > 0 DO
+      @@start_set += @@topk_set.pop().v;
+    END;
+  END;
+
+  start = {@@start_set};
+  start = SELECT s FROM start:s ACCUM s.@parents += s POST-ACCUM s.@num_times_seen = num_seen_min, @@tmp_set += s, @@start_set_type += VertexTypes(s, s.type);
+
+  @@verbose_info += ("start_set" -> @@start_set_type);
+
+  FOREACH i IN RANGE[0, num_hops-1] DO
+    start = SELECT t FROM start:s -((RELATIONSHIP>|
+                                     CONTAINS_ENTITY>|
+                                     reverse_CONTAINS_ENTITY>|
+                                     IS_AFTER>):e)- :t
+            WHERE s.@visited < 1 AND t NOT IN s.@parents
+            ACCUM s.@visited += 1, t.@num_times_seen += 1, t.@parents += s, t.@parents += s.@parents
+            POST-ACCUM(t) @@tmp_set += t;
+
+    IF start.size() == 0 THEN
+      BREAK;
+    END;
+  END;
+
+  start = {@@tmp_set};
+  @@tmp_set.clear();
+
+  res = SELECT s FROM start:s WHERE s.@num_times_seen >= num_seen_min AND s.type != "Document"
+        ACCUM
+          IF s.type == "DocumentChunk" THEN
+            @@to_retrieve_content += s
+          END
+        POST-ACCUM(s)
+          IF NOT (chunk_only OR doc_only) OR (chunk_only OR doc_only) AND s.type == "DocumentChunk" THEN
+            @@selected_set_type += VertexTypes(s, s.type)
+          END;
+
+  // Always make sure seed chunks are included in content retrieval
+  FOREACH v IN @@start_set DO
+    IF v.type == "DocumentChunk" THEN
+      @@to_retrieve_content += v;
+    END;
+  END;
+
+  IF max_results > 0 THEN
+    cand = {@@to_retrieve_content};
+    cand = SELECT s FROM cand:s WHERE s.qwen_embedding.size() > 0
+           POST-ACCUM @@top_chunks += ChunkScore(s, 1 - gds.vector.distance(query_vector, s.qwen_embedding, "COSINE"));
+    @@to_retrieve_content.clear();
+    WHILE @@top_chunks.size() > 0 DO
+      @@to_retrieve_content += @@top_chunks.pop().v;
+    END;
+  END;
+
+  FOREACH chunk_v IN @@to_retrieve_content DO
+    @@chunk_ids += chunk_v.id;
+  END;
+
+  cset = {Content.*};
+  res_c = SELECT c FROM cset:c WHERE @@chunk_ids.contains(c.id)
+          POST-ACCUM @@final_retrieval += (c.id -> c.text);
+
+  @@verbose_info += ("selected_set" -> @@selected_set_type);
+
+  PRINT @@final_retrieval as final_retrieval, @@edges as edges;
+
+  IF verbose THEN
+      PRINT @@verbose_info as verbose;
+  END;
+}

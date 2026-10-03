@@ -1,0 +1,13 @@
+{
+  "phase": "PHASE_14D_H",
+  "retry_owner": "base_llm",
+  "chat_openai_max_retries": 0,
+  "max_provider_attempts_per_logical_call": 2,
+  "max_llm_calls_per_question": 6,
+  "max_plan_retries": 2,
+  "max_replans": 1,
+  "httpx_timeout_connect_s": 60.0,
+  "httpx_timeout_read_s": 180.0,
+  "invariants_verified": 13,
+  "invariants_passed": 13
+}

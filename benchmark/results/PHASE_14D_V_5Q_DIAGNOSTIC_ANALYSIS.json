@@ -1,0 +1,81 @@
+{
+  "phase": "PHASE_14D_V_5Q_DIAGNOSTIC_ANALYSIS",
+  "status": "COMPLETED",
+  "timestamp": "2026-10-02T00:43:30Z",
+  "live_run_summary": {
+    "total_questions": 5,
+    "http_success": 5,
+    "correct_questions": 4,
+    "accuracy_normalized": 0.80,
+    "crashes": 0,
+    "timeouts": 0
+  },
+  "question_breakdown": [
+    {
+      "qid": "pub-001",
+      "type": "aggregation",
+      "correct": true,
+      "latency_s": 30.11,
+      "tool_used": "graphrag__aggregate",
+      "status": "CLEAN_SUCCESS"
+    },
+    {
+      "qid": "pub-002",
+      "type": "temporal",
+      "correct": true,
+      "latency_s": 14.87,
+      "tool_used": "graphrag__temporal_resolve",
+      "status": "CLEAN_SUCCESS"
+    },
+    {
+      "qid": "pub-003",
+      "type": "aggregation",
+      "correct": false,
+      "latency_s": 16.26,
+      "tool_used": "graphrag__aggregate",
+      "status": "MODEL_STRUCTURED_OUTPUT_EMPTY_FAILURE",
+      "root_cause": "AIRouter endpoint (https://api.airouter.in/v1) with openai/gpt-oss-20b does not support OpenAI native function calling / with_structured_output. AIRouter returns HTTP 200 with content='', which causes both structured output and raw parser fallback to receive empty text, producing '(no answer produced)'."
+    },
+    {
+      "qid": "pub-004",
+      "type": "superlative",
+      "correct": true,
+      "latency_s": 7.09,
+      "tool_used": "graphrag__superlative",
+      "status": "CLEAN_SUCCESS"
+    },
+    {
+      "qid": "pub-005",
+      "type": "multi_hop",
+      "correct": true,
+      "latency_s": 18.70,
+      "tool_used": "graphrag__hybrid_search (succeeded) + graphrag__structural_retrieve (arg validation error, safely handled)",
+      "status": "RESILIENT_SUCCESS",
+      "root_cause": "Step 2 arg_bindings mapped S1.context (a dict) to question arg requiring a str. Pydantic validation safely caught the schema mismatch (ok=False), and synthesis proceeded using Step 1 retrieved chunks to produce correct answer."
+    }
+  ],
+  "forensic_investigation_topics": {
+    "topic_1_q3_structured_output": {
+      "issue": "AIRouter openai/gpt-oss-20b returned content='' for with_structured_output",
+      "mechanism": "is_openrouter check in base_llm.py only matched 'openrouter' in base_url, missing 'airouter'. ChatOpenAI.with_structured_output sent OpenAI tools payload to AIRouter which returned empty content.",
+      "production_impact": "Causes structured triage/planner/synthesis to fail back to prompt parsers or fail synthesis when content is empty."
+    },
+    "topic_2_q5_tool_args_validation": {
+      "issue": "graphrag__structural_retrieve received dict instead of string",
+      "mechanism": "Planner arg_bindings set question=S1.context. StepResult.context is a dict. Pydantic schema StructuralRetrieveArgs rejected dict.",
+      "production_impact": "Step 2 marked ok=False, but pipeline error boundary preserved Step 1 evidence and scored correct=True."
+    },
+    "topic_3_retrieval_embedding_tigergraph_health": {
+      "qwen_1024d_vector_retrieval": "HEALTHY",
+      "tigergraph_gsql_vector_search": "HEALTHY",
+      "deterministic_olympic_tools": "HEALTHY",
+      "evaluator_and_scoring": "HEALTHY",
+      "changes_required": "NONE"
+    }
+  },
+  "constraints_verification": {
+    "production_files_modified": 0,
+    "api_calls": 0,
+    "live_questions": 0
+  }
+}

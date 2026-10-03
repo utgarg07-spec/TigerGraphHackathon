@@ -1,0 +1,47 @@
+{"timestamp": "2026-10-01T19:06:40.247572", "elapsed_s": 9.989738464355469e-05, "qid": "pub-001", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:06:40.251060", "elapsed_s": 0.003597736358642578, "qid": "pub-001", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:06:40.273187", "elapsed_s": 0.025722503662109375, "qid": "pub-001", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:06:54.539602", "elapsed_s": 14.292162895202637, "qid": "pub-001", "event": "end agentic_triage elapsed=14.261s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:06:54.572579", "elapsed_s": 14.32509469985962, "qid": "pub-001", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:01.261751", "elapsed_s": 21.01428484916687, "qid": "pub-001", "event": "end agentic_plan elapsed=6.686s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:01.268358", "elapsed_s": 21.020899772644043, "qid": "pub-001", "event": "TOOL graphrag__aggregate start", "stage": "TOOL graphrag__aggregate", "details": {}}
+{"timestamp": "2026-10-01T19:07:04.735286", "elapsed_s": 24.487814903259277, "qid": "pub-001", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:10.348924", "elapsed_s": 30.101472854614258, "qid": "pub-001", "event": "end generate_answer elapsed=5.611s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:10.357455", "elapsed_s": 6.365776062011719e-05, "qid": "pub-002", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:07:10.365919", "elapsed_s": 0.00850224494934082, "qid": "pub-002", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:07:10.379899", "elapsed_s": 0.02248096466064453, "qid": "pub-002", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:13.798077", "elapsed_s": 3.4406704902648926, "qid": "pub-002", "event": "end agentic_triage elapsed=3.408s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:13.823441", "elapsed_s": 3.465996265411377, "qid": "pub-002", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:19.433842", "elapsed_s": 9.076422691345215, "qid": "pub-002", "event": "end agentic_plan elapsed=5.608s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:19.437492", "elapsed_s": 9.080097913742065, "qid": "pub-002", "event": "TOOL graphrag__temporal_resolve start", "stage": "TOOL graphrag__temporal_resolve", "details": {}}
+{"timestamp": "2026-10-01T19:07:19.456297", "elapsed_s": 9.098858118057251, "qid": "pub-002", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:25.219094", "elapsed_s": 14.86169958114624, "qid": "pub-002", "event": "end generate_answer elapsed=5.755s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:25.225113", "elapsed_s": 3.218650817871094e-05, "qid": "pub-003", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:07:25.238431", "elapsed_s": 0.013339519500732422, "qid": "pub-003", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:07:25.252687", "elapsed_s": 0.027599811553955078, "qid": "pub-003", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:31.551818", "elapsed_s": 6.326735496520996, "qid": "pub-003", "event": "error Invalid json output: \nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE ", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:31.554980", "elapsed_s": 6.329895973205566, "qid": "pub-003", "event": "end agentic_triage elapsed=6.287s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:31.589219", "elapsed_s": 6.364122629165649, "qid": "pub-003", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:37.090947", "elapsed_s": 11.865848541259766, "qid": "pub-003", "event": "end agentic_plan elapsed=5.499s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:37.095146", "elapsed_s": 11.870073556900024, "qid": "pub-003", "event": "TOOL graphrag__aggregate start", "stage": "TOOL graphrag__aggregate", "details": {}}
+{"timestamp": "2026-10-01T19:07:37.112914", "elapsed_s": 11.887816667556763, "qid": "pub-003", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:41.482321", "elapsed_s": 16.257258892059326, "qid": "pub-003", "event": "end generate_answer elapsed=4.359s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:41.487535", "elapsed_s": 4.673004150390625e-05, "qid": "pub-004", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:07:41.502971", "elapsed_s": 0.015439987182617188, "qid": "pub-004", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:07:41.516801", "elapsed_s": 0.02927875518798828, "qid": "pub-004", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:42.946466", "elapsed_s": 1.4589755535125732, "qid": "pub-004", "event": "end agentic_triage elapsed=1.416s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:42.965584", "elapsed_s": 1.4780681133270264, "qid": "pub-004", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:45.859554", "elapsed_s": 4.372064113616943, "qid": "pub-004", "event": "end agentic_plan elapsed=2.892s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:45.862892", "elapsed_s": 4.375402450561523, "qid": "pub-004", "event": "TOOL graphrag__superlative start", "stage": "TOOL graphrag__superlative", "details": {}}
+{"timestamp": "2026-10-01T19:07:45.881604", "elapsed_s": 4.394073724746704, "qid": "pub-004", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:48.574392", "elapsed_s": 7.086887359619141, "qid": "pub-004", "event": "end generate_answer elapsed=2.681s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:48.580800", "elapsed_s": 5.984306335449219e-05, "qid": "pub-005", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:07:48.592772", "elapsed_s": 0.01193857192993164, "qid": "pub-005", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:07:48.607035", "elapsed_s": 0.026257991790771484, "qid": "pub-005", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:49.933153", "elapsed_s": 1.3524203300476074, "qid": "pub-005", "event": "end agentic_triage elapsed=1.314s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:49.956629", "elapsed_s": 1.375873327255249, "qid": "pub-005", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:53.378854", "elapsed_s": 4.798137903213501, "qid": "pub-005", "event": "end agentic_plan elapsed=3.419s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:07:53.382501", "elapsed_s": 4.801772356033325, "qid": "pub-005", "event": "TOOL graphrag__hybrid_search start", "stage": "TOOL graphrag__hybrid_search", "details": {}}
+{"timestamp": "2026-10-01T19:08:03.774470", "elapsed_s": 15.193754434585571, "qid": "pub-005", "event": "TOOL graphrag__structural_retrieve start", "stage": "TOOL graphrag__structural_retrieve", "details": {}}
+{"timestamp": "2026-10-01T19:08:03.781150", "elapsed_s": 15.200388431549072, "qid": "pub-005", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:08:07.271782", "elapsed_s": 18.69106125831604, "qid": "pub-005", "event": "end generate_answer elapsed=3.477s", "stage": "LLM_CALL", "details": {}}

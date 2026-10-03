@@ -1,0 +1,60 @@
+{
+  "phase": "PHASE_14D_L",
+  "status": "PASS",
+  "questions": 25,
+  "unique_qids": "25/25",
+  "http_success": "25/25",
+  "timeouts": "0/25",
+  "normalized_accuracy": "0/25 (0.0%)",
+  "strict_exact": "0/25 (0.0%)",
+  "gold_evidence": "0/25 (0.0%)",
+  "mean_latency_s": 2.33,
+  "median_latency_s": 1.35,
+  "p95_latency_s": 5.81,
+  "max_latency_s": 12.19,
+  "mean_logical_llm_calls": 3,
+  "total_provider_retries": 0,
+  "total_provider_failovers": 0,
+  "mean_agent_steps": 1,
+  "mean_replans": 0,
+  "budget_violations": 0,
+  "retry_invariant_violations": 0,
+  "evaluator_errors": 0,
+  "qtype_breakdown": {
+    "lookup": {
+      "count": 5,
+      "accuracy_pct": 0.0,
+      "gold_hit_pct": 0.0,
+      "mean_latency_s": 2.4
+    },
+    "temporal": {
+      "count": 5,
+      "accuracy_pct": 0.0,
+      "gold_hit_pct": 0.0,
+      "mean_latency_s": 1.29
+    },
+    "aggregation": {
+      "count": 5,
+      "accuracy_pct": 0.0,
+      "gold_hit_pct": 0.0,
+      "mean_latency_s": 1.27
+    },
+    "superlative": {
+      "count": 5,
+      "accuracy_pct": 0.0,
+      "gold_hit_pct": 0.0,
+      "mean_latency_s": 1.24
+    },
+    "multi_hop": {
+      "count": 5,
+      "accuracy_pct": 0.0,
+      "gold_hit_pct": 0.0,
+      "mean_latency_s": 5.47
+    }
+  },
+  "production_files_modified": 0,
+  "phase_12_modified": false,
+  "phase_13_modified": false,
+  "live_questions": 25,
+  "final_recommendation": "PROCEED TO FINAL 100Q"
+}

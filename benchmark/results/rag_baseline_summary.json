@@ -1,0 +1,52 @@
+{
+  "pipeline": "classic_vector_rag",
+  "phase": "Phase 3 Baseline",
+  "source_artifact": "benchmark/results/phase3_qwen_100_benchmark.jsonl",
+  "primary_historical_artifact": "benchmark/results/rag_baseline.json",
+  "number_of_questions": 100,
+  "number_of_failures_or_timeouts": 0,
+  "overall_accuracy_pct": 19.0,
+  "overall_evidence_hit_pct": 3.0,
+  "average_completeness": 0.2302,
+  "average_grounding": null,
+  "average_total_tokens": 8617.17,
+  "average_latency_ms": 11289.01,
+  "average_retrieval_intrusion_pct": 0.0,
+  "per_qtype_summary": {
+    "aggregation": {
+      "questions": 21,
+      "accuracy_pct": 85.71,
+      "evidence_hit_pct": 0.0,
+      "avg_completeness": 0.8571,
+      "avg_latency_ms": 11435.57
+    },
+    "temporal": {
+      "questions": 22,
+      "accuracy_pct": 0.0,
+      "evidence_hit_pct": 4.55,
+      "avg_completeness": 0.0455,
+      "avg_latency_ms": 19633.82
+    },
+    "superlative": {
+      "questions": 10,
+      "accuracy_pct": 0.0,
+      "evidence_hit_pct": 20.0,
+      "avg_completeness": 0.1018,
+      "avg_latency_ms": 14710.5
+    },
+    "multi_hop": {
+      "questions": 28,
+      "accuracy_pct": 0.0,
+      "evidence_hit_pct": 0.0,
+      "avg_completeness": 0.0357,
+      "avg_latency_ms": 8443.71
+    },
+    "lookup": {
+      "questions": 19,
+      "accuracy_pct": 5.26,
+      "evidence_hit_pct": 0.0,
+      "avg_completeness": 0.1053,
+      "avg_latency_ms": 3856.89
+    }
+  }
+}

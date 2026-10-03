@@ -1,0 +1,198 @@
+{
+  "total_documents": 2951,
+  "olympic_event_documents": 2162,
+  "olympic_event_percentage": 73.26,
+  "non_olympic_documents": 789,
+  "non_olympic_percentage": 26.74,
+  "infobox_type_distribution": {
+    "Olympic event": 2162,
+    "film": 549,
+    "officeholder": 73,
+    "person": 67,
+    "tennis tournament event": 25,
+    "company": 16,
+    "NO_INFOBOX": 11,
+    "writer": 9,
+    "international football competition": 8,
+    "scientist": 6,
+    "International Handball Competition": 3,
+    "aircraft occurrence": 2,
+    "military conflict": 2,
+    "airline": 2,
+    "website": 2,
+    "international ice hockey competition": 2,
+    "field hockey": 2,
+    "Olympic water polo tournament": 2,
+    "civilian attack": 1,
+    "television": 1,
+    "international handball competition": 1,
+    "venue": 1,
+    "Olympic games": 1,
+    "Song Contest": 1,
+    "media franchise": 1,
+    "rugby tournament": 1
+  },
+  "olympic_field_coverage": {
+    "event": {
+      "present": 2162,
+      "percentage": 100.0,
+      "missing": 0
+    },
+    "games": {
+      "present": 2162,
+      "percentage": 100.0,
+      "missing": 0
+    },
+    "venue": {
+      "present": 2100,
+      "percentage": 97.13,
+      "missing": 62
+    },
+    "date_raw": {
+      "present": 2139,
+      "percentage": 98.94,
+      "missing": 23
+    },
+    "competitors": {
+      "present": 2130,
+      "percentage": 98.52,
+      "missing": 32
+    },
+    "nations": {
+      "present": 2128,
+      "percentage": 98.43,
+      "missing": 34
+    },
+    "gold": {
+      "present": 2162,
+      "percentage": 100.0,
+      "missing": 0
+    },
+    "goldNOC": {
+      "present": 2154,
+      "percentage": 99.63,
+      "missing": 8
+    },
+    "silver": {
+      "present": 2155,
+      "percentage": 99.68,
+      "missing": 7
+    },
+    "silverNOC": {
+      "present": 2147,
+      "percentage": 99.31,
+      "missing": 15
+    },
+    "bronze": {
+      "present": 2155,
+      "percentage": 99.68,
+      "missing": 7
+    },
+    "bronzeNOC": {
+      "present": 2145,
+      "percentage": 99.21,
+      "missing": 17
+    },
+    "win_value": {
+      "present": 1384,
+      "percentage": 64.01,
+      "missing": 778
+    },
+    "prev": {
+      "present": 2020,
+      "percentage": 93.43,
+      "missing": 142
+    },
+    "next": {
+      "present": 2111,
+      "percentage": 97.64,
+      "missing": 51
+    }
+  },
+  "duplicates": {
+    "duplicate_doc_ids_count": 0,
+    "duplicate_doc_ids": [],
+    "duplicate_titles_count": 0,
+    "duplicate_titles": []
+  },
+  "parse_failures": {
+    "failed_olympic_parsing_count": 0,
+    "parse_failures": [],
+    "malformed_numeric_count": 0,
+    "malformed_numeric_samples": [],
+    "unusual_formatting_count": 1120,
+    "unusual_formatting_samples": [
+      {
+        "doc_id": "Q743905",
+        "title": "Athletics at the 2008 Summer Olympics – Men's 110 metres hurdles",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q1433269",
+        "title": "Athletics at the 2004 Summer Olympics – Men's 400 metres hurdles",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q1005784",
+        "title": "Athletics at the 2008 Summer Olympics – Men's decathlon",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q3628768",
+        "title": "Athletics at the 2000 Summer Olympics – Men's 400 metres",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q7400295",
+        "title": "Sailing at the 1988 Summer Olympics – Women's 470",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q15506518",
+        "title": "Short-track speed skating at the 2014 Winter Olympics – Men's 5000 metre relay",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q4951829",
+        "title": "Boxing at the 1996 Summer Olympics – Bantamweight",
+        "unusual_keys": [
+          "dates",
+          "bronze2"
+        ]
+      },
+      {
+        "doc_id": "Q1221945",
+        "title": "Cross-country skiing at the 1994 Winter Olympics – Women's 15 kilometre freestyle",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q766586",
+        "title": "Speed skating at the 2002 Winter Olympics – Women's 3000 metres",
+        "unusual_keys": [
+          "dates"
+        ]
+      },
+      {
+        "doc_id": "Q850246",
+        "title": "Short-track speed skating at the 2006 Winter Olympics – Women's 500 metres",
+        "unusual_keys": [
+          "dates"
+        ]
+      }
+    ]
+  }
+}

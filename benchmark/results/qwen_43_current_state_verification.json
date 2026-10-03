@@ -1,0 +1,352 @@
+{
+  "historical_count": 43,
+  "verified_count": 43,
+  "failed_count": 0,
+  "all_currently_valid": true,
+  "ids": [
+    {
+      "historical_chunk_id": "Q1005192_chunk_0",
+      "document_id": "Q1005192",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1005557_chunk_0",
+      "document_id": "Q1005557",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1005811_chunk_1",
+      "document_id": "Q1005811",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q10572431_chunk_0",
+      "document_id": "Q10572431",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q107861723_chunk_1",
+      "document_id": "Q107861723",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1095367_chunk_1",
+      "document_id": "Q1095367",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1156252_chunk_5",
+      "document_id": "Q1156252",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1222641_chunk_0",
+      "document_id": "Q1222641",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1222651_chunk_0",
+      "document_id": "Q1222651",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q12808128_chunk_0",
+      "document_id": "Q12808128",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1360804_chunk_2",
+      "document_id": "Q1360804",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q1408881_chunk_0",
+      "document_id": "Q1408881",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q17515790_chunk_0",
+      "document_id": "Q17515790",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q2000988_chunk_2",
+      "document_id": "Q2000988",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q2070832_chunk_0",
+      "document_id": "Q2070832",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q22964444_chunk_2",
+      "document_id": "Q22964444",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q2463752_chunk_4",
+      "document_id": "Q2463752",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q24761058_chunk_0",
+      "document_id": "Q24761058",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q2500292_chunk_0",
+      "document_id": "Q2500292",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q25991452_chunk_1",
+      "document_id": "Q25991452",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q26228283_chunk_0",
+      "document_id": "Q26228283",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q26234144_chunk_1",
+      "document_id": "Q26234144",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q26860_chunk_1",
+      "document_id": "Q26860",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q280553_chunk_0",
+      "document_id": "Q280553",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q30680433_chunk_0",
+      "document_id": "Q30680433",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q3499066_chunk_1",
+      "document_id": "Q3499066",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q3628683_chunk_5",
+      "document_id": "Q3628683",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q3628777_chunk_2",
+      "document_id": "Q3628777",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q3998590_chunk_1",
+      "document_id": "Q3998590",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q47155555_chunk_1",
+      "document_id": "Q47155555",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q47295256_chunk_1",
+      "document_id": "Q47295256",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q4903025_chunk_7",
+      "document_id": "Q4903025",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q599322_chunk_1",
+      "document_id": "Q599322",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q645932_chunk_2",
+      "document_id": "Q645932",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q65242164_chunk_3",
+      "document_id": "Q65242164",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q65242174_chunk_2",
+      "document_id": "Q65242174",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q677063_chunk_1",
+      "document_id": "Q677063",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q735286_chunk_2",
+      "document_id": "Q735286",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q7979972_chunk_0",
+      "document_id": "Q7979972",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q7979977_chunk_1",
+      "document_id": "Q7979977",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q843436_chunk_6",
+      "document_id": "Q843436",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q914969_chunk_0",
+      "document_id": "Q914969",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    },
+    {
+      "historical_chunk_id": "Q937526_chunk_0",
+      "document_id": "Q937526",
+      "vertex_exists": true,
+      "qwen_embedding_non_null": true,
+      "embedding_dimension": 1024,
+      "current_state_verified": true
+    }
+  ]
+}

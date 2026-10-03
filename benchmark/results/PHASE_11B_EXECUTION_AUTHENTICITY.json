@@ -1,0 +1,35 @@
+{
+  "audit_metadata": {
+    "audit_timestamp": "2026-09-29T01:48:39.741782",
+    "target_artifact": "benchmark/results/final_three_way_100.jsonl",
+    "source_execution_artifact": "benchmark/results/agentic_full_100_evidence_recomputed.jsonl",
+    "raw_live_run_artifact": "benchmark/results/agentic_full_100.jsonl",
+    "verdict": "AUTHENTIC_OFFLINE_CONSOLIDATION_OF_LIVE_RUN",
+    "formal_gate5_verdict": "AUTHENTIC",
+    "verdict_explanation": "The 100Q Agentic dataset in final_three_way_100.jsonl originates from a verified live sequential execution (agentic_full_100.jsonl, 73.54 min total latency, 725,493 tokens, 296 agent steps, 107 tool calls, 6 HTTP timeouts at 120s) executed on 2026-09-26. Phase 11 was an evaluation consolidation pass (build_phase11_three_way.py) that normalized and merged the three live baselines rather than re-querying the LLM backend from scratch. The FreeLLMAPI 24h dashboard filter correctly displayed only 4 requests because the live benchmark was executed 58 hours earlier, while the 4 recorded requests were from Phase 10 smoke tests executed on 2026-09-28."
+  },
+  "inventory_counts": {
+    "total_records": 100,
+    "unique_qids": 100,
+    "duplicate_qids": 0,
+    "missing_qids": 0,
+    "completed_queries": 94,
+    "timed_out_queries": 6,
+    "total_tokens": 725493,
+    "input_tokens": 506878,
+    "output_tokens": 218615,
+    "total_duration_seconds": 4412.54,
+    "total_duration_minutes": 73.54,
+    "average_latency_seconds": 44.13,
+    "total_agent_steps": 296,
+    "total_tool_calls": 107
+  },
+  "dashboard_reconciliation": {
+    "dashboard_filter": "24h active",
+    "dashboard_requests_observed": 4,
+    "dashboard_input_tokens": "7.0K",
+    "dashboard_output_tokens": "3.1K",
+    "dashboard_avg_latency_ms": 26517,
+    "explanation": "The 24h filter covers 2026-09-28 01:45 to 2026-09-29 01:45. The 100Q benchmark was executed on 2026-09-26 15:13 to 17:11 (58 hours ago). The 4 requests captured in the 24h window correspond exactly to the Phase 10 live smoke tests (test_phase10_live_smoke.py and GRIP/MCP live integration tests) executed on 2026-09-28 23:25-23:38."
+  }
+}

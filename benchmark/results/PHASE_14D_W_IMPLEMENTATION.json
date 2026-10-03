@@ -1,0 +1,47 @@
+{
+  "phase": "PHASE_14D_W_IMPLEMENTATION",
+  "status": "SUCCESS",
+  "timestamp": "2026-10-02T00:49:15Z",
+  "exact_files_modified": [
+    "common/llm_services/base_llm.py",
+    "graphrag/app/agent/agentic_executor.py"
+  ],
+  "fix_a_details": {
+    "file": "common/llm_services/base_llm.py",
+    "function": "invoke_structured",
+    "change": "Updated is_openrouter variable check to include 'airouter' base_url and provider_name checks. AIRouter endpoints now follow the PydanticOutputParser direct-chat path instead of with_structured_output(), preventing empty content=' ' responses."
+  },
+  "fix_b_details": {
+    "file": "graphrag/app/agent/agentic_executor.py",
+    "function": "execute_plan",
+    "change": "Updated arg_bindings resolution. If arg_name == 'question', resolved val is a dict, and args['question'] is already a non-empty string, continue without overwriting the string question with the dict context."
+  },
+  "offline_validation": {
+    "py_compile_base_llm": "PASSED (exit 0)",
+    "py_compile_agentic_executor": "PASSED (exit 0)",
+    "test_script": "scratch/test_phase14d_w_offline_validation.py",
+    "test_execution": "PASSED (exit 0 inside Docker container)",
+    "fix_a_tests": [
+      "AIRouter base_url triggers bypass path (is_openrouter=True)",
+      "OpenRouter base_url triggers bypass path (is_openrouter=True)",
+      "Standard OpenAI preserves default native path (is_openrouter=False)"
+    ],
+    "fix_b_tests": [
+      "Existing string question preserved when binding resolves to dict S1.context",
+      "Existing string question overwritten when binding resolves to string S2.context",
+      "No existing question -> dict assigned as before",
+      "Unrelated argument binding preserves existing behavior"
+    ]
+  },
+  "constraints_verification": {
+    "production_files_outside_target_changed": false,
+    "api_calls": 0,
+    "live_questions": 0,
+    "phase_12_13_modified": false,
+    "phase_6_modified": false,
+    "embeddings_gsql_retrieval_modified": false,
+    "docker_compose_modified": false,
+    "evaluator_modified": false,
+    "diagnostic_runner_modified": false
+  }
+}

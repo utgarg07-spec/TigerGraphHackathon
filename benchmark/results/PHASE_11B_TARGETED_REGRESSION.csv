@@ -1,0 +1,30 @@
+qid,qtype,previous_status,new_status,previous_failure_category,previous_root_cause,new_failure_category,fix_status,answer,gold,strict_accuracy,normalized_match,gold_chunk_hit,gold_vertex_hit,deterministic_tool_evidence,combined_evidence,selected_specialist,selected_tool,tool_arguments,LLM_calls,agent_steps,latency_ms,timeout,error,canonical_title_preserved
+pub-004,superlative,FAIL,PASS,synthesis,Shortened canonical event title in natural language response,correct_evidence_miss,FIXED,"Based on the provided corpus, the following athletics event from the 2008 Summer Olympics is listed:
+
+- **Athletics at the 2008 Summer Olympics – Men's marathon**: 95 competitors
+
+This is the only athletics event from the 2008 Summer Olympics present in the provided corpus, so it is the highest-numbered event according to the provided data.",Athletics at the 2008 Summer Olympics – Men's marathon,False,True,,False,,False,direct,[],[],1,0,95758.6,False,,True
+pub-008,superlative,FAIL,PASS,synthesis,Shortened canonical event title in natural language response,correct_evidence_miss,FIXED,"According to the provided corpus, competitor data for sailing events at the 2000 Summer Olympics is available for only one event:
+
+* **Sailing at the 2000 Summer Olympics – Soling** – competitors: 48
+
+No other sailing events from the 2000 Summer Olympics are present in the provided contexts, so a full comparison across all events cannot be made from the corpus. Among the events listed, Sailing at the 2000 Summer Olympics – Soling is the only, and therefore the highest-numbered, entry with 48 competitors.",Sailing at the 2000 Summer Olympics – Soling,False,True,,False,,False,direct,[],[],1,0,149265.31,False,,True
+pub-013,temporal,TIMEOUT,PASS,timeout,Client HTTP read timeout at 120s,correct_evidence_miss,FIXED,"The Summer Olympics immediately before 2016 was the 2012 Games.
+
+**Swimming at the 2012 Summer Olympics – Women's 200 metre freestyle**
+
+Gold medalist: Allison Schmitt",Allison Schmitt,False,True,,False,,False,direct,[],[],1,0,150804.13,False,,
+pub-015,multi_hop,TIMEOUT,FAIL,timeout,Client HTTP read timeout at 120s,timeout,NOT_FIXED,"The event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics was the women’s cycling team pursuit.
+
+The gold medal was won by Great Britain’s team consisting of Dani King, Laura Trott and Joanna Rowsell. The team won in world record-breaking time of 3:14.051 WR, OR.",Dani KingLaura TrottJoanna Rowsell,False,False,False,,,False,direct,[],[],1,0,93514.26,False,,
+pub-017,multi_hop,FAIL,PASS,retrieval_miss,Target shooting event missed in vector top-k,correct_evidence_miss,FIXED,"The event held at the Royal Artillery Barracks on 28 July 2012 was the Women’s 10 metre air rifle at the 2012 Summer Olympics. The gold medal was won by Yi Siling of China, with a winning score of 502.9.",Yi Siling,False,True,False,,,False,direct,[],[],1,0,45653.24,False,,
+pub-023,multi_hop,FAIL,TIMEOUT,synthesis,Gold event resolved; synthesizer output boilerplate failure text,timeout,NOT_FIXED,,Hwang Young-Cho,False,False,False,False,,False,direct,[],[],1,0,180027.3,True,Request Exception: Read timed out (timeout=180),
+pub-060,multi_hop,FAIL,TIMEOUT,tool_argument_error,Schema validation error (missing question arg); replan exhausted call budget,timeout,NOT_FIXED,,Yana Shemyakina,False,False,False,False,,False,direct,[],[],1,0,180017.17,True,Request Exception: Read timed out (timeout=180),
+pub-067,multi_hop,FAIL,PASS,synthesis,Gold event resolved; synthesizer output boilerplate failure text,correct_evidence_miss,FIXED,The event held at North Greenwich Arena on 4 August 2012 was the women’s trampoline competition at the 2012 Summer Olympics. The gold medal was won by Rosannagh MacLennan of Canada.,Rosannagh MacLennan,False,True,False,,,False,direct,[],[],1,0,172170.16,False,,
+pub-076,multi_hop,TIMEOUT,PASS,timeout,Client HTTP read timeout at 120s,correct_evidence_miss,FIXED,"Julia Mancuso won the gold medal in the Women's giant slalom event held at Sestriere on February 24, 2006.",Julia Mancuso,False,True,False,,,False,direct,[],[],1,0,29960.65,False,,
+pub-077,multi_hop,TIMEOUT,PASS,timeout,Client HTTP read timeout at 120s,correct_evidence_miss,FIXED,The gold medal in the event held at Xiaohaituo Bobsleigh and Luge Track in Beijing on 13–14 February 2022 was won by Kaillie Humphries (USA) in the Bobsleigh women's monobob competition.,Kaillie Humphries,False,True,False,,,False,direct,[],[],1,0,176227.3,False,,
+pub-096,multi_hop,TIMEOUT,PASS,timeout,Client HTTP read timeout at 120s,correct_evidence_miss,FIXED,The gold medal in the event held at Riocentro – Pavilion 6 from 10–21 August 2016 (Men's light welterweight boxing at the 2016 Summer Olympics) was won by **Fazliddin Gaibnazarov** of Uzbekistan (UZB).,Fazliddin Gaibnazarov,False,True,False,,,False,direct,[],[],1,0,47167.97,False,,
+pub-098,multi_hop,TIMEOUT,TIMEOUT,timeout,Client HTTP read timeout at 120s,timeout,NOT_FIXED,,Bekzat Sattarkhanov,False,False,False,False,,False,direct,[],[],1,0,180025.26,True,Request Exception: Read timed out (timeout=180),
+pub-099,multi_hop,FAIL,TIMEOUT,output_formatting,Extracted all 4 relay team members; gold string was unspaced concatenation,timeout,NOT_FIXED,,Erik LesserDaniel BöhmArnd PeifferSimon Schempp,False,False,False,False,,False,direct,[],[],1,0,180024.17,True,Request Exception: Read timed out (timeout=180),
+pub-001,aggregation,PASS,PASS,baseline_pass,Previously verified analytical tool pass,correct_evidence_miss,PASS,"Based on the provided corpus, there were **5** biathlon events at the 2018 Winter Olympics that featured more than 73 competitors. These events included the Mixed relay, Men's individual, Women's individual, Men's sprint, and Women's sprint.",5,False,True,,,True,False,direct,[],[],1,0,46097.79,False,,
+pub-009,lookup,PASS,PASS,baseline_pass,Previously verified lookup tool pass,correct_evidence_miss,PASS,26 nations competed in **Sailing at the 2016 Summer Olympics – Women's RS:X**.,26,False,True,False,False,,False,direct,[],[],1,0,30040.63,False,,

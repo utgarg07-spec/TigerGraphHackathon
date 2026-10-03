@@ -1,0 +1,12 @@
+{
+  "phase": "PHASE_14",
+  "gate": "GATE_2",
+  "provider_contract_status": "PASS",
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b",
+  "total_contract_calls": 5,
+  "successful_calls": 4,
+  "structured_plan_valid_pct": 80.0,
+  "average_latency_ms": 725.99,
+  "fallback_model": "qwen/qwen-2.5-coder-32b-instruct"
+}

@@ -1,0 +1,7 @@
+RAW REPAIR LOG NOT FOUND
+
+Repair outcome documented in report: benchmark/results/qwen_final_embedding_repair_report.md
+Pre-repair: 5673/5716 present, 43 missing.
+Post-repair: 5716/5716 present, 0 missing.
+Model: qwen3-embedding:0.6b (1024-d)
+Elapsed time: 31.41 seconds (1.37 chunks/sec)

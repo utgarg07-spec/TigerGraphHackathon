@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "question_set": "SELECTED_25_QIDS",
+  "count": 25,
+  "unique_qids": "25/25",
+  "distribution": "5/5/5/5/5",
+  "qtype_breakdown": {
+    "lookup": 5,
+    "temporal": 5,
+    "aggregation": 5,
+    "superlative": 5,
+    "multi_hop": 5
+  },
+  "overlap_with_phase14d_5q": 0,
+  "overlap_with_phase13_25q": 11,
+  "overlap_with_phase12_100q": 25,
+  "api_calls": 0,
+  "live_questions": 0,
+  "production_files_modified": 0,
+  "phase_12_modified": "NO",
+  "phase_13_modified": "NO",
+  "selected_qids": [
+    "pub-032", "pub-034", "pub-035", "pub-042", "pub-046",
+    "pub-013", "pub-016", "pub-018", "pub-026", "pub-036",
+    "pub-012", "pub-019", "pub-020", "pub-024", "pub-027",
+    "pub-037", "pub-044", "pub-053", "pub-066", "pub-084",
+    "pub-015", "pub-017", "pub-022", "pub-023", "pub-028"
+  ]
+}

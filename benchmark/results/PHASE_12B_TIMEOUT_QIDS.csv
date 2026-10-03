@@ -1,0 +1,19 @@
+qid,qtype,total_latency_s,llm_calls,agent_steps,tool_calls,provider,model,timeout_location,primary_cause
+pub-004,superlative,180.04,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-012,aggregation,180.023,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-020,aggregation,180.004,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-037,superlative,180.011,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-038,multi_hop,180.016,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-058,aggregation,180.016,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-067,multi_hop,180.016,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-069,aggregation,180.021,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-072,temporal,180.039,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-073,multi_hop,180.029,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-077,multi_hop,180.005,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-080,lookup,180.026,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-086,multi_hop,180.031,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-087,aggregation,180.032,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-091,lookup,180.011,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-096,multi_hop,180.025,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-098,multi_hop,180.04,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency
+pub-099,multi_hop,180.032,1,0,0,FreeLLMAPI (openai/auto),Qwen/Qwen2.5-Coder-32B-Instruct,Initial HTTP Request / Plan Generation,A. Provider/network latency

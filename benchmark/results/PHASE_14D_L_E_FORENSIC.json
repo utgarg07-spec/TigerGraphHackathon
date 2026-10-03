@@ -1,0 +1,20 @@
+{
+  "phase": "PHASE_14D_L_E",
+  "status": "COMPLETED",
+  "final_status": "CONFIGURATION_FAILURE",
+  "root_cause": "Invalid AIRouter API Key (HTTP 401 Unauthorized)",
+  "api_calls": 0,
+  "live_questions": 0,
+  "production_files_modified": 0,
+  "summary": {
+    "total_questions": 25,
+    "http_success": 25,
+    "llm_authentication_success": 0,
+    "tool_execution_success": 25,
+    "synthesis_success": 0,
+    "normalized_accuracy": 0.0,
+    "gold_evidence_hit": 0.0,
+    "mean_latency_s": 2.33
+  },
+  "exact_next_action": "Obtain a valid AIRouter API key (sk-air-v1-...) or configure valid LLM provider credentials before rerunning live benchmark."
+}

@@ -1,0 +1,66 @@
+{
+  "pipeline": "agentic_graphrag",
+  "phase": "Phase 4 Normalized Baseline",
+  "source_artifact": "benchmark/results/agentic_full_100_evidence_recomputed.jsonl",
+  "number_of_questions": 100,
+  "number_of_failures_or_timeouts": 6,
+  "overall_accuracy_pct": 87.0,
+  "overall_evidence_hit_pct": 93.0,
+  "evidence_breakdown": {
+    "gold_chunk_hits": 21,
+    "gold_vertex_hits": 59,
+    "gold_tool_evidence_hits": 83,
+    "combined_gold_evidence_hits": 93
+  },
+  "average_completeness": 0.8813,
+  "average_grounding": null,
+  "token_efficiency": {
+    "average_total_tokens": 7718.01,
+    "average_input_tokens": 5392.32,
+    "average_output_tokens": 2325.69
+  },
+  "average_latency_ms": 44125.36,
+  "average_retrieval_intrusion_pct": 0.0,
+  "per_qtype_summary": {
+    "aggregation": {
+      "questions": 21,
+      "accuracy_pct": 100.0,
+      "evidence_hit_pct": 100.0,
+      "avg_completeness": 0.9524,
+      "avg_latency_ms": 29986.05,
+      "avg_tokens": 5269.29
+    },
+    "temporal": {
+      "questions": 22,
+      "accuracy_pct": 95.45,
+      "evidence_hit_pct": 95.45,
+      "avg_completeness": 0.9545,
+      "avg_latency_ms": 37824.14,
+      "avg_tokens": 5350.24
+    },
+    "superlative": {
+      "questions": 10,
+      "accuracy_pct": 80.0,
+      "evidence_hit_pct": 100.0,
+      "avg_completeness": 0.9732,
+      "avg_latency_ms": 23863.1,
+      "avg_tokens": 5233.2
+    },
+    "multi_hop": {
+      "questions": 28,
+      "accuracy_pct": 64.29,
+      "evidence_hit_pct": 78.57,
+      "avg_completeness": 0.6571,
+      "avg_latency_ms": 78059.64,
+      "avg_tokens": 15406.04
+    },
+    "lookup": {
+      "questions": 19,
+      "accuracy_pct": 100.0,
+      "evidence_hit_pct": 100.0,
+      "avg_completeness": 1.0,
+      "avg_latency_ms": 27705.11,
+      "avg_tokens": 5042.74
+    }
+  }
+}

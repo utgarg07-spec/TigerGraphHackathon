@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "pub_001_root_cause": "EVALUATOR NORMALIZATION ERROR",
+  "pub_003_root_cause": "EVALUATOR NORMALIZATION ERROR",
+  "aggregation_tool": "CORRECT",
+  "synthesis_fidelity": "PASS",
+  "evaluator": "DEFECTIVE",
+  "retry_architecture": "PASS",
+  "provider_stability": "PASS",
+  "five_q_http": "5/5",
+  "five_q_timeouts": 0,
+  "live_api_calls_during_audit": 0,
+  "production_files_modified": 0,
+  "phase_12_modified": "NO",
+  "phase_13_modified": "NO",
+  "final_recommendation": "4. FIX EVALUATOR FIRST",
+  "details": {
+    "pub_001": {
+      "question": "According to the provided corpus, how many biathlon events at the 2018 Winter Olympics had more than 73 competitors?",
+      "gold": ["5"],
+      "tool": "graphrag__aggregate",
+      "tool_arguments": {"games": "2018 Winter Olympics", "sport": "biathlon", "threshold": 73},
+      "tool_result": "5",
+      "synthesis_output": "According to the provided corpus, five biathlon events at the 2018 Winter Olympics had more than 73 competitors.",
+      "evaluator_result": false,
+      "diagnosis": "The deterministic tool returned count=5. Synthesis correctly expressed 5 as 'five'. The evaluator failed to normalize word-numbers ('five') to digits ('5') before exact/contains matching."
+    },
+    "pub_003": {
+      "question": "According to the provided corpus, how many shooting events at the 2004 Summer Olympics had more than 37 competitors?",
+      "gold": ["8"],
+      "tool": "graphrag__aggregate",
+      "tool_arguments": {"games": "2004 Summer Olympics", "sport": "shooting", "threshold": 37},
+      "tool_result": "8",
+      "synthesis_output": "According to the provided corpus, eight shooting events at the 2004 Summer Olympics had more than 37 competitors.",
+      "evaluator_result": false,
+      "diagnosis": "The deterministic tool returned count=8. Synthesis correctly expressed 8 as 'eight'. The evaluator failed to normalize word-numbers ('eight') to digits ('8') before exact/contains matching."
+    }
+  }
+}

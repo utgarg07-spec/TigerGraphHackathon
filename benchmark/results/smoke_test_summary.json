@@ -1,0 +1,47 @@
+{
+  "run_name": "smoke_test",
+  "number_attempted": 5,
+  "number_successful": 4,
+  "number_failed": 1,
+  "http_success_rate": 0.8,
+  "strict_exact_match": 0.0,
+  "normalized_match": 0.0,
+  "avg_latency_seconds": 52.043,
+  "average_retrieval_intrusion_pct": 0.0,
+  "qtype_summary": {
+    "aggregation": {
+      "attempted": 2,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 0,
+      "normalized_match_pct": 0.0
+    },
+    "temporal": {
+      "attempted": 1,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 0,
+      "normalized_match_pct": 0.0
+    },
+    "superlative": {
+      "attempted": 1,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 0,
+      "normalized_match_pct": 0.0
+    },
+    "multi_hop": {
+      "attempted": 1,
+      "strict_exact_match_count": 0,
+      "strict_exact_match_pct": 0.0,
+      "normalized_match_count": 0,
+      "normalized_match_pct": 0.0
+    }
+  },
+  "pipeline_configuration": {
+    "mode": "classic",
+    "rag_method": "similaritysearch",
+    "pass_qtype": false,
+    "graph_name": "Olympics"
+  }
+}

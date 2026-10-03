@@ -1,0 +1,33 @@
+{
+  "phase": "PHASE_14D_U_HOTFIX",
+  "status": "SUCCESS",
+  "timestamp": "2026-10-02T00:30:30Z",
+  "step_result_schema_discovered": {
+    "class_name": "StepResult",
+    "module": "common.py_schemas.schemas",
+    "fields": {
+      "step_id": "str",
+      "ok": "bool",
+      "summary": "str",
+      "context": "Optional[object]",
+      "citations": "List[Dict]"
+    },
+    "error_attribute_present": false
+  },
+  "runner_change_summary": "Replaced invalid step_res.error access with safe extraction derived from step_res.ok, step_res.summary, and step_res.context. Wrapped all telemetry logging and introspection across all monkeypatches in defensive try/except blocks with diagnostic_hook_error logging.",
+  "offline_validation": {
+    "py_compile": "PASSED",
+    "mock_test_script": "scratch/test_phase14d_u_hotfix_mock.py",
+    "mock_test_result": "PASSED (3/3 tests: normal step, failing step without .error, malformed step)",
+    "step_result_returned_unchanged": true,
+    "hook_exception_prevented": true
+  },
+  "constraints_verification": {
+    "modified_files": [
+      "scratch/run_phase14d_u_5q_diagnostic.py"
+    ],
+    "production_files_modified": 0,
+    "api_calls": 0,
+    "live_questions": 0
+  }
+}

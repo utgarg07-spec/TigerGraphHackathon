@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "classification": "D",
+  "classification_description": "EVALUATOR/TELEMETRY FALSE NEGATIVE — The retrieval actually succeeded and returned valid context, but the runner test script checked if step.get('kind') == 'retrieval' instead of checking step.get('kind') in ('unstructured', 'deterministic', 'superlative', 'retrieval').",
+  "tool_actually_executed": true,
+  "exact_tool": "graphrag__superlative",
+  "exact_arguments": {
+    "sport": "athletics",
+    "games": "2008 Summer Olympics"
+  },
+  "tool_result": "Successfully retrieved top event by competitor count: Athletics at the 2008 Summer Olympics – Men's marathon (95 competitors).",
+  "evidence_present": true,
+  "evidence_passed_to_synthesis": true,
+  "replan_evaluated": true,
+  "replan_count": 0,
+  "answer_supported_by_tool_result": true,
+  "retrieval_failure": "FALSE NEGATIVE",
+  "retry_architecture": "PASS",
+  "budget": "PASS",
+  "production_files_modified": 0,
+  "api_calls": 0,
+  "live_benchmarks_run": 0,
+  "final_diagnosis": "In scratch/run_phase14d_i_pub004.py, line 94 checked if step.get('kind') == 'retrieval'. In agentic_executor.py, trace steps preserve step.kind which for graphrag__superlative is 'unstructured' (or 'deterministic'), not 'retrieval'. Thus the runner script failed to count the returned context, labeling retrieval_status as FAIL. However, the deterministic tool graphrag__superlative executed in 10.098s total run time, returned non-empty evidence (Men's marathon, 95 competitors), passed it to synthesis, and synthesis generated the exact gold answer. The retry and budget invariants (3 logical calls <=6, 3 provider attempts <=2 per call, 0 retries, 0 replans, 1 step <=5) were 100% respected.",
+  "next_action": "Fix the runner script kind check to accept ('retrieval', 'unstructured', 'deterministic', 'superlative') and proceed to 5Q smoke test authorization."
+}

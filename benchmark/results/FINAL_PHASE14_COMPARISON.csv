@@ -1,0 +1,5 @@
+system,normalized_accuracy_pct,evidence_pct,timeouts,avg_latency_s
+RAG Baseline,19.0,3.0,0,15.2
+GraphRAG Baseline,20.0,16.0,0,22.4
+Agentic Phase 12 (Frozen),76.0,79.0,18,74.3
+Agentic Phase 14 (Post-Fix Final),2.0,2.0,0,39.77

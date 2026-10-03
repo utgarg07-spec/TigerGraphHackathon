@@ -1,0 +1,69 @@
+{
+  "audit_meta": {
+    "title": "Phase 11A Final Benchmark Integrity & Agentic Effectiveness Audit",
+    "benchmark_dataset": "100-Question Public Olympics Benchmark",
+    "eval_contract": "Unified 3-Way Contract v1.0.0",
+    "status": "VALIDATED \u2014 TARGETED ENGINEERING FIXES RECOMMENDED",
+    "gates_passed": 16,
+    "gates_total": 16
+  },
+  "headline_metrics": {
+    "rag": {
+      "accuracy_normalized": 0.19,
+      "accuracy_strict_non_fallback": 0.02,
+      "gold_evidence": 0.03,
+      "avg_tokens_completed": 8617.17,
+      "avg_latency_completed_s": 86.44
+    },
+    "graphrag": {
+      "accuracy_normalized": 0.2,
+      "accuracy_strict_non_fallback": 0.02,
+      "gold_evidence": 0.16,
+      "avg_tokens_completed": 1103.3,
+      "avg_latency_completed_s": 68.53
+    },
+    "agentic": {
+      "accuracy_normalized": 0.87,
+      "accuracy_strict_non_fallback": 0.87,
+      "gold_evidence": 0.93,
+      "avg_tokens_completed": 7718.01,
+      "avg_latency_completed_s": 39.28
+    }
+  },
+  "gates_summary": {
+    "GATE_0_alignment": "PASS",
+    "GATE_1_embeddings": "PASS",
+    "GATE_2_accuracy_def": "PASS",
+    "GATE_3_accuracy_recomp": "PASS",
+    "GATE_4_retrieval_intrusion": "PASS",
+    "GATE_5_completeness": "PASS",
+    "GATE_6_tokens": "PASS",
+    "GATE_7_latency": "PASS",
+    "GATE_8_adaptivity": "PASS",
+    "GATE_9_specialists": "PASS",
+    "GATE_10_cost_effectiveness": "PASS",
+    "GATE_11_multihop": "PASS",
+    "GATE_12_superlative": "PASS",
+    "GATE_13_decision": "PASS",
+    "GATE_14_improvement_decision": "PASS",
+    "GATE_15_artifacts": "PASS"
+  },
+  "failure_distributions": {
+    "multihop_failures": {
+      "total_failures": 10,
+      "breakdown": {
+        "other_timeout_120s": 5,
+        "synthesis_boilerplate": 2,
+        "retrieval_miss": 1,
+        "tool_argument_error": 1,
+        "output_formatting": 1
+      }
+    },
+    "superlative_failures": {
+      "total_failures": 2,
+      "breakdown": {
+        "synthesis_verbatim_title_truncation": 2
+      }
+    }
+  }
+}

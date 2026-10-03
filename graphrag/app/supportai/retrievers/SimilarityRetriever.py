@@ -1,0 +1,79 @@
+import json
+from supportai.retrievers import BaseRetriever
+from common.metrics.tg_proxy import TigerGraphConnectionProxy
+
+
+class SimilarityRetriever(BaseRetriever):
+    def __init__(
+        self,
+        embedding_service,
+        embedding_store,
+        llm_service,
+        connection: TigerGraphConnectionProxy,
+    ):
+        super().__init__(embedding_service, embedding_store, llm_service, connection)
+
+    def search(self, question, index, top_k=1, withHyDE=False, expand=False, verbose=False, vector_query=None):
+        if expand:
+            questions = self._expand_question(question, top_k, verbose)
+            verbose and self.logger.info(f"Expanded questions to use: {questions}")
+
+            start_set = self._generate_start_set(questions, [index], top_k, withHyDE=withHyDE, verbose=verbose)
+            
+
+            self._check_query_install("Content_Similarity_Search")
+            res = self.conn.runInstalledQuery(
+                "Content_Similarity_Search",
+                params = {
+                    "json_list_vts": str(start_set),
+                    "v_type": index,
+                    "verbose": verbose,
+                },
+                usePost=True
+            )
+        else:
+            if withHyDE:
+                query_vector = self._hyde_embedding(question)
+            else:
+                query_vector = self._generate_embedding(question)
+
+            if not vector_query:
+                if (hasattr(self.emb_service, "model_name") and "qwen" in str(self.emb_service.model_name).lower()) or getattr(self.emb_service, "dimensions", 0) == 1024:
+                    query_name = "Content_Similarity_Qwen_Vector_Search"
+                else:
+                    query_name = "Content_Similarity_Vector_Search"
+            else:
+                query_name = vector_query
+            self._check_query_install(query_name)
+            res = self.conn.runInstalledQuery(
+                query_name,
+                params = {
+                    "v_type": index,
+                    "query_vector": query_vector,
+                    "top_k": top_k,
+                    "verbose": verbose,
+                },
+                usePost=True
+            )
+        if len(res) > 1 and "verbose" in res[1]:
+            verbose_info = json.dumps(res[1]['verbose'])
+            self.logger.info(f"Retrived SimilaritySearch query verbose info: {verbose_info}")
+            if expand:
+                res[1]["verbose"]["expanded_questions"] = questions
+        return res
+
+    def retrieve_answer(self, question, index, top_k=1, withHyDE=False, expand=False, combine=False, verbose=False):
+        retrieved = self.search(question, index, top_k, withHyDE, expand, verbose)
+        context = [retrieved[0]["final_retrieval"][x] for x in retrieved[0]["final_retrieval"]]
+        if combine:
+            context = ["\n".join(context)]
+            resp = self._generate_response(question, context, verbose=verbose)
+        else:
+            scored = self._score_candidates(question, context, top_k=top_k)
+            resp = self._generate_response(question, scored, verbose=verbose)
+
+        if verbose and len(retrieved) > 1 and "verbose" in retrieved[1]:
+            resp["verbose"] = retrieved[1]["verbose"]
+            resp["verbose"]["final_retrieval"] = retrieved[0]["final_retrieval"]
+
+        return resp

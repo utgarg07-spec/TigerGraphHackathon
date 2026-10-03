@@ -1,0 +1,40 @@
+{
+  "phase": "PHASE_14",
+  "gate": "GATE_1",
+  "phase6_tools_status": "PASS",
+  "total_tests": 78,
+  "passed_tests": 78,
+  "failed_tests": 0,
+  "breakdown": {
+    "graphrag__lookup": {
+      "passed": 19,
+      "failed": 0,
+      "total": 19,
+      "status": "PASS"
+    },
+    "graphrag__aggregate": {
+      "passed": 21,
+      "failed": 0,
+      "total": 21,
+      "status": "PASS"
+    },
+    "graphrag__superlative": {
+      "passed": 10,
+      "failed": 0,
+      "total": 10,
+      "status": "PASS"
+    },
+    "graphrag__temporal_resolve": {
+      "passed": 22,
+      "failed": 0,
+      "total": 22,
+      "status": "PASS"
+    },
+    "edge_cases": {
+      "passed": 6,
+      "failed": 0,
+      "total": 6,
+      "status": "PASS"
+    }
+  }
+}

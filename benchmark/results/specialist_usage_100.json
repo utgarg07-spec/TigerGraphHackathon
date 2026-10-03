@@ -1,0 +1,82 @@
+{
+  "entity_linking": {
+    "name": "EntityLinkingSpecialist",
+    "category": "entity linking",
+    "registered": true,
+    "available": true,
+    "invoked_count": 32,
+    "questions_invoking_it": 31,
+    "success_count": 30,
+    "failure_count": 0
+  },
+  "graph_traversal": {
+    "name": "GraphTraversalSpecialist",
+    "category": "graph traversal",
+    "registered": true,
+    "available": true,
+    "invoked_count": 32,
+    "questions_invoking_it": 31,
+    "success_count": 30,
+    "failure_count": 2
+  },
+  "similarity_search": {
+    "name": "SimilarityRetrievalSpecialist",
+    "category": "similarity search",
+    "registered": true,
+    "available": true,
+    "invoked_count": 23,
+    "questions_invoking_it": 22,
+    "success_count": 18,
+    "failure_count": 5
+  },
+  "document_retrieval": {
+    "name": "DocumentRetrievalSpecialist",
+    "category": "document retrieval",
+    "registered": true,
+    "available": true,
+    "invoked_count": 23,
+    "questions_invoking_it": 22,
+    "success_count": 23,
+    "failure_count": 0
+  },
+  "aggregation": {
+    "name": "AnalyticalSpecialist",
+    "category": "aggregation & superlative",
+    "registered": true,
+    "available": true,
+    "invoked_count": 31,
+    "questions_invoking_it": 31,
+    "success_count": 31,
+    "failure_count": 0
+  },
+  "multi_hop": {
+    "name": "MultiHopInvestigationSpecialist",
+    "category": "multi-hop reasoning",
+    "registered": true,
+    "available": true,
+    "invoked_count": 21,
+    "questions_invoking_it": 21,
+    "success_count": 21,
+    "failure_count": 0
+  },
+  "evidence_evaluation": {
+    "name": "EvidenceEvaluationSpecialist",
+    "category": "evidence evaluation",
+    "registered": true,
+    "available": true,
+    "invoked_count": 94,
+    "questions_invoking_it": 94,
+    "success_count": 94,
+    "failure_count": 0
+  },
+  "tigergraph_mcp": {
+    "name": "TigerGraphMCPSpecialist",
+    "category": "mcp graph query",
+    "registered": true,
+    "available": true,
+    "invoked_count": 0,
+    "questions_invoking_it": 0,
+    "success_count": 0,
+    "failure_count": 0
+  }
+}

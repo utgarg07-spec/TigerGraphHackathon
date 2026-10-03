@@ -1,0 +1,57 @@
+{
+  "pipeline": "graphrag_hybrid",
+  "phase": "Phase 5 Baseline",
+  "source_artifact": "benchmark/results/phase5_qwen_hybrid_100_benchmark.jsonl",
+  "primary_historical_artifact": "benchmark/results/graphrag_baseline.json",
+  "number_of_questions": 100,
+  "number_of_failures_or_timeouts": 0,
+  "overall_accuracy_pct": 20.0,
+  "overall_evidence_hit_pct": 16.0,
+  "average_completeness": 0.2,
+  "average_grounding": null,
+  "average_total_tokens": 1103.3,
+  "average_latency_ms": 35043.14,
+  "average_retrieval_intrusion_pct": 100.0,
+  "failure_categories": {
+    "zero_context_dropouts": 73,
+    "zero_context_dropout_pct": 73.0,
+    "description": "Seed vector chunks missing outgoing DOCUMENT_HAS_EVENT graph traversal edges"
+  },
+  "per_qtype_summary": {
+    "temporal": {
+      "questions": 22,
+      "accuracy_pct": 0.0,
+      "evidence_hit_pct": 54.55,
+      "avg_completeness": 0.0,
+      "avg_latency_ms": 44811.77
+    },
+    "aggregation": {
+      "questions": 21,
+      "accuracy_pct": 85.71,
+      "evidence_hit_pct": 0.0,
+      "avg_completeness": 0.8571,
+      "avg_latency_ms": 24994.62
+    },
+    "superlative": {
+      "questions": 10,
+      "accuracy_pct": 0.0,
+      "evidence_hit_pct": 0.0,
+      "avg_completeness": 0.0,
+      "avg_latency_ms": 35740.8
+    },
+    "lookup": {
+      "questions": 19,
+      "accuracy_pct": 10.53,
+      "evidence_hit_pct": 5.26,
+      "avg_completeness": 0.1053,
+      "avg_latency_ms": 29718.47
+    },
+    "multi_hop": {
+      "questions": 28,
+      "accuracy_pct": 0.0,
+      "evidence_hit_pct": 10.71,
+      "avg_completeness": 0.0,
+      "avg_latency_ms": 38268.18
+    }
+  }
+}

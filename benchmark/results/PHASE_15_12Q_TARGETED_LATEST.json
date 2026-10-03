@@ -1,0 +1,242 @@
+[
+  {
+    "qid": "pub-015",
+    "qtype": "multi_hop",
+    "latency_s": 112.61,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": false,
+    "strict_exact_match": false,
+    "prediction": "(no answer produced)",
+    "gold": [
+      "Dani KingLaura TrottJoanna Rowsell"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-017",
+    "qtype": "multi_hop",
+    "latency_s": 70.394,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "The gold medal in the event held at the Royal Artillery Barracks on 28\u202fJuly\u202f2012 was won by **Yi Siling** of China.",
+    "gold": [
+      "Yi Siling"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-028",
+    "qtype": "multi_hop",
+    "latency_s": 23.289,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "Michael\u202fPhelps (USA) won the gold medal in the **Men\u2019s 400\u202fmetre individual medley** at the 2004 Summer Olympics held at the Olympic Aquatic Centre on August\u202f14,\u202f2004.",
+    "gold": [
+      "Michael Phelps"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-030",
+    "qtype": "multi_hop",
+    "latency_s": 30.22,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "**Gold medalist:** Emese Sz\u00e1sz (Hungary) won the gold medal in the *Women's \u00e9p\u00e9e competition in fencing at the 2016 Summer Olympics* held at Carioca Arena\u202f3 on 6\u202fAugust\u202f2016.\n\n---\n\n**Event details**\n- **Venue:** Carioca Arena\u202f3\n- **Date:** 6\u202fAugust\u202f2016\n- **Sport:** Fencing \u2013 Women\u2019s \u00e9p\u00e9e\n- **Gold medalist:** Emese Sz\u00e1sz (HUN)\n- **Silver medalist:** Rossella Fiamingo (ITA)\n- **Bronze medalist:** Sun Yiwen (CHN)\n\nThe competition was part of the 2016 Summer Olympic Games in Rio de Janeiro.\n\n---\n\n**Citation**\n- Source: `Q25386274_chunk_0`",
+    "gold": [
+      "Emese Sz\u00e1sz"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-041",
+    "qtype": "multi_hop",
+    "latency_s": 101.799,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "The gold medal was won by **Nino Schurter** of Switzerland in the men\u2019s cross\u2011country cycling event held at the Mountain Bike Centre on 21\u202fAugust 2016.",
+    "gold": [
+      "Nino Schurter"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-060",
+    "qtype": "multi_hop",
+    "latency_s": 52.327,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": false,
+    "strict_exact_match": false,
+    "prediction": "Mansur Isaev of Russia won the gold medal in the Men's 73\u202fkg judo competition at the 2012 Summer Olympics, which was held at the ExCeL Exhibition Centre on 30\u202fJuly\u202f2012.",
+    "gold": [
+      "Yana Shemyakina"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-073",
+    "qtype": "multi_hop",
+    "latency_s": 42.0,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "Yang Ling of China won the gold medal in the Men's 10 metre running target event at the 2000 Summer Olympics, held at the Sydney International Shooting Centre on 21\u202fSeptember\u202f2000 (slow) and 22\u202fSeptember\u202f2000 (fast).",
+    "gold": [
+      "Yang Ling"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-079",
+    "qtype": "multi_hop",
+    "latency_s": 22.175,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "The gold medal in the women\u2019s cycling road race, held at Centennial Parklands, Sydney on 26\u202fSeptember\u202f2000, was won by Leontien Zijlaard of the Netherlands.",
+    "gold": [
+      "Leontien Zijlaard"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-083",
+    "qtype": "multi_hop",
+    "latency_s": 15.37,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": true,
+    "strict_exact_match": false,
+    "prediction": "Pernilla\u202fWiberg of Sweden won the gold medal in the women\u2019s combined event held at Kvitfjell and Hafjell on 20\u201321\u202fFebruary\u202f1994.",
+    "gold": [
+      "Pernilla Wiberg"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-086",
+    "qtype": "multi_hop",
+    "latency_s": 30.748,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": false,
+    "strict_exact_match": false,
+    "prediction": "(no answer produced)",
+    "gold": [
+      "Shani Davis"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-098",
+    "qtype": "multi_hop",
+    "latency_s": 78.403,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": false,
+    "strict_exact_match": false,
+    "prediction": "The gold medal in the women\u2019s 53\u202fkg weightlifting event, which took place at the Sydney Convention and Exhibition Centre on 18\u202fSeptember\u202f2000, was won by Yang\u202fXia of China.",
+    "gold": [
+      "Bekzat Sattarkhanov"
+    ],
+    "error": null
+  },
+  {
+    "qid": "pub-099",
+    "qtype": "multi_hop",
+    "latency_s": 50.275,
+    "http_status": "SUCCESS",
+    "logical_llm_calls": 3,
+    "provider_attempts": 3,
+    "provider_retries": 0,
+    "replan_count": 0,
+    "tool_calls": [
+      "graphrag__hybrid_search"
+    ],
+    "normalized_accuracy": false,
+    "strict_exact_match": false,
+    "prediction": "Marit\u202fBj\u00f8rgen of Norway won the gold medal in the women\u2019s 30\u202fkilometre freestyle cross\u2011country skiing event held at the Laura\u202fBiathlon\u202f&\u202fSki\u202fComplex on\u202f22\u202fFebruary\u202f2014.",
+    "gold": [
+      "Erik LesserDaniel B\u00f6hmArnd PeifferSimon Schempp"
+    ],
+    "error": null
+  }
+]

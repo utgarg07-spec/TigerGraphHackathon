@@ -1,0 +1,42 @@
+{
+  "phase": "PHASE_14A",
+  "status": "READY_FOR_FINAL_100Q",
+  "timestamp": "2026-09-30T00:57:00+05:30",
+  "summary": {
+    "root_cause_resolved": "OpenRouter max_tokens parameter cap enforced + run-scoped circuit breaker implemented for hard quota exhaustion.",
+    "phase6_result": "78/78 PASS (100.0%)",
+    "provider_unit_tests": "10/10 PASS (100.0%)",
+    "gate6_1q_result": {
+      "http_status": "SUCCESS",
+      "latency_s": 41.92,
+      "timeouts": 0
+    },
+    "gate7_5q_result": {
+      "http_success": 5,
+      "total": 5,
+      "timeouts": 0,
+      "accuracy_count": 3,
+      "accuracy_pct": 60.0,
+      "mean_latency_s": 26.64
+    },
+    "gate8_10q_result": {
+      "http_success": 10,
+      "total": 10,
+      "timeouts": 0,
+      "accuracy_count": 3,
+      "accuracy_pct": 30.0,
+      "mean_latency_s": 38.40
+    }
+  },
+  "circuit_breaker": {
+    "implemented": true,
+    "scope": "run_scoped_in_process",
+    "tested_scenarios": [
+      "groq_429_quota_exhaustion_skip",
+      "openrouter_402_credit_skip",
+      "freellmapi_connection_drop_bounded",
+      "reset_circuits_fresh_process"
+    ]
+  },
+  "historical_baselines_intact": true
+}

@@ -1,0 +1,145 @@
+{
+  "benchmark": "25Q_CONFIDENCE_RUN",
+  "timestamp": "2026-10-01T20:52:27.942405",
+  "total_questions": 25,
+  "http_success_rate": "25/25 (100.0%)",
+  "normalized_accuracy": "22/25 (88.0%)",
+  "strict_exact_match": "1/25 (4.0%)",
+  "gold_evidence_hit": "22/25 (88.0%)",
+  "latency_metrics": {
+    "mean_s": 26.4,
+    "median_s": 16.29,
+    "p95_s": 76.69,
+    "max_s": 119.5,
+    "total_elapsed_s": 659.98
+  },
+  "llm_and_agent_metrics": {
+    "mean_logical_llm_calls": 3.28,
+    "mean_agent_steps": 1.08,
+    "mean_replans": 0,
+    "total_provider_retries": 1,
+    "total_provider_failovers": 0
+  },
+  "qtype_summary": {
+    "lookup": {
+      "count": 5,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 28.16
+    },
+    "temporal": {
+      "count": 5,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 20.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 12.97
+    },
+    "aggregation": {
+      "count": 5,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 15.17
+    },
+    "superlative": {
+      "count": 5,
+      "accuracy_pct": 100.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 100.0,
+      "mean_latency_s": 13.57
+    },
+    "multi_hop": {
+      "count": 5,
+      "accuracy_pct": 40.0,
+      "strict_em_pct": 0.0,
+      "gold_hit_pct": 40.0,
+      "mean_latency_s": 62.12
+    }
+  },
+  "failures": [
+    {
+      "qid": "pub-015",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics?",
+      "prediction": "I wasn't able to generate an answer for this question. Try asking again, or rephrase it to be more specific or focused on a single topic. If the problem continues, contact your administrator for more details.",
+      "gold": [
+        "Dani KingLaura TrottJoanna Rowsell"
+      ],
+      "latency_s": 119.496,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 2,
+      "logical_llm_calls": 7,
+      "provider_http_attempts": 7,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search",
+        "graphrag__structural_retrieve"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    },
+    {
+      "qid": "pub-017",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Royal Artillery Barracks on 28 July 2012?",
+      "prediction": "There was no Olympic shooting event held",
+      "gold": [
+        "Yi Siling"
+      ],
+      "latency_s": 69.364,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 1,
+      "logical_llm_calls": 3,
+      "provider_http_attempts": 3,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__hybrid_search"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    },
+    {
+      "qid": "pub-028",
+      "qtype": "multi_hop",
+      "question": "Who won the gold medal in the event held at Olympic Aquatic Centre on August 14, 2004 (heats & final)?",
+      "prediction": "Information unavailable.",
+      "gold": [
+        "Michael Phelps"
+      ],
+      "latency_s": 67.32,
+      "http_status": "SUCCESS",
+      "timeout": false,
+      "agent_steps_count": 2,
+      "logical_llm_calls": 6,
+      "provider_http_attempts": 6,
+      "provider_retries": 0,
+      "provider_failovers": 0,
+      "replan_count": 0,
+      "tool_calls": [
+        "graphrag__structural_retrieve",
+        "graphrag__structural_retrieve"
+      ],
+      "retrieval_status": "PASS",
+      "normalized_accuracy": false,
+      "strict_exact_match": false,
+      "combined_gold_evidence_hit": false,
+      "model": "openai/gpt-oss-20b",
+      "error": null
+    }
+  ]
+}

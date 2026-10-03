@@ -1,0 +1,6 @@
+metric,RAG,GraphRAG,Agentic_GraphRAG
+Normalized Match Accuracy,0%,0%,76%
+Combined Gold Evidence Hit Rate,0%,0%,79%
+Average Latency,11.29s,35.04s,74.296s
+Average Tokens,8617,1103,5665
+Timeouts / Failures,0,0,18

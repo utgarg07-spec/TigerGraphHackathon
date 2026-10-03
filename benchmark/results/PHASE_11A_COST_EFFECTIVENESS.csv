@@ -1,0 +1,6 @@
+category_code,category_name,question_count,percentage,description,sample_qids
+A,Outcome Overlap (Both Correct),19,19.0%,Both Base RAG and Agentic scored correct (only 2 genuine non-fallback matches in RAG),"pub-001, pub-003, pub-010, pub-019, pub-020"
+B,"High Value-Add (RAG Failed, Agentic Succeeded)",68,68.0%,"Base RAG failed/crashed, Agentic GraphRAG resolved accurately with grounded evidence","pub-002, pub-005, pub-006, pub-007, pub-009, pub-011"
+C,Agentic Added Cost & Still Failed,13,13.0%,"Agentic failed to produce correct answer (10 Multi-Hop, 2 Superlative, 1 Temporal; 6 timeouts)","pub-004, pub-008, pub-013, pub-015, pub-017, pub-023"
+D,Evidence Improved Without Strict Accuracy,6,6.0%,Gold chunk/vertex retrieved but string match failed due to phrasing or unspaced gold string,"pub-004, pub-008, pub-023, pub-060, pub-067, pub-099"
+E,Agentic Reduced Token Cost vs RAG,4,4.0%,Completed benchmark queries where Agentic consumed 35% to 76% fewer tokens than Base RAG,"pub-001, pub-002, pub-003, pub-004"

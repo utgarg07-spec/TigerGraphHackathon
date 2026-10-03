@@ -1,0 +1,18 @@
+{"timestamp": "2026-10-01T19:24:23.733537", "elapsed_s": 7.224082946777344e-05, "qid": "pub-003", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:24:23.736483", "elapsed_s": 0.0029954910278320312, "qid": "pub-003", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:24:23.759029", "elapsed_s": 0.025537729263305664, "qid": "pub-003", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:26.891420", "elapsed_s": 3.157954454421997, "qid": "pub-003", "event": "end agentic_triage elapsed=3.130s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:26.921422", "elapsed_s": 3.187910795211792, "qid": "pub-003", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:32.002717", "elapsed_s": 8.269254446029663, "qid": "pub-003", "event": "end agentic_plan elapsed=5.078s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:32.006551", "elapsed_s": 8.273075342178345, "qid": "pub-003", "event": "TOOL graphrag__aggregate start", "stage": "TOOL graphrag__aggregate", "details": {}}
+{"timestamp": "2026-10-01T19:24:37.727261", "elapsed_s": 13.993765592575073, "qid": "pub-003", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:42.981044", "elapsed_s": 19.247567415237427, "qid": "pub-003", "event": "end generate_answer elapsed=5.251s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:42.989971", "elapsed_s": 6.365776062011719e-05, "qid": "pub-005", "event": "question", "stage": "START", "details": {}}
+{"timestamp": "2026-10-01T19:24:42.997336", "elapsed_s": 0.007399797439575195, "qid": "pub-005", "event": "loaded", "stage": "CONFIG", "details": {}}
+{"timestamp": "2026-10-01T19:24:43.016227", "elapsed_s": 0.026289701461791992, "qid": "pub-005", "event": "start agentic_triage", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:46.237312", "elapsed_s": 3.2473928928375244, "qid": "pub-005", "event": "end agentic_triage elapsed=3.212s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:46.256829", "elapsed_s": 3.266873359680176, "qid": "pub-005", "event": "start agentic_plan", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:49.661004", "elapsed_s": 6.671095132827759, "qid": "pub-005", "event": "end agentic_plan elapsed=3.402s", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:24:49.664083", "elapsed_s": 6.674151420593262, "qid": "pub-005", "event": "TOOL graphrag__hybrid_search start", "stage": "TOOL graphrag__hybrid_search", "details": {}}
+{"timestamp": "2026-10-01T19:25:01.210378", "elapsed_s": 18.220433712005615, "qid": "pub-005", "event": "start generate_answer", "stage": "LLM_CALL", "details": {}}
+{"timestamp": "2026-10-01T19:25:14.937359", "elapsed_s": 31.94738507270813, "qid": "pub-005", "event": "end generate_answer elapsed=13.723s", "stage": "LLM_CALL", "details": {}}

@@ -1,0 +1,14 @@
+Metric,Classic Vector RAG,GraphRAG Hybrid,Agentic GraphRAG
+Total Questions,100,100,100
+Correct Answers,19,20,87
+Overall Accuracy (%),19.0%,20.0%,87.0%
+Evidence Hits,3,16,93
+Evidence Hit Rate (%),3.0%,16.0%,93.0%
+Average Completeness,0.2302,0.2,0.8813
+Average Grounding,N/A,N/A,N/A
+Average Total Tokens,8617.1667,1103.2963,7718.0106
+Median Total Tokens,8312.5,862,5439.5
+Average Latency (ms),11289.01,35043.14,44125.36
+Median Latency (ms),3967.5,28030.5,31473.0
+Retrieval Intrusion (%),0.0%,100.0%,0.0%
+Timeouts / Failures,0,0,6

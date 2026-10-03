@@ -1,0 +1,295 @@
+{
+  "phase": "PHASE_12C",
+  "experiment_date": "2026-09-29",
+  "final_decision": "A. FAST PROVIDER IDENTIFIED \u2014 ROUTING CHANGE JUSTIFIED",
+  "telemetry_resolution": {
+    "finding": "Option A: Outer /gsql_rag/query HTTP request remained open while multi-turn LLM calls executed. When cumulative turn latency exceeded 180s, client timed out with ReadTimeout.",
+    "verified": true
+  },
+  "provider_inventory": [
+    {
+      "name": "FreeLLMAPI",
+      "model": "auto",
+      "status": "ACTIVE (BASELINE)",
+      "avg_latency_ms": 11418.67
+    },
+    {
+      "name": "Groq",
+      "model": "qwen/qwen3.8-27b",
+      "status": "ACTIVE (CANDIDATE)",
+      "avg_latency_ms": 732.97
+    },
+    {
+      "name": "OpenRouter",
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "status": "ACTIVE (CANDIDATE)",
+      "avg_latency_ms": 7879.91
+    },
+    {
+      "name": "OpenRouter",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "status": "ACTIVE (CANDIDATE)",
+      "avg_latency_ms": 6388.99
+    }
+  ],
+  "provider_latency_summary": {
+    "FreeLLMAPI (Baseline Qwen)": {
+      "requests": 5,
+      "success_count": 4,
+      "valid_structured_count": 2,
+      "avg_latency_ms": 11418.67,
+      "median_latency_ms": 8841.85,
+      "p95_latency_ms": 32078.73
+    },
+    "OpenRouter (Qwen-2.5-Coder-32B)": {
+      "requests": 5,
+      "success_count": 5,
+      "valid_structured_count": 5,
+      "avg_latency_ms": 7879.91,
+      "median_latency_ms": 8045.4,
+      "p95_latency_ms": 12961.72
+    },
+    "Groq (Qwen3.8-27B)": {
+      "requests": 5,
+      "success_count": 5,
+      "valid_structured_count": 5,
+      "avg_latency_ms": 732.97,
+      "median_latency_ms": 730.48,
+      "p95_latency_ms": 824.07
+    },
+    "OpenRouter (Llama-3.3-70B)": {
+      "requests": 5,
+      "success_count": 5,
+      "valid_structured_count": 4,
+      "avg_latency_ms": 6388.99,
+      "median_latency_ms": 5695.63,
+      "p95_latency_ms": 14315.6
+    }
+  },
+  "five_question_agentic_results": [
+    {
+      "provider": "FreeLLMAPI (Baseline Qwen)",
+      "model": "auto",
+      "qid": "pub-009",
+      "qtype": "lookup",
+      "latency_ms": 8967.03,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{\"strategy\": \"Query the knowledge graph for distinct nations participating in the women's RS:X sailing event at the 2016"
+    },
+    {
+      "provider": "FreeLLMAPI (Baseline Qwen)",
+      "model": "auto",
+      "qid": "pub-001",
+      "qtype": "aggregation",
+      "latency_ms": 4907.15,
+      "status_code": 200,
+      "valid_json": false,
+      "valid_tool": false,
+      "output_preview": "You are an agentic planner. Given a user question, return a JSON object with a strategy and step list. Question: How man"
+    },
+    {
+      "provider": "FreeLLMAPI (Baseline Qwen)",
+      "model": "auto",
+      "qid": "pub-013",
+      "qtype": "temporal",
+      "latency_ms": 2298.61,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{   \"strategy\": \"Retrieve information on the Summer Olympics and the women's 200 metre freestyle swimming event from a r"
+    },
+    {
+      "provider": "FreeLLMAPI (Baseline Qwen)",
+      "model": "auto",
+      "qid": "pub-004",
+      "qtype": "superlative",
+      "latency_ms": 32078.73,
+      "status_code": "EXCEPTION",
+      "valid_json": false,
+      "valid_tool": false,
+      "error": "HTTPConnectionPool(host='localhost', port=31415): Read timed out. (read timeout=30)"
+    },
+    {
+      "provider": "FreeLLMAPI (Baseline Qwen)",
+      "model": "auto",
+      "qid": "pub-060",
+      "qtype": "multi_hop",
+      "latency_ms": 8841.85,
+      "status_code": 200,
+      "valid_json": false,
+      "valid_tool": false,
+      "output_preview": "You are an agentic planner. Given a user question, return a JSON object with a strategy and step list. Question: What ev"
+    },
+    {
+      "provider": "OpenRouter (Qwen-2.5-Coder-32B)",
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "qid": "pub-009",
+      "qtype": "lookup",
+      "latency_ms": 4719.4,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{   \"strategy\": \"To determine the number of different nations that had athletes competing in the sailing women's RS:X ev"
+    },
+    {
+      "provider": "OpenRouter (Qwen-2.5-Coder-32B)",
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "qid": "pub-001",
+      "qtype": "aggregation",
+      "latency_ms": 8045.4,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{   \"strategy\": \"To determine how many biathlon events at the 2018 Winter Olympics had more than 73 competitors, I will "
+    },
+    {
+      "provider": "OpenRouter (Qwen-2.5-Coder-32B)",
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "qid": "pub-013",
+      "qtype": "temporal",
+      "latency_ms": 5326.92,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{   \"strategy\": \"To determine the gold medalist in the women's 200 metre freestyle swimming event at the Summer Olympics"
+    },
+    {
+      "provider": "OpenRouter (Qwen-2.5-Coder-32B)",
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "qid": "pub-004",
+      "qtype": "superlative",
+      "latency_ms": 8346.1,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{   \"strategy\": \"To determine which Athletics event had the highest number of competitors at the 2008 Summer Olympics, I"
+    },
+    {
+      "provider": "OpenRouter (Qwen-2.5-Coder-32B)",
+      "model": "qwen/qwen-2.5-coder-32b-instruct",
+      "qid": "pub-060",
+      "qtype": "multi_hop",
+      "latency_ms": 12961.72,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{   \"strategy\": \"To find the event that took place at ExCeL London on 30 July 2012 where a French athlete won a gold med"
+    },
+    {
+      "provider": "Groq (Qwen3.8-27B)",
+      "model": "qwen/qwen3.8-27b",
+      "qid": "pub-009",
+      "qtype": "lookup",
+      "latency_ms": 730.48,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "```json {   \"strategy\": \"Identify the sailing women's RS:X event at the 2016 Summer Olympics, retrieve the list of parti"
+    },
+    {
+      "provider": "Groq (Qwen3.8-27B)",
+      "model": "qwen/qwen3.8-27b",
+      "qid": "pub-001",
+      "qtype": "aggregation",
+      "latency_ms": 824.07,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "```json {   \"strategy\": \"Retrieve the list of biathlon events at the 2018 Winter Olympics, obtain the number of competit"
+    },
+    {
+      "provider": "Groq (Qwen3.8-27B)",
+      "model": "qwen/qwen3.8-27b",
+      "qid": "pub-013",
+      "qtype": "temporal",
+      "latency_ms": 741.83,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "```json {   \"strategy\": \"Identify the Summer Olympics held immediately before 2016 (which is 2012), then find the winner"
+    },
+    {
+      "provider": "Groq (Qwen3.8-27B)",
+      "model": "qwen/qwen3.8-27b",
+      "qid": "pub-004",
+      "qtype": "superlative",
+      "latency_ms": 658.89,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "```json {   \"strategy\": \"Identify all Athletics events at the 2008 Summer Olympics, retrieve the number of competitors f"
+    },
+    {
+      "provider": "Groq (Qwen3.8-27B)",
+      "model": "qwen/qwen3.8-27b",
+      "qid": "pub-060",
+      "qtype": "multi_hop",
+      "latency_ms": 709.59,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "```json {   \"strategy\": \"Identify the major event held at ExCeL London on 30 July 2012, then find the specific gold meda"
+    },
+    {
+      "provider": "OpenRouter (Llama-3.3-70B)",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "qid": "pub-009",
+      "qtype": "lookup",
+      "latency_ms": 5695.63,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{\"strategy\": \"counting\", \"steps\": [{\"id\": \"S1\", \"kind\": \"tool\", \"tool\": \"graphrag__aggregate\", \"args\": {\"function\": \"cou"
+    },
+    {
+      "provider": "OpenRouter (Llama-3.3-70B)",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "qid": "pub-001",
+      "qtype": "aggregation",
+      "latency_ms": 6517.15,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{\"strategy\": \"To find the number of biathlon events at the 2018 Winter Olympics with more than 73 competitors, we need t"
+    },
+    {
+      "provider": "OpenRouter (Llama-3.3-70B)",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "qid": "pub-013",
+      "qtype": "temporal",
+      "latency_ms": 2183.91,
+      "status_code": 200,
+      "valid_json": false,
+      "valid_tool": false,
+      "output_preview": "{\"strategy\": \"Find gold medalist in women's 200m freestyle swimming at 2012 Summer Olympics\", \"steps\": [{\"id\": \"S1\", \"ki"
+    },
+    {
+      "provider": "OpenRouter (Llama-3.3-70B)",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "qid": "pub-004",
+      "qtype": "superlative",
+      "latency_ms": 3232.68,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{\"strategy\": \"To find the Athletics event with the highest number of competitors at the 2008 Summer Olympics, we need to"
+    },
+    {
+      "provider": "OpenRouter (Llama-3.3-70B)",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "qid": "pub-060",
+      "qtype": "multi_hop",
+      "latency_ms": 14315.6,
+      "status_code": 200,
+      "valid_json": true,
+      "valid_tool": true,
+      "output_preview": "{\"strategy\": \"find event at ExCeL London on 30 July 2012 that awarded a gold medal to an athlete from France\", \"steps\": "
+    }
+  ],
+  "recommendations": {
+    "routing_strategy": "C. role-specific routing (Planning -> Groq qwen3.8-27b; Reasoning -> Groq qwen3.8-27b; Synthesis -> Groq qwen3.8-27b / OpenRouter fallback)",
+    "read_timeout_retry": "NOT RECOMMENDED (Groq speedup of 15.5x solves root cause at source without client retry overhead)"
+  }
+}
